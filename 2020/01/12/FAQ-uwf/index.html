@@ -19,15 +19,15 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="現在更新中です。  “UWF Servicing Mode” で WSUS の設定が参照されないUWF の不具合として、2019 年 9 月 (Windows 10 1903 のみ 2019 年 10 月) の更新プログラムで修正しております。 Windows Defender のレジストリを除外すると OS 起動時にハングアップする“HKLM\System\CurrentControlSet\S">
+  <meta name="description" content="現在更新中です。  “UWF Servicing Mode” で WSUS の設定が参照されないUWF の不具合として、2019 年 9 月 (Windows 10 1903 のみ 2019 年 10 月) の更新プログラムで修正しております。 Windows Defender のレジストリを除外すると OS 起動時にハングアップするHKLM\System\CurrentControlSet\Se">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FAQ (Unified Write Filter)">
 <meta property="og:url" content="https://jpiotblog.github.io/2020/01/12/FAQ-uwf/index.html">
 <meta property="og:site_name" content="Japan IoT Support Blog">
-<meta property="og:description" content="現在更新中です。  “UWF Servicing Mode” で WSUS の設定が参照されないUWF の不具合として、2019 年 9 月 (Windows 10 1903 のみ 2019 年 10 月) の更新プログラムで修正しております。 Windows Defender のレジストリを除外すると OS 起動時にハングアップする“HKLM\System\CurrentControlSet\S">
+<meta property="og:description" content="現在更新中です。  “UWF Servicing Mode” で WSUS の設定が参照されないUWF の不具合として、2019 年 9 月 (Windows 10 1903 のみ 2019 年 10 月) の更新プログラムで修正しております。 Windows Defender のレジストリを除外すると OS 起動時にハングアップするHKLM\System\CurrentControlSet\Se">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-01-11T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-01-21T10:27:27.163Z">
+<meta property="article:modified_time" content="2020-01-21T10:38:59.390Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="FAQ">
 <meta name="twitter:card" content="summary">
@@ -150,9 +150,9 @@
   	<div class="article-entry" itemprop="articleBody">
     	<p>現在更新中です。</p>
 <hr>
-<h4 id="“UWF-Servicing-Mode”-で-WSUS-の設定が参照されない"><a href="#“UWF-Servicing-Mode”-で-WSUS-の設定が参照されない" class="headerlink" title="“UWF Servicing Mode” で WSUS の設定が参照されない"></a>“UWF Servicing Mode” で WSUS の設定が参照されない</h4><p>UWF の不具合として、2019 年 9 月 (Windows 10 1903 のみ 2019 年 10 月) の更新プログラムで修正しております。<br><br></p>
-<h4 id="Windows-Defender-のレジストリを除外すると-OS-起動時にハングアップする"><a href="#Windows-Defender-のレジストリを除外すると-OS-起動時にハングアップする" class="headerlink" title="Windows Defender のレジストリを除外すると OS 起動時にハングアップする"></a>Windows Defender のレジストリを除外すると OS 起動時にハングアップする</h4><p>“HKLM\System\CurrentControlSet\Services\WdFilter” や、”HKLM\SYSTEM\ControlSet001\Control\DeviceClasses{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}” を除外設定にしていると、OS 起動時にハングアップして起動できない場合があります。レースコンディションによるものであり、スペックの低い端末で発生する傾向にあります。OS 側での修正は困難であるため、Wdfilter の除外解除等をご検討ください。<br><br></p>
-<h4 id="“uwfmgr-exe-filter-enable”-コマンドを実行すると保護対象ボリュームに配置された-Pagefile-sys-が削除される"><a href="#“uwfmgr-exe-filter-enable”-コマンドを実行すると保護対象ボリュームに配置された-Pagefile-sys-が削除される" class="headerlink" title="“uwfmgr.exe filter enable” コマンドを実行すると保護対象ボリュームに配置された Pagefile.sys が削除される"></a>“uwfmgr.exe filter enable” コマンドを実行すると保護対象ボリュームに配置された Pagefile.sys が削除される</h4><p>初回の ”uwfmgr.exe filter enable” コマンドの実行時に Pagefile に関するレジストリ値を操作する処理が実施される為です。回避策としては、”uwfmgr.exe filter enable” コマンドを実行した後、再起動の直前にもう一度 Pagefile.sys の設定を保護対象ボリュームに対して実施する必要があります。</p>
+<h4 id="“UWF-Servicing-Mode”-で-WSUS-の設定が参照されない"><a href="#“UWF-Servicing-Mode”-で-WSUS-の設定が参照されない" class="headerlink" title="“UWF Servicing Mode” で WSUS の設定が参照されない"></a><strong>“UWF Servicing Mode” で WSUS の設定が参照されない</strong></h4><p>UWF の不具合として、2019 年 9 月 (Windows 10 1903 のみ 2019 年 10 月) の更新プログラムで修正しております。<br><br></p>
+<h4 id="Windows-Defender-のレジストリを除外すると-OS-起動時にハングアップする"><a href="#Windows-Defender-のレジストリを除外すると-OS-起動時にハングアップする" class="headerlink" title="Windows Defender のレジストリを除外すると OS 起動時にハングアップする"></a><strong>Windows Defender のレジストリを除外すると OS 起動時にハングアップする</strong></h4><p><code>HKLM\System\CurrentControlSet\Services\WdFilter</code> や、<code>HKLM\SYSTEM\ControlSet001\Control\DeviceClasses\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}</code> を除外設定にしていると、OS 起動時にハングアップして起動できない場合があります。レースコンディションによるものであり、スペックの低い端末で発生する傾向にあります。OS 側での修正は困難であるため、Wdfilter の除外解除等をご検討ください。<br><br></p>
+<h4 id="“uwfmgr-exe-filter-enable”-コマンドを実行すると保護対象ボリュームに配置された-Pagefile-sys-が削除される"><a href="#“uwfmgr-exe-filter-enable”-コマンドを実行すると保護対象ボリュームに配置された-Pagefile-sys-が削除される" class="headerlink" title="“uwfmgr.exe filter enable” コマンドを実行すると保護対象ボリュームに配置された Pagefile.sys が削除される"></a><strong>“uwfmgr.exe filter enable” コマンドを実行すると保護対象ボリュームに配置された Pagefile.sys が削除される</strong></h4><p>初回の <code>uwfmgr.exe filter enable</code> コマンドの実行時に Pagefile に関するレジストリ値を操作する処理が実施される為です。回避策としては、<code>uwfmgr.exe filter enable</code> コマンドを実行した後、再起動の直前にもう一度 Pagefile.sys の設定を保護対象ボリュームに対して実施する必要があります。</p>
 
   	</div>
 	  
