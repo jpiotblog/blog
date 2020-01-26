@@ -27,7 +27,7 @@
 <meta property="og:description" content="トラブル発生時の情報採取手順を記載します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-01-25T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-01-26T14:03:01.404Z">
+<meta property="article:modified_time" content="2020-01-26T15:02:06.275Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="情報採取手順">
 <meta name="twitter:card" content="summary">
@@ -153,18 +153,16 @@
 <br>
 
 <hr>
-<h3 id="実施対象"><a href="#実施対象" class="headerlink" title="実施対象"></a>実施対象</h3><pre><code>事象発生マシン (OS: Windows 10 IoT Core または Windows 10 IoT Enterprise)  </code></pre><h3 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h3><pre><code>[こちら](https://jpiotblog.github.io/files/CollectInfo_UWF.txt &quot;CollectInfo_UWF.txt&quot;) から CollectInfo_UWF.txt ファイルをダウンロードし、拡張子を .txt から .bat に変更、実施対象の任意の場所に格納します。  
+<h3 id="実施対象"><a href="#実施対象" class="headerlink" title="実施対象"></a>実施対象</h3><p>事象発生マシン (OS: Windows 10 IoT Core または Windows 10 IoT Enterprise)  </p>
+<h3 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h3><p><a href="https://jpiotblog.github.io/files/CollectInfo_UWF.txt" title="CollectInfo_UWF.txt">こちら</a> から CollectInfo_UWF.txt ファイルをダウンロードし、拡張子を .txt から .bat に変更、実施対象の任意の場所に格納します。  </p>
+<p>&lt;実施対象に以下が存在する状態&gt;<br>・ [任意の場所]\CollectInfo_UWF.bat ファイル</p>
+<h3 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h3><p>ログを採取することで負荷が上がる可能性は考えられますが、基本的に OS リソースや処理への影響はありません。  </p>
+<h3 id="情報採取手順"><a href="#情報採取手順" class="headerlink" title="情報採取手順"></a>情報採取手順</h3><pre><code>1. 事象発生マシンに管理者アカウントでログオンします。
+2. CollectInfo_UWF.bat ファイルを右クリックし、[管理者として実行] を選択します。
+3. &quot;実行したい番号を入力ください&quot; メッセージに 1 を入力、リターン キーを押下し、表示に従いメニューに戻ります。
+4. &quot;実行したい番号を入力ください&quot; メッセージに q を入力、リターン キーを押下してツールを終了します。
+5. デスクトップ上 &lt;YYYYMMDD 形式の年月日&gt;_&lt;ホスト名&gt;_info フォルダーを圧縮し、お問い合わせいただく際にご提供ください。  </code></pre><br>
 
-&lt;実施対象に以下が存在する状態&gt;  
-・ [任意の場所]\CollectInfo_UWF.bat ファイル</code></pre><h3 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h3><pre><code>ログを採取することで負荷が上がる可能性は考えられますが、基本的に OS リソースや処理への影響はありません。  </code></pre><h3 id="情報採取手順"><a href="#情報採取手順" class="headerlink" title="情報採取手順"></a>情報採取手順</h3><ol>
-<li>事象発生マシンに管理者アカウントでログオンします。</li>
-<li>CollectInfo_UWF.bat ファイルを右クリックし、[管理者として実行] を選択します。</li>
-<li>“実行したい番号を入力ください” メッセージに 1 を入力、リターン キーを押下し、表示に従いメニューに戻ります。</li>
-<li>“実行したい番号を入力ください” メッセージに q を入力、リターン キーを押下してツールを終了します。</li>
-<li>デスクトップ上 &lt;YYYYMMDD 形式の年月日&gt;_&lt;ホスト名&gt;_info フォルダーを圧縮し、お問い合わせいただく際にご提供ください。  <br>
-
-</li>
-</ol>
 <hr>
 <br>
 ※ 現在更新中です。
