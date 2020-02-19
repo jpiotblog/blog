@@ -27,7 +27,7 @@
 <meta property="og:description" content="よくあるご質問とその回答をお纏めいたします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-01-15T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-19T05:45:47.929Z">
+<meta property="article:modified_time" content="2020-02-19T07:41:04.965Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="FAQ">
 <meta name="twitter:card" content="summary">
@@ -144,7 +144,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考となる公開情報について"><span class="toc-number">1.</span> <span class="toc-text">参考となる公開情報について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UWF-適用環境で-Windows-Update-時に-CPU-が高くなる時がある"><span class="toc-number">2.</span> <span class="toc-text">UWF 適用環境で Windows Update 時に CPU が高くなる時がある</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#“UWF-Servicing-Mode”-実行時に、WSUS-の設定が参照されない"><span class="toc-number">3.</span> <span class="toc-text">“UWF Servicing Mode” 実行時に、WSUS の設定が参照されない</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#“uwfmgr-exe-filter-enable”-コマンドを実行すると保護対象ボリュームに配置された-Pagefile-sys-が削除される"><span class="toc-number">4.</span> <span class="toc-text">“uwfmgr.exe filter enable” コマンドを実行すると保護対象ボリュームに配置された Pagefile.sys が削除される</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UWF-の除外に追加したら-OS-が正常に起動しなくなる"><span class="toc-number">5.</span> <span class="toc-text">UWF の除外に追加したら OS が正常に起動しなくなる</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#長期間-例-24-時間-365-日-稼働するシステムで-UWF-を有効化し、オーバーレイ領域を枯渇させない方法はあるか"><span class="toc-number">6.</span> <span class="toc-text">長期間 (例: 24 時間 365 日) 稼働するシステムで UWF を有効化し、オーバーレイ領域を枯渇させない方法はあるか</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考となる公開情報について"><span class="toc-number">1.</span> <span class="toc-text">参考となる公開情報について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UWF-適用環境で-Windows-Update-時に-CPU-が高くなる時がある"><span class="toc-number">2.</span> <span class="toc-text">UWF 適用環境で Windows Update 時に CPU が高くなる時がある</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#“UWF-Servicing-Mode”-実行時に、WSUS-の設定が参照されない"><span class="toc-number">3.</span> <span class="toc-text">“UWF Servicing Mode” 実行時に、WSUS の設定が参照されない</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#“uwfmgr-exe-filter-enable”-コマンドを実行すると保護対象ボリュームに配置された-Pagefile-sys-が削除される"><span class="toc-number">4.</span> <span class="toc-text">“uwfmgr.exe filter enable” コマンドを実行すると保護対象ボリュームに配置された Pagefile.sys が削除される</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#長期間-例-24-時間-365-日-稼働するシステムで-UWF-を有効化し、オーバーレイ領域を枯渇させない方法はあるか"><span class="toc-number">5.</span> <span class="toc-text">長期間 (例: 24 時間 365 日) 稼働するシステムで UWF を有効化し、オーバーレイ領域を枯渇させない方法はあるか</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -185,19 +185,6 @@
 <h2 id="“UWF-Servicing-Mode”-実行時に、WSUS-の設定が参照されない"><a href="#“UWF-Servicing-Mode”-実行時に、WSUS-の設定が参照されない" class="headerlink" title="“UWF Servicing Mode” 実行時に、WSUS の設定が参照されない"></a>“UWF Servicing Mode” 実行時に、WSUS の設定が参照されない</h2><p>UWF の不具合として、2019 年 9 月 (Windows 10 1903 のみ 2019 年 10 月) の更新プログラムで修正しております。  </p>
 <hr>
 <h2 id="“uwfmgr-exe-filter-enable”-コマンドを実行すると保護対象ボリュームに配置された-Pagefile-sys-が削除される"><a href="#“uwfmgr-exe-filter-enable”-コマンドを実行すると保護対象ボリュームに配置された-Pagefile-sys-が削除される" class="headerlink" title="“uwfmgr.exe filter enable” コマンドを実行すると保護対象ボリュームに配置された Pagefile.sys が削除される"></a>“uwfmgr.exe filter enable” コマンドを実行すると保護対象ボリュームに配置された Pagefile.sys が削除される</h2><p>初回の <code>uwfmgr.exe filter enable</code> コマンドの実行時に Pagefile に関するレジストリ値を操作する処理が実施される為です。回避策としては、<code>uwfmgr.exe filter enable</code> コマンドを実行した後、再起動の直前にもう一度 Pagefile.sys の設定を保護対象ボリュームに対して実施する必要があります。  </p>
-<hr>
-<h2 id="UWF-の除外に追加したら-OS-が正常に起動しなくなる"><a href="#UWF-の除外に追加したら-OS-が正常に起動しなくなる" class="headerlink" title="UWF の除外に追加したら OS が正常に起動しなくなる"></a>UWF の除外に追加したら OS が正常に起動しなくなる</h2><p>システムの起動の初期段階でアクセスするフォルダ (C:\Windows 配下など) は、他のデータと一貫性を持っています。一部のフォルダーを除外し、関連するその他の情報と一貫性が崩れた場合、システムがハンドルできない問題が発生し「SYSTEM THREAD EXCEPTION NOT HANDLED」エラーが発生する場合があります。これは、アクセスできる情報としてアクセスしようとしたら失敗 (Access violation の発生) することでシステムの起動が進められなくなるためです。<br>設定を推奨しない除外パスは、公開情報 <a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwfexclusions" target="_blank" rel="noopener">書き込みフィルターの除外</a> を参照ください。なお、現在公開情報への追加リクエスト中の情報として、以下も併せてご確認ください。  </p>
-<ul>
-<li><p>C:\Windows\WinSWX フォルダーを除外すると OS 起動時に BSOD が発生する  </p>
-<p> Winodws 10 Enterprise 2019 LTSC では、C:\Windows\WinSWX フォルダーを除外するとシステム起動時に 「SYSTEM THREAD EXCEPTION NOT HANDLED」 で BSOD なるという報告がございます。  </p>
-</li>
-</ul>
-<p>なお、UWF の除外対象にしたい製品の具体的な除外パスについてお問い合わせいただく場合、各対象製品サポートへお問い合わせくださいますようお願いいたします。Windows Defender については以下のような事例がございますので、併せてご紹介いたします。  </p>
-<ul>
-<li><p>Windows Defender のレジストリを除外すると OS 起動時にハングアップする  </p>
-<p> レジストリ キー <code>HKLM\System\CurrentControlSet\Services\WdFilter</code> や <code>HKLM\SYSTEM\ControlSet001\Control\DeviceClasses\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}</code> を除外設定にしていると、OS 起動時にハングアップして起動できない場合があります。レースコンディションによるものであり、スペックの低い端末で発生する傾向にあります。OS 側での修正は困難であるため、Wdfilter の除外解除等をご検討ください。  </p>
-</li>
-</ul>
 <hr>
 <h2 id="長期間-例-24-時間-365-日-稼働するシステムで-UWF-を有効化し、オーバーレイ領域を枯渇させない方法はあるか"><a href="#長期間-例-24-時間-365-日-稼働するシステムで-UWF-を有効化し、オーバーレイ領域を枯渇させない方法はあるか" class="headerlink" title="長期間 (例: 24 時間 365 日) 稼働するシステムで UWF を有効化し、オーバーレイ領域を枯渇させない方法はあるか"></a>長期間 (例: 24 時間 365 日) 稼働するシステムで UWF を有効化し、オーバーレイ領域を枯渇させない方法はあるか</h2><p>オーバーレイ領域の消費傾向は、その環境の利用方法に依存いたします。ご利用方法に依存せず、オーバーレイ領域の消費を節約する汎用的な方法はございません。<br>UWF 有効化した環境で長期間システムを起動し続ける場合、システムを通常利用した場合にどの程度オーバーレイが消費するか運用テストを最低でも 1 週間単位で実施いただくことをお勧めいたします。ウイルス対策ソフトウェアの定義ファイル更新を含める場合には、最低でも 1 ヶ月以上の運用テストを実施ください。結果を基にオーバーレイ領域が枯渇しないよう容量を確保するか、システムのご利用方法を調整ください。  </p>
 <hr>
@@ -282,7 +269,7 @@
     
         <li><a class="flat-box" href="/blog/categories/IoT-%E8%A3%BD%E5%93%81%E5%85%A8%E8%88%AC/"><div class='name'>IoT 製品全般</div><div class='badget'>2</div></a></li>
     
-        <li><a class="flat-box" href="/blog/categories/Unified-Write-Filter/"><div class='name'>Unified Write Filter</div><div class='badget'>3</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/Unified-Write-Filter/"><div class='name'>Unified Write Filter</div><div class='badget'>4</div></a></li>
     
     </ul>
     
@@ -293,7 +280,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">メモリ ダンプの設定手順</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a>
+        <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">メモリ ダンプの設定手順</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a> <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/" style="font-size: 14px; color: #808080">除外設定</a>
     </div>
 </div>
 

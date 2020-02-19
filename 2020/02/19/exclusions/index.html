@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: Unified Write Filter | Japan IoT Support Blog</title>
+  <title>UWF の除外設定について | Japan IoT Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,12 +19,17 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Japan IoT Support Blog">
-<meta property="og:url" content="https://jpiotblog.github.io/categories/Unified-Write-Filter/index.html">
+  <meta name="description" content="UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UWF の除外設定について">
+<meta property="og:url" content="https://jpiotblog.github.io/2020/02/19/exclusions/index.html">
 <meta property="og:site_name" content="Japan IoT Support Blog">
+<meta property="og:description" content="UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。">
 <meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2020-02-18T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-19T07:41:04.965Z">
 <meta property="article:author" content="jpiotblog">
+<meta property="article:tag" content="除外設定">
 <meta name="twitter:card" content="summary">
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
@@ -119,175 +124,77 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
-  <script>
-    window.subData= { title:'Category : Unified Write Filter'}
-  </script>
-
-<section class="post-list">
+        <article id="post-exclusions"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2020/02/19/exclusions/">
+    	UWF の除外設定について
+    </a>
+  </h2>
+	<time>
+	  2月 19, 2020
+	</time>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/02/19/exclusions/">
-        UWF の除外設定について
-      </a>
-    </h2>
-    
-    <time>
-      2月 19, 2020
-    </time>
-		
     
     <div class='cats'>
         <a href="/blog/categories/Unified-Write-Filter/">Unified Write Filter</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <p>UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。</p>
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UWF-の除外に追加したら-OS-が正常に起動しなくなる"><span class="toc-number">1.</span> <span class="toc-text">UWF の除外に追加したら OS が正常に起動しなくなる</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。</p>
+<a id="more"></a>
+<br>
 
-    
-	  <div class="readmore">
-      <a href="/blog/2020/02/19/exclusions/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+<hr>
+<h2 id="UWF-の除外に追加したら-OS-が正常に起動しなくなる"><a href="#UWF-の除外に追加したら-OS-が正常に起動しなくなる" class="headerlink" title="UWF の除外に追加したら OS が正常に起動しなくなる"></a>UWF の除外に追加したら OS が正常に起動しなくなる</h2><p>システムの起動の初期段階でアクセスするフォルダ (C:\Windows 配下など) は、他のデータと一貫性を持っています。一部のフォルダーを除外し、関連するその他の情報と一貫性が崩れた場合、システムがハンドルできない問題が発生し「SYSTEM THREAD EXCEPTION NOT HANDLED」エラーが発生する場合があります。これは、アクセスできる情報としてアクセスしようとしたら失敗 (Access violation の発生) することでシステムの起動が進められなくなるためです。<br>設定を推奨しない除外パスは、公開情報 <a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwfexclusions" target="_blank" rel="noopener">書き込みフィルターの除外</a> を参照ください。なお、現在公開情報への追加リクエスト中の情報として、以下も併せてご確認ください。  </p>
+<ul>
+<li><p>C:\Windows\WinSWX フォルダーを除外すると OS 起動時に BSOD が発生する  </p>
+<p> Winodws 10 Enterprise 2019 LTSC では、C:\Windows\WinSWX フォルダーを除外するとシステム起動時に 「SYSTEM THREAD EXCEPTION NOT HANDLED」 で BSOD なるという報告がございます。  </p>
+</li>
+</ul>
+<p>なお、UWF の除外対象にしたい製品の具体的な除外パスについてお問い合わせいただく場合、各対象製品サポートへお問い合わせくださいますようお願いいたします。Windows Defender については以下のような事例がございますので、併せてご紹介いたします。  </p>
+<ul>
+<li><p>Windows Defender のレジストリを除外すると OS 起動時にハングアップする  </p>
+<p> レジストリ キー <code>HKLM\System\CurrentControlSet\Services\WdFilter</code> や <code>HKLM\SYSTEM\ControlSet001\Control\DeviceClasses\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}</code> を除外設定にしていると、OS 起動時にハングアップして起動できない場合があります。レースコンディションによるものであり、スペックの低い端末で発生する傾向にあります。OS 側での修正は困難であるため、Wdfilter の除外解除等をご検討ください。  </p>
+</li>
+</ul>
+<hr>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
       
         <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/">除外設定</a>
       
 	  </div>
     
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/02/12/dump-setting/">
-        UWF を有効化した環境でメモリ ダンプを取得する方法
-      </a>
-    </h2>
-    
-    <time>
-      2月 12, 2020
-    </time>
 		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Unified-Write-Filter/">Unified Write Filter</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>UWF を有効化した環境で、メモリ ダンプを取得する方法についてご紹介します。</p>
-
-    
-	  <div class="readmore">
-      <a href="/blog/2020/02/12/dump-setting/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/">メモリ ダンプの設定手順</a>
-      
-	  </div>
-    
-  </section>
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2020/02/12/dump-setting/" rel="next"  title="UWF を有効化した環境でメモリ ダンプを取得する方法">
+						UWF を有効化した環境でメモリ ダンプを取得する方法
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/01/26/CollectInfo_UWF/">
-        UWF 関連トラブル時の情報採取手順について
-      </a>
-    </h2>
-    
-    <time>
-      1月 26, 2020
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Unified-Write-Filter/">Unified Write Filter</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>トラブル発生時の情報採取手順を記載します。</p>
-
-    
-	  <div class="readmore">
-      <a href="/blog/2020/01/26/CollectInfo_UWF/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/">情報採取手順</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/01/16/FAQ-uwf/">
-        FAQ (Unified Write Filter)
-      </a>
-    </h2>
-    
-    <time>
-      1月 16, 2020
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Unified-Write-Filter/">Unified Write Filter</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>よくあるご質問とその回答をお纏めいたします。</p>
-
-    
-	  <div class="readmore">
-      <a href="/blog/2020/01/16/FAQ-uwf/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/FAQ/">FAQ</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-</section>
-
+<script>
+	window.subData = {
+		title: 'UWF の除外設定について',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>
