@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>jpiotblog について | Japan IoT Support Blog</title>
+  <title>長期間稼働するシステムでの UWF 有効化について | Japan IoT Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,17 +19,17 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日本マイクロソフトの IoT 製品 (Device Lockdown 機能含む) に関するサポート情報のブログです。 公開日2020 年 1 月 1 日より公開いたしました。 活動について製品のサポート メンバーによって運用されております。仕様に関する情報やトラブル シューティングの手順、実装におけるワンポイント アドバイスを公開いたします。 留意事項サイトのコンテンツや情報において、可能な限り正">
+  <meta name="description" content="長期間稼働するシステムで UWF を有効化する場合の、一般的な留意事項ををお纏めいたします。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jpiotblog について">
-<meta property="og:url" content="https://jpiotblog.github.io/2020/01/01/about-jpiotblog/index.html">
+<meta property="og:title" content="長期間稼働するシステムでの UWF 有効化について">
+<meta property="og:url" content="https://jpiotblog.github.io/2020/02/20/UWF-longtermup/index.html">
 <meta property="og:site_name" content="Japan IoT Support Blog">
-<meta property="og:description" content="日本マイクロソフトの IoT 製品 (Device Lockdown 機能含む) に関するサポート情報のブログです。 公開日2020 年 1 月 1 日より公開いたしました。 活動について製品のサポート メンバーによって運用されております。仕様に関する情報やトラブル シューティングの手順、実装におけるワンポイント アドバイスを公開いたします。 留意事項サイトのコンテンツや情報において、可能な限り正">
+<meta property="og:description" content="長期間稼働するシステムで UWF を有効化する場合の、一般的な留意事項ををお纏めいたします。">
 <meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2019-12-31T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-01-09T16:09:57.065Z">
+<meta property="article:published_time" content="2020-02-19T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-20T02:14:38.215Z">
 <meta property="article:author" content="jpiotblog">
-<meta property="article:tag" content="はじめに">
+<meta property="article:tag" content="オーバーレイ">
 <meta name="twitter:card" content="summary">
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
@@ -124,40 +124,44 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-about-jpiotblog"
+        <article id="post-UWF-longtermup"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/blog/2020/01/01/about-jpiotblog/">
-    	jpiotblog について
+  	<a href="/blog/2020/02/20/UWF-longtermup/">
+    	長期間稼働するシステムでの UWF 有効化について
     </a>
   </h2>
 	<time>
-	  1月 1, 2020
+	  2月 20, 2020
 	</time>
 	
     
     <div class='cats'>
-        <a href="/blog/categories/IoT-%E8%A3%BD%E5%93%81%E5%85%A8%E8%88%AC/">IoT 製品全般</a>
+        <a href="/blog/categories/Unified-Write-Filter/">Unified Write Filter</a>
     </div>
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#公開日"><span class="toc-number">1.</span> <span class="toc-text">公開日</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#活動について"><span class="toc-number">2.</span> <span class="toc-text">活動について</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#留意事項"><span class="toc-number">3.</span> <span class="toc-text">留意事項</span></a></li></ol></section>
+		<section class="toc-wrapper"></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>日本マイクロソフトの IoT 製品 (Device Lockdown 機能含む) に関するサポート情報のブログです。</p>
-<h3 id="公開日"><a href="#公開日" class="headerlink" title="公開日"></a>公開日</h3><p>2020 年 1 月 1 日より公開いたしました。</p>
-<h3 id="活動について"><a href="#活動について" class="headerlink" title="活動について"></a>活動について</h3><p>製品のサポート メンバーによって運用されております。仕様に関する情報やトラブル シューティングの手順、実装におけるワンポイント アドバイスを公開いたします。</p>
-<h3 id="留意事項"><a href="#留意事項" class="headerlink" title="留意事項"></a>留意事項</h3><p>サイトのコンテンツや情報において、可能な限り正確な情報を掲載し、更新するよう努めております。しかしながら、状況の変化や情報が古くなることにより、必ずしもお客様環境に適用できない情報となる場合がございます。恐れ入りますが、予めご留意くださいますようお願い申し上げます。</p>
+    	<p>長期間稼働するシステムで UWF を有効化する場合の、一般的な留意事項ををお纏めいたします。</p>
+<a id="more"></a>
+<br>
+
+<hr>
+<p>オーバーレイ領域の消費傾向はその環境のご利用方法に依存いたします。例えば、新しいファイルの作成や更新が頻繁に行われるシステムでは、オーバーレイが比較的早く消費します。逆に、新しいファイルの作成は行われず、限定された動作のみを行うシステムでは消費は少ないことが想定されます。オーバーレイ領域の消費傾向が把握できていないシステムにおきましては、長期間連続稼働 (例: 24 時間 365 日) を要件するシステムでの UWF 利用はお勧めいたしません。  </p>
+<p>なお、システムを再起動せず稼働可能な期間を判断するためには、UWF を有効化して模擬運用を実施し、オーバーレイの消費傾向を把握することをお勧めいたします。運用が周期的に行われる場合、周期の最大期間 (例: 一週間、または一ヶ月など) を目途に模擬運用を継続ください。消費傾向からシステム再起動タイミングを逆算したり、どのような操作が最もオーバーレイを消費しているかを確認して利用方法を変更するなどご検討ください。</p>
+<hr>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/">はじめに</a>
+        <a href="/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/">オーバーレイ</a>
       
 	  </div>
     
@@ -165,10 +169,10 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/01/12/past-blog/" rel="prev"  title="過去ブログについて">
-						過去ブログについて 
-					</a></span>
 				
+					<span class="art-item-right">next：<a href="/blog/2020/02/19/exclusions/" rel="next"  title="UWF の除外を推奨しないパスについて">
+						UWF の除外を推奨しないパスについて
+					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
 	
@@ -177,7 +181,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'jpiotblog について',
+		title: '長期間稼働するシステムでの UWF 有効化について',
 		tools: true
 	}
 </script>

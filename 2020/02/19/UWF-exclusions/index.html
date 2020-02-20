@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>jpiotblog について | Japan IoT Support Blog</title>
+  <title>UWF の除外を推奨しないパスについて | Japan IoT Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,17 +19,17 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日本マイクロソフトの IoT 製品 (Device Lockdown 機能含む) に関するサポート情報のブログです。 公開日2020 年 1 月 1 日より公開いたしました。 活動について製品のサポート メンバーによって運用されております。仕様に関する情報やトラブル シューティングの手順、実装におけるワンポイント アドバイスを公開いたします。 留意事項サイトのコンテンツや情報において、可能な限り正">
+  <meta name="description" content="UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jpiotblog について">
-<meta property="og:url" content="https://jpiotblog.github.io/2020/01/01/about-jpiotblog/index.html">
+<meta property="og:title" content="UWF の除外を推奨しないパスについて">
+<meta property="og:url" content="https://jpiotblog.github.io/2020/02/19/UWF-exclusions/index.html">
 <meta property="og:site_name" content="Japan IoT Support Blog">
-<meta property="og:description" content="日本マイクロソフトの IoT 製品 (Device Lockdown 機能含む) に関するサポート情報のブログです。 公開日2020 年 1 月 1 日より公開いたしました。 活動について製品のサポート メンバーによって運用されております。仕様に関する情報やトラブル シューティングの手順、実装におけるワンポイント アドバイスを公開いたします。 留意事項サイトのコンテンツや情報において、可能な限り正">
+<meta property="og:description" content="UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。">
 <meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2019-12-31T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-01-09T16:09:57.065Z">
+<meta property="article:published_time" content="2020-02-18T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-20T02:14:38.184Z">
 <meta property="article:author" content="jpiotblog">
-<meta property="article:tag" content="はじめに">
+<meta property="article:tag" content="除外設定">
 <meta name="twitter:card" content="summary">
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
@@ -124,40 +124,52 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-about-jpiotblog"
+        <article id="post-UWF-exclusions"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/blog/2020/01/01/about-jpiotblog/">
-    	jpiotblog について
+  	<a href="/blog/2020/02/19/UWF-exclusions/">
+    	UWF の除外を推奨しないパスについて
     </a>
   </h2>
 	<time>
-	  1月 1, 2020
+	  2月 19, 2020
 	</time>
 	
     
     <div class='cats'>
-        <a href="/blog/categories/IoT-%E8%A3%BD%E5%93%81%E5%85%A8%E8%88%AC/">IoT 製品全般</a>
+        <a href="/blog/categories/Unified-Write-Filter/">Unified Write Filter</a>
     </div>
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#公開日"><span class="toc-number">1.</span> <span class="toc-text">公開日</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#活動について"><span class="toc-number">2.</span> <span class="toc-text">活動について</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#留意事項"><span class="toc-number">3.</span> <span class="toc-text">留意事項</span></a></li></ol></section>
+		<section class="toc-wrapper"></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>日本マイクロソフトの IoT 製品 (Device Lockdown 機能含む) に関するサポート情報のブログです。</p>
-<h3 id="公開日"><a href="#公開日" class="headerlink" title="公開日"></a>公開日</h3><p>2020 年 1 月 1 日より公開いたしました。</p>
-<h3 id="活動について"><a href="#活動について" class="headerlink" title="活動について"></a>活動について</h3><p>製品のサポート メンバーによって運用されております。仕様に関する情報やトラブル シューティングの手順、実装におけるワンポイント アドバイスを公開いたします。</p>
-<h3 id="留意事項"><a href="#留意事項" class="headerlink" title="留意事項"></a>留意事項</h3><p>サイトのコンテンツや情報において、可能な限り正確な情報を掲載し、更新するよう努めております。しかしながら、状況の変化や情報が古くなることにより、必ずしもお客様環境に適用できない情報となる場合がございます。恐れ入りますが、予めご留意くださいますようお願い申し上げます。</p>
+    	<p>UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。</p>
+<a id="more"></a>
+<br>
+
+<hr>
+<p>システムの起動の初期段階でアクセスするフォルダ (C:\Windows 配下など) は、他のデータと一貫性を持っています。一部のフォルダーを除外し、関連するその他の情報と一貫性が崩れた場合、システムがハンドルできない問題が発生し「SYSTEM THREAD EXCEPTION NOT HANDLED」エラーが発生する場合があります。これは、アクセスできる情報としてアクセスしようとしたら失敗 (Access violation の発生) することでシステムの起動が進められなくなるためです。<br>一般的に、設定を推奨しない除外パスは、公開情報 <a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwfexclusions" target="_blank" rel="noopener">書き込みフィルターの除外</a> を参照ください。なお、現在公開情報への追加リクエスト中の内容となりますが、以下も併せてご確認ください。  </p>
+<ul>
+<li><p>C:\Windows\WinSXS フォルダーを除外すると OS 起動時に BSOD が発生する  </p>
+<p> Winodws 10 Enterprise 2019 LTSC では、C:\Windows\WinSXS フォルダーを除外するとシステム起動時に 「SYSTEM THREAD EXCEPTION NOT HANDLED」 で BSOD が発生するという報告がございます。C:\Windows\WinSXS フォルダー配下にはシステム起動初期にアクセスする情報が含まれておりますため、除外をお勧めいたしません。  </p>
+</li>
+<li><p>Windows Defender のレジストリを除外すると OS 起動時にハングアップする  </p>
+<p> レジストリ キー <code>HKLM\System\CurrentControlSet\Services\WdFilter</code> や <code>HKLM\SYSTEM\ControlSet001\Control\DeviceClasses\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}</code> を除外設定にしていると、OS 起動時にハングアップして起動できない場合があります。レースコンディションによるものであり、スペックの低い端末で発生する傾向にあります。OS 側での修正は困難であるため、Wdfilter の除外解除等をご検討ください。  </p>
+</li>
+</ul>
+<p>なお、UWF を有効にした環境で OS 再起動後も情報を維持したい製品がある場合、必要な除外設定につきましては対象製品サポートへお問い合わせいただく必要がございます。除外設定の追加によって何らかの問題が発生した場合にも、除外対象パスを使用するプロセス側にて調査が必要となりますため、対象の製品サポートにて事例の有無や対処方法をお問い合わせください。</p>
+<hr>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/">はじめに</a>
+        <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/">除外設定</a>
       
 	  </div>
     
@@ -165,10 +177,14 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/01/12/past-blog/" rel="prev"  title="過去ブログについて">
-						過去ブログについて 
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/02/19/exclusions/" rel="prev"  title="UWF の除外を推奨しないパスについて">
+						UWF の除外を推奨しないパスについて 
 					</a></span>
 				
+				
+					<span class="art-item-right">next：<a href="/blog/2020/02/12/dump-setting/" rel="next"  title="UWF を有効化した環境でメモリ ダンプを取得する方法">
+						UWF を有効化した環境でメモリ ダンプを取得する方法
+					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
 	
@@ -177,7 +193,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'jpiotblog について',
+		title: 'UWF の除外を推奨しないパスについて',
 		tools: true
 	}
 </script>
