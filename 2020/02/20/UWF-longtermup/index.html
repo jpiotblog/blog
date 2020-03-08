@@ -27,7 +27,7 @@
 <meta property="og:description" content="長期間稼働するシステムで UWF を有効化する場合の、一般的な留意事項をご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-19T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-08T16:25:36.114Z">
+<meta property="article:modified_time" content="2020-03-08T16:26:59.034Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="オーバーレイ">
 <meta name="twitter:card" content="summary">
@@ -159,8 +159,7 @@
 <p>検討方法例:  </p>
 <ol>
 <li><p>一週間または一ヶ月などの運用周期となる期間、運用試験を実施いただき、オーバーレイの消費傾向を把握します。</p>
-<p>消費量 / 残容量の確認:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay get-consumption  </span><br><span class="line">uwfmgr overlay get-availablespace</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>/ 残容量の確認:</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay get-consumption  </span><br><span class="line">uwfmgr overlay get-availablespace</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>試験結果を基に、システム再起動間隔でオーバーレイが消費しないよう設定値を決定します。</p>
 <p>例:<br>オーバーレイ消費傾向: 約 200 MB / 日<br>システム再起動間隔　: 一週間毎  </p>
