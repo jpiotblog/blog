@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF を有効化した環境で、メモリ ダンプを取得する方法についてご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-11T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-08T16:12:29.289Z">
+<meta property="article:modified_time" content="2020-03-08T16:14:59.708Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="メモリ ダンプの設定手順">
 <meta name="twitter:card" content="summary">
@@ -144,7 +144,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#はじめに"><span class="toc-number">1.</span> <span class="toc-text">はじめに</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事前準備"><span class="toc-number">2.</span> <span class="toc-text">事前準備</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dump-の出力手順"><span class="toc-number">3.</span> <span class="toc-text">Dump の出力手順</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#※-参考情報"><span class="toc-number">4.</span> <span class="toc-text">※ 参考情報</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#はじめに"><span class="toc-number">1.</span> <span class="toc-text">はじめに</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事前準備"><span class="toc-number">2.</span> <span class="toc-text">事前準備</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dump-出力設定手順"><span class="toc-number">3.</span> <span class="toc-text">Dump 出力設定手順</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dump-の出力手順"><span class="toc-number">4.</span> <span class="toc-text">Dump の出力手順</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#※-参考情報"><span class="toc-number">5.</span> <span class="toc-text">※ 参考情報</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -173,7 +173,15 @@
 </li>
 <li><p>事前に UWF フィルターとボリュームの保護を実行します。この過程で PageFile の設定が一旦初期化されます。  </p>
 <p> 実行例:<br> ※ この手順ではシステム ドライブを C: ドライブとします。 </p>
- <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   uwfmgr.exe filter enable  </span><br><span class="line">   uwfmgr.exe volume protect c:  </span><br><span class="line">   shutdown -r -t <span class="number">0</span>  </span><br><span class="line">   ``` </span><br><span class="line"></span><br><span class="line">***</span><br><span class="line">## Dump 出力設定手順</span><br><span class="line">- (<span class="number">1</span>) UWF フィルターを無効化する。  </span><br><span class="line"></span><br><span class="line">   実行例:  </span><br><span class="line">   ```dos</span><br><span class="line">   uwfmgr.exe filter disable</span><br></pre></td></tr></table></figure>
+ <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe filter enable  </span><br><span class="line">uwfmgr.exe volume protect c:  </span><br><span class="line">shutdown -r -t <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="Dump-出力設定手順"><a href="#Dump-出力設定手順" class="headerlink" title="Dump 出力設定手順"></a>Dump 出力設定手順</h2><ul>
+<li><p>(1) UWF フィルターを無効化する。  </p>
+<p> 実行例:  </p>
+ <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe filter disable</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>(2) PageFile の大きさを 物理メモリ + 300 Mbyte 以上の大きさに設定する。  </p>
 <p> 実行例:<br> a) [エクスプローラ] - [コンピュータ] を右クリックし [プロパティ(R)] をクリックします。<br> b) [システムの詳細設定] をクリックします。<br> c) [詳細設定] タブの [パフォーマンス] にある [設定(S)] をクリックします。<br> d) [詳細設定] タブの [仮想メモリ] の項目にある [変更(C)] ボタンをクリックします。<br> e) この画面にて、[すべてのドライブのページング ファイルのサイズを自動的に管理する(A)] オプションを外します。<br> f) 手順 1) で作成したシステムドライブ以外のドライブ (ここでは D:) をクリックします。<br> g) [カスタムサイズ] にチェックを付け、[初期サイズ]、[最大サイズ] の両方に物理メモリ + 300 Mbyte 以上の値を入力します。 (例えば 4096MB メモリの場合、4396MB)<br> h) その後 [設定] ボタンをクリックし設定を反映させ [OK] ボタンをクリックします。<br> i) “変更結果はコンピューターを再起動しなければ有効になりません。” というポップアップが表示されますので、[OK] ボタンをクリックします。<br> j) “パフォーマンス オプション” のウィンドウも [OK] ボタンにて閉じます。  </p>
