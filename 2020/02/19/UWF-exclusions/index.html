@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-18T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-06T06:30:50.462Z">
+<meta property="article:modified_time" content="2020-04-06T06:54:02.656Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="除外設定">
 <meta name="twitter:card" content="summary">
@@ -162,7 +162,7 @@
 <li><p>Windows Defender のレジストリを除外すると OS 起動時にハングアップする  </p>
 <p> 下記レジストリ キーを除外していると、OS 起動時にハングアップして起動できない場合があります。レースコンディションによるものであり、スペックの低い端末で発生する傾向にあります。OS 側での修正は困難であるため、Wdfilter の除外解除等をご検討ください。  </p>
 <p> ・ <code>HKLM\System\CurrentControlSet\Services\WdFilter</code><br> ・ <code>HKLM\SYSTEM\ControlSet001\Control\DeviceClasses\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}</code>  </p>
-<p> Windows 10 Enterprise 2016 LTSB の環境では下記除外が入っていた場合にも同様の問題が発生するという報告が確認できています。該当する場合にはこちらの除外解除もご検討ください。  </p>
+<p> Windows 10 Enterprise 2016 LTSB の環境では下記除外が入っていた場合にも同様の問題が発生するという報告があります。該当する場合にはこちらの除外解除もご検討ください。  </p>
 <p> ・ <code>HKLM\SOFTWARE\Classes\TypeLib\{8C389764-F036-48F2-9AE2-88C260DCF43B}</code><br> ・ <code>HKLM\SOFTWARE\Classes\CLSID\{A2D75874-6750-4931-94C1-C99D3BC9D0C7}</code><br> ・ <code>HKLM\SOFTWARE\Classes\CLSID\{195B4D07-3DE2-4744-BBF2-D90121AE785B}</code>  </p>
 </li>
 </ul>
