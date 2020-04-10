@@ -27,7 +27,7 @@
 <meta property="og:description" content="長期間稼働するシステムで UWF を有効化する場合の、一般的な留意事項をご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-19T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-06T06:54:02.664Z">
+<meta property="article:modified_time" content="2020-04-10T06:24:03.577Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="オーバーレイ">
 <meta name="twitter:card" content="summary">
@@ -170,7 +170,7 @@
 <li>一週間通常使用しても警告を出力しないように 1.5 GB = 1536 MB と設定 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-warningthreshold 1536</span><br></pre></td></tr></table></figure></li>
 <li>重大エラー表示後 2 日間余裕があるように 2.5 GB = 2560 MB と設定 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-criticalthreshold 2560</span><br></pre></td></tr></table></figure></li>
 <li>RAM 上に 3072 MB を確保するのが難しい場合は Disk オーバーレイを設定<br> ※ OS 再起動後、set-size で指定したサイズの隠しファイル C:\uwfswap.sys が作成されます。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-type disk</span><br></pre></td></tr></table></figure></li>
-<li>設定を反映させるため OS を再起動 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-type disk</span><br></pre></td></tr></table></figure>
+<li>設定を反映させるため OS を再起動 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -r -t 0</span><br></pre></td></tr></table></figure>
 <br>
 
 </li>
