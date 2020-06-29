@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-06-29T08:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-29T16:08:41.012Z">
+<meta property="article:modified_time" content="2020-06-29T16:12:28.276Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="uwfmgr.exe">
 <meta name="twitter:card" content="summary">
@@ -178,13 +178,13 @@
 <p>レジストリ キー、値の作成、変更を反映する場合、uwfmgr.exe registry commit を使用します。実行は値単位で、正規表現は使用できません。    </p>
 <ul>
 <li><p>例 (HKLM\SOFTWARE\test キー配下の値 test の変更反映)</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit &quot;HKLM\SOFTWARE\test test&quot;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit &quot;HKLM\SOFTWARE\test&quot; test</span><br></pre></td></tr></table></figure>
 <br>
 レジストリ キー、値の削除を反映する場合、uwfmgr.exe registry commit-delete を使用します。キーのみを指定して削除を実行することが可能です。  
 レジストリ キー、値を削除後に実行するのではなく、コマンドを実行によって削除します。  
 </li>
 <li><p>例 (HKLM\Software\test キー配下の値 test の削除反映)</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit-delete &quot;HKLM\Software\test test&quot;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit-delete &quot;HKLM\Software\test&quot; test</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>例 (HKLM\Software\test キーの削除反映)</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit-delete &quot;HKLM\Software\test&quot;</span><br></pre></td></tr></table></figure>
