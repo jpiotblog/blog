@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpiotblog.github.io/"/>
-  <updated>2020-06-17T04:47:43.594Z</updated>
+  <updated>2020-06-29T15:59:53.857Z</updated>
   <id>https://jpiotblog.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>uwfmgr.exe コマンドの Commit/Cummit-Delete サブ オプションについて</title>
+    <link href="https://jpiotblog.github.io/2020/06/29/UWF-commit/"/>
+    <id>https://jpiotblog.github.io/2020/06/29/UWF-commit/</id>
+    <published>2020-06-29T08:00:00.000Z</published>
+    <updated>2020-06-29T15:59:53.857Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Unified Write Filter" scheme="https://jpiotblog.github.io/categories/Unified-Write-Filter/"/>
+    
+    
+      <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/tags/uwfmgr-exe/"/>
+    
+  </entry>
+  
+  <entry>
     <title>長期間稼働するシステムでの UWF 有効化について</title>
     <link href="https://jpiotblog.github.io/2020/02/20/UWF-longtermup/"/>
     <id>https://jpiotblog.github.io/2020/02/20/UWF-longtermup/</id>
     <published>2020-02-19T15:00:00.000Z</published>
-    <updated>2020-06-17T04:47:43.594Z</updated>
+    <updated>2020-06-29T15:59:53.891Z</updated>
     
     <summary type="html">
     
@@ -42,7 +63,7 @@
     <link href="https://jpiotblog.github.io/2020/02/19/UWF-exclusions/"/>
     <id>https://jpiotblog.github.io/2020/02/19/UWF-exclusions/</id>
     <published>2020-02-18T15:00:00.000Z</published>
-    <updated>2020-06-17T04:47:43.578Z</updated>
+    <updated>2020-06-29T15:59:53.876Z</updated>
     
     <summary type="html">
     
@@ -63,7 +84,7 @@
     <link href="https://jpiotblog.github.io/2020/02/12/UWF-dump-setting/"/>
     <id>https://jpiotblog.github.io/2020/02/12/UWF-dump-setting/</id>
     <published>2020-02-11T15:00:00.000Z</published>
-    <updated>2020-06-17T04:47:43.554Z</updated>
+    <updated>2020-06-29T15:59:53.860Z</updated>
     
     <summary type="html">
     
@@ -84,7 +105,7 @@
     <link href="https://jpiotblog.github.io/2020/01/26/CollectInfo_UWF/"/>
     <id>https://jpiotblog.github.io/2020/01/26/CollectInfo_UWF/</id>
     <published>2020-01-25T15:00:00.000Z</published>
-    <updated>2020-06-17T04:47:43.532Z</updated>
+    <updated>2020-06-29T15:59:53.846Z</updated>
     
     <summary type="html">
     
@@ -105,7 +126,7 @@
     <link href="https://jpiotblog.github.io/2020/01/16/UWF-FAQ/"/>
     <id>https://jpiotblog.github.io/2020/01/16/UWF-FAQ/</id>
     <published>2020-01-15T15:00:00.000Z</published>
-    <updated>2020-06-17T04:47:43.584Z</updated>
+    <updated>2020-06-29T15:59:53.876Z</updated>
     
     <summary type="html">
     
@@ -126,7 +147,7 @@
     <link href="https://jpiotblog.github.io/2020/01/12/past-blog/"/>
     <id>https://jpiotblog.github.io/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2020-06-17T04:47:43.538Z</updated>
+    <updated>2020-06-29T15:59:53.853Z</updated>
     
     <summary type="html">
     
@@ -147,7 +168,7 @@
     <link href="https://jpiotblog.github.io/2020/01/01/about-jpiotblog/"/>
     <id>https://jpiotblog.github.io/2020/01/01/about-jpiotblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-06-17T04:47:43.525Z</updated>
+    <updated>2020-06-29T15:59:53.841Z</updated>
     
     <summary type="html">
     
