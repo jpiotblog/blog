@@ -8,16 +8,8 @@
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/02/20/UWF-longtermup/</loc>
-        <lastmod>2020-06-29T23:57:42.188Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://jpiotblog.github.io/2020/01/16/UWF-FAQ/</loc>
-        <lastmod>2020-06-29T23:57:42.188Z</lastmod>
+        <lastmod>2020-06-30T00:04:38.401Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +17,15 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/02/19/UWF-exclusions/</loc>
-        <lastmod>2020-06-29T23:57:42.173Z</lastmod>
+        <lastmod>2020-06-30T00:04:38.401Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpiotblog.github.io/2020/02/20/UWF-longtermup/</loc>
+        <lastmod>2020-06-30T00:04:38.401Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,15 +33,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/02/12/UWF-dump-setting/</loc>
-        <lastmod>2020-06-29T23:57:42.173Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpiotblog.github.io/2020/01/26/CollectInfo_UWF/</loc>
-        <lastmod>2020-06-29T23:57:42.156Z</lastmod>
+        <lastmod>2020-06-30T00:04:38.394Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -49,15 +41,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/06/29/UWF-commit/</loc>
-        <lastmod>2020-06-29T23:57:42.156Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpiotblog.github.io/2020/01/01/about-jpiotblog/</loc>
-        <lastmod>2020-06-29T23:57:42.156Z</lastmod>
+        <lastmod>2020-06-30T00:04:38.390Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -65,7 +49,23 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/01/12/past-blog/</loc>
-        <lastmod>2020-06-29T23:57:42.156Z</lastmod>
+        <lastmod>2020-06-30T00:04:38.380Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpiotblog.github.io/2020/01/26/CollectInfo_UWF/</loc>
+        <lastmod>2020-06-30T00:04:38.376Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpiotblog.github.io/2020/01/01/about-jpiotblog/</loc>
+        <lastmod>2020-06-30T00:04:38.372Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
