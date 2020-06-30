@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-06-29T08:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-30T00:13:28.793Z">
+<meta property="article:modified_time" content="2020-06-30T01:07:23.466Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="uwfmgr.exe">
 <meta name="twitter:card" content="summary">
@@ -156,7 +156,7 @@
 <hr>
 <p>※ uwfmgr.exe ツールの利用法は、<a href="https://docs.microsoft.com/en-us/windows-hardware/customize/enterprise/uwfmgrexe" target="_blank" rel="noopener">こちら</a> を参照ください。  </p>
 <hr>
-<h2 id="uwfmgr-exe-File-Commit-Cummit-Delete-について"><a href="#uwfmgr-exe-File-Commit-Cummit-Delete-について" class="headerlink" title="uwfmgr.exe File Commit/Cummit-Delete について"></a>uwfmgr.exe File Commit/Cummit-Delete について</h2><p>UWF オーバーレイの保護領域に対してファイル操作を行った場合、OS 再起動後にこれらの操作内容がリセットされます。この時、uwfmgr.exe File Commit/Cummit-Delete によって、変更内容がリセットされないよう “コミット” することが可能です。  </p>
+<h2 id="uwfmgr-exe-File-Commit-Cummit-Delete-について"><a href="#uwfmgr-exe-File-Commit-Cummit-Delete-について" class="headerlink" title="uwfmgr.exe File Commit/Cummit-Delete について"></a>uwfmgr.exe File Commit/Cummit-Delete について</h2><p>UWF オーバーレイの保護領域に対してファイル操作を行った場合、OS 再起動後にこれらの操作内容がリセットされます。この時、uwfmgr.exe File Commit/Cummit-Delete によって、変更内容がリセットされないよう “コミット” することが可能です。コミットしたタイミングの変更内容が実際のシステムに反映されます。  </p>
 <p>ファイルの作成、変更を反映する場合、uwfmgr.exe file commit を使用します。実行はファイル単位で、正規表現は使用できません。  </p>
 <ul>
 <li>例 (c:\temp\test.txt の変更反映) <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe file commit &quot;c:\temp\test.txt&quot;</span><br></pre></td></tr></table></figure>
@@ -177,7 +177,7 @@
 <p>補足:<br>新しくフォルダーを作成し、その配下に作成したファイルに対して uwfmgr file commit を実行した場合、作成したフォルダーを含めてコミットされます。逆に、フォルダー内のファイルを全て uwfmgr file commit-delete で削除後、空のフォルダーを削除する場合には uwfmgr file commit-delete をそのフォルダーに対して実行することでフォルダーの削除がコミットされます。</p>
 </blockquote>
 <hr>
-<h2 id="uwfmgr-exe-Registry-Commit-Cummit-Delete-について"><a href="#uwfmgr-exe-Registry-Commit-Cummit-Delete-について" class="headerlink" title="uwfmgr.exe Registry Commit/Cummit-Delete について"></a>uwfmgr.exe Registry Commit/Cummit-Delete について</h2><p>UWF オーバーレイによってシステムの利用領域を保護している状態でレジストリ キーや値の変更を行った場合、OS 再起動後に変更内容はリセットされます。この時、uwfmgr.exe Registry Commit/Cummit-Delete によって、変更内容がリセットされないよう “コミット” することが可能です。  </p>
+<h2 id="uwfmgr-exe-Registry-Commit-Cummit-Delete-について"><a href="#uwfmgr-exe-Registry-Commit-Cummit-Delete-について" class="headerlink" title="uwfmgr.exe Registry Commit/Cummit-Delete について"></a>uwfmgr.exe Registry Commit/Cummit-Delete について</h2><p>UWF オーバーレイによってシステムの利用領域を保護している状態でレジストリ キーや値の変更を行った場合、OS 再起動後に変更内容はリセットされます。この時、uwfmgr.exe Registry Commit/Cummit-Delete によって、変更内容がリセットされないよう “コミット” することが可能です。コミットしたタイミングの変更内容がシステムに反映されます。  </p>
 <p>レジストリ キー、値の作成、変更を反映する場合、uwfmgr.exe registry commit を使用します。実行は値単位で、正規表現は使用できません。    </p>
 <ul>
 <li>例 (HKLM\SOFTWARE\test キー配下の値 test の変更反映) <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit &quot;HKLM\SOFTWARE\test&quot; test</span><br></pre></td></tr></table></figure>
