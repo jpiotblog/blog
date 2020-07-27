@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点をご紹介いたします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-07-27T08:00:00.000Z">
-<meta property="article:modified_time" content="2020-07-27T13:24:43.538Z">
+<meta property="article:modified_time" content="2020-07-27T13:46:03.101Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="Sysprep">
 <meta name="twitter:card" content="summary">
@@ -161,16 +161,18 @@
 </blockquote>
 </li>
 </ul>
-<p>インストールが完了した状態は、UWF フィルターは無効化されています。この状態で sysprep を実行し、マスター イメージを作成ください。  </p>
-<h3 id="留意事項について"><a href="#留意事項について" class="headerlink" title="留意事項について"></a>留意事項について</h3><p>UWF フィルターを有効化した状態や、ボリューム保護の設定をした後でマスター イメージを作成した場合、UWF の設定が正常に引き継がれません。以下の留意点をご確認ください。  </p>
+<p>インストールが完了した状態は、UWF フィルターは無効化されています。この状態で sysprep を実行し、マスター イメージを作成ください。<br>既に UWF のフィルターを有効化していた場合、後述の留意事項をご確認ください。</p>
+<h3 id="留意事項について"><a href="#留意事項について" class="headerlink" title="留意事項について"></a>留意事項について</h3><p>UWF フィルターを有効化した状態や、ボリューム保護の設定をした後でマスター イメージを作成した場合、UWF の設定が正常に引き継がれません。以下の留意点をご確認いただき、それぞれ対処を実施ください。</p>
 <ul>
-<li><p>UWF フィルターを有効化した場合、sysprep を実行してもイメージの一般化は行われません。UWF フィルターを有効化した環境の場合、以下のコマンドを実行して UWF フィルターを無効化ください。  </p>
+<li><p>UWF フィルターを有効化した環境の場合、sysprep を実行してもイメージの一般化は行われません。UWF フィルターを有効化した環境の場合、以下のコマンドを実行後、OS を再起動して UWF フィルターを無効化ください。  </p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr filter disable</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>ドライブの書き込み保護の設定は、イメージの展開後の環境では有効に動作いたしません。これは、UWF が保持している保護対象ボリュームの GUID が、イメージ展開後の環境で変わってしまうためです。もし C ドライブの保護設定を行っていた場合、以下のコマンドで保護を解除ください。</p>
+<li><p>ドライブの書き込み保護の設定は、イメージの展開後の環境では有効に動作いたしません。これは、UWF が保持している保護対象ボリュームの GUID が、イメージ展開後の環境で変わってしまうためです。もし C ドライブの保護設定を行っていた場合、以下のコマンドを実行後に OS を再起動し、保護を解除ください。</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr volume unprotect C:</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>その他、UWF の除外パスやオーバーレイの設定につきましても、基本的にイメージ展開後の環境でそれぞれ実行することを推奨いたします。</p>
+<li><p>UWF の除外パスやオーバーレイの設定につきましては、イメージ展開後に問題が発生したという報告はございません。しかしながら、設定するパスや展開後の環境に依存して問題が発生する可能性がございますので、基本的にイメージ展開後に実行することを推奨いたします。  </p>
+</br>
+
 </li>
 </ul>
 <hr>
