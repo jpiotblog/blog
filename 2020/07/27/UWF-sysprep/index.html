@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: IoT 製品全般 | Japan IoT Support Blog</title>
+  <title>UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点について | Japan IoT Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,12 +19,17 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Japan IoT Support Blog">
-<meta property="og:url" content="https://jpiotblog.github.io/categories/IoT-%E8%A3%BD%E5%93%81%E5%85%A8%E8%88%AC/index.html">
+  <meta name="description" content="UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点をご紹介いたします。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点について">
+<meta property="og:url" content="https://jpiotblog.github.io/2020/07/27/UWF-sysprep/index.html">
 <meta property="og:site_name" content="Japan IoT Support Blog">
+<meta property="og:description" content="UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点をご紹介いたします。">
 <meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2020-07-27T08:00:00.000Z">
+<meta property="article:modified_time" content="2020-07-27T13:15:35.569Z">
 <meta property="article:author" content="jpiotblog">
+<meta property="article:tag" content="Sysprep">
 <meta name="twitter:card" content="summary">
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
@@ -120,95 +125,83 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
-  <script>
-    window.subData= { title:'Category : IoT 製品全般'}
-  </script>
-
-<section class="post-list">
+        <article id="post-UWF-sysprep"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2020/07/27/UWF-sysprep/">
+    	UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点について
+    </a>
+  </h2>
+	<time>
+	  7月 27, 2020
+	</time>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/01/12/past-blog/">
-        過去ブログについて
-      </a>
-    </h2>
-    
-    <time>
-      1月 12, 2020
-    </time>
-		
     
     <div class='cats'>
-        <a href="/blog/categories/IoT-%E8%A3%BD%E5%93%81%E5%85%A8%E8%88%AC/">IoT 製品全般</a>
+        <a href="/blog/categories/Unified-Write-Filter/">Unified Write Filter</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <p>過去のブログ情報を紹介いたします。<br>定期的な更新は行われていないため、除外設定等の情報は現在の OS では適用されない場合がございます。<br>恐れ入りますが、予めご留意いただけますようお願い申し上げます。</p>
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#留意事項について"><span class="toc-number">1.</span> <span class="toc-text">留意事項について</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点をご紹介いたします。</p>
+<a id="more"></a>
+<br>
 
-    
-	  <div class="readmore">
-      <a href="/blog/2020/01/12/past-blog/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+<hr>
+<p>統合書き込みフィルター (UWF) は、Windows 10 のオプション機能になります。<br>端末のキッティングにあたり UWF 機能を有効化した状態でマスター イメージを作成する場合、まずは以下のサイトの情報に従い UWF 機能をインストールします。  </p>
+<p><a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/iot-ent-device-lockdown-features#unified-write-filter-uwf" target="_blank" rel="noopener">統合書き込みフィルター (UWF) 機能の使用</a></p>
+<blockquote>
+<p>(抜粋)<br>   1. 次の機能をインストールします。<br>   a. [スタート] をクリックし、「 Windows の機能の有効化または無効化」と入力します。<br>   b. [Windows の機能] ウィンドウで、 [デバイスロックダウン] ノードを展開し、[統合書き込みフィルター &gt; OK] をオンにします。<br>   : ※ 一部省略<br>   d. [閉じる] をクリックして、 [Windows の機能] ウィンドウを閉じます。</p>
+</blockquote>
+<p>インストールが完了した状態は、UWF フィルターは無効化されています。この状態で sysprep を実行し、マスター イメージを作成ください。  </p>
+<h3 id="留意事項について"><a href="#留意事項について" class="headerlink" title="留意事項について"></a>留意事項について</h3><p>UWF フィルターを有効化した状態や、ボリューム保護の設定をした後でマスター イメージを作成した場合、UWF の設定が正常に引き継がれないことが確認でいております。以下の留意点をご確認ください。  </p>
+<ul>
+<li><p>UWF フィルターを有効化した場合、sysprep を実行してもイメージの一般化は行われません。UWF フィルターを有効化した環境の場合、以下のコマンドを実行して UWF フィルターを無効化ください。  </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr filter disable</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ドライブの書き込み保護の設定は、イメージの展開後の環境では有効に動作いたしません。これは、UWF が保持している保護対象ボリュームの GUID が、イメージ展開後の環境で変わってしまうためです。もし C ドライブの保護設定を行っていた場合、以下のコマンドで保護を解除ください。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr volume unprotect C:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>その他、UWF の除外パスやオーバーレイの設定につきましても、基本的にイメージ展開後の環境でそれぞれ実行することを推奨いたします。</p>
+</li>
+</ul>
+<hr>
+<p><code>変更履歴</code><br><code>2020/07/27 created by Mochizuki</code>  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
       
-        <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/">過去ブログ</a>
+        <a href="/blog/tags/Sysprep/">Sysprep</a>
       
 	  </div>
     
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/01/01/about-jpiotblog/">
-        jpiotblog について
-      </a>
-    </h2>
-    
-    <time>
-      1月 1, 2020
-    </time>
 		
-    
-    <div class='cats'>
-        <a href="/blog/categories/IoT-%E8%A3%BD%E5%93%81%E5%85%A8%E8%88%AC/">IoT 製品全般</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>日本マイクロソフトの IoT 製品 (Device Lockdown 機能含む) に関するサポート情報のブログです。</p>
-<h3 id="公開日"><a href="#公開日" class="headerlink" title="公開日"></a>公開日</h3><p>2020 年 1 月 1 日より公開いたしました。</p>
-<h3 id="活動について"><a href="#活動について" class="headerlink" title="活動について"></a>活動について</h3><p>製品のサポート メンバーによって運用されております。仕様に関する情報やトラブル シューティングの手順、実装におけるワンポイント アドバイスを公開いたします。</p>
-<h3 id="留意事項"><a href="#留意事項" class="headerlink" title="留意事項"></a>留意事項</h3><p>サイトのコンテンツや情報において、可能な限り正確な情報を掲載し、更新するよう努めております。しかしながら、状況の変化や情報が古くなることにより、必ずしもお客様環境に適用できない情報となる場合がございます。恐れ入りますが、予めご留意くださいますようお願い申し上げます。</p>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/">はじめに</a>
-      
-	  </div>
-    
-  </section>
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2020/06/29/UWF-commit/" rel="next"  title="uwfmgr.exe ツールの Commit/Commit-Delete コマンドについて">
+						uwfmgr.exe ツールの Commit/Commit-Delete コマンドについて
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-</section>
-
+<script>
+	window.subData = {
+		title: 'UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点について',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>

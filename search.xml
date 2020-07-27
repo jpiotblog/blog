@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点について</title>
+      <link href="/blog/2020/07/27/UWF-sysprep/"/>
+      <url>/blog/2020/07/27/UWF-sysprep/</url>
+      
+        <content type="html"><![CDATA[<p>UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点をご紹介いたします。</p><a id="more"></a><br><hr><p>統合書き込みフィルター (UWF) は、Windows 10 のオプション機能になります。<br>端末のキッティングにあたり UWF 機能を有効化した状態でマスター イメージを作成する場合、まずは以下のサイトの情報に従い UWF 機能をインストールします。  </p><p><a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/iot-ent-device-lockdown-features#unified-write-filter-uwf" target="_blank" rel="noopener">統合書き込みフィルター (UWF) 機能の使用</a></p><blockquote><p>(抜粋)<br>   1. 次の機能をインストールします。<br>   a. [スタート] をクリックし、「 Windows の機能の有効化または無効化」と入力します。<br>   b. [Windows の機能] ウィンドウで、 [デバイスロックダウン] ノードを展開し、[統合書き込みフィルター &gt; OK] をオンにします。<br>   : ※ 一部省略<br>   d. [閉じる] をクリックして、 [Windows の機能] ウィンドウを閉じます。</p></blockquote><p>インストールが完了した状態は、UWF フィルターは無効化されています。この状態で sysprep を実行し、マスター イメージを作成ください。  </p><h3 id="留意事項について"><a href="#留意事項について" class="headerlink" title="留意事項について"></a>留意事項について</h3><p>UWF フィルターを有効化した状態や、ボリューム保護の設定をした後でマスター イメージを作成した場合、UWF の設定が正常に引き継がれないことが確認でいております。以下の留意点をご確認ください。  </p><ul><li><p>UWF フィルターを有効化した場合、sysprep を実行してもイメージの一般化は行われません。UWF フィルターを有効化した環境の場合、以下のコマンドを実行して UWF フィルターを無効化ください。  </p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr filter disable</span><br></pre></td></tr></table></figure></li><li><p>ドライブの書き込み保護の設定は、イメージの展開後の環境では有効に動作いたしません。これは、UWF が保持している保護対象ボリュームの GUID が、イメージ展開後の環境で変わってしまうためです。もし C ドライブの保護設定を行っていた場合、以下のコマンドで保護を解除ください。</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr volume unprotect C:</span><br></pre></td></tr></table></figure></li><li><p>その他、UWF の除外パスやオーバーレイの設定につきましても、基本的にイメージ展開後の環境でそれぞれ実行することを推奨いたします。</p></li></ul><hr><p><code>変更履歴</code><br><code>2020/07/27 created by Mochizuki</code>  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Unified Write Filter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Sysprep </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>uwfmgr.exe ツールの Commit/Commit-Delete コマンドについて</title>
       <link href="/blog/2020/06/29/UWF-commit/"/>
       <url>/blog/2020/06/29/UWF-commit/</url>
