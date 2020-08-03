@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF 有効化環境で LCU (累積更新プログラム) の適用時に Out Of Memory で発生する事象について紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-08-01T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-03T13:54:39.906Z">
+<meta property="article:modified_time" content="2020-08-03T13:55:28.927Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="Out Of Memory">
 <meta property="article:tag" content="UWF servicing mode">
@@ -164,10 +164,8 @@
 <hr>
 <h3 id="事象"><a href="#事象" class="headerlink" title="事象"></a>事象</h3><p>UWF を有効化している環境で Windows Update を適用する方法は、主に以下 2 通りになります。</p>
 <ul>
-<li><p>uwfmgr.exe filter disable を実行して OS 再起動し、手動で Windows Update を実行する。  </p>
-</li>
-<li><p>uwfmgr.exe servicing enable を実行して<a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/service-uwf-protected-devices" target="_blank" rel="noopener">UWF サービスモード</a>を有効化する。  </p>
-</li>
+<li>uwfmgr.exe filter disable を実行して OS 再起動し、手動で Windows Update を実行する。  </li>
+<li>uwfmgr.exe servicing enable を実行して<a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/service-uwf-protected-devices" target="_blank" rel="noopener">UWF サービスモード</a>を有効化する。  </li>
 </ul>
 <p>この時、上述の適用環境に該当するマシンでは Out Of Memory が発生し、更新が失敗する事象が確認されています。 </p>
 <hr>
