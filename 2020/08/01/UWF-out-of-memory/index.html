@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: 情報採取手順 | Japan IoT Support Blog</title>
+  <title>UWF 有効化環境で Windows Update 実行時に Out Of Memory が発生する | Japan IoT Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,12 +19,18 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Japan IoT Support Blog">
-<meta property="og:url" content="https://jpiotblog.github.io/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/index.html">
+  <meta name="description" content="UWF 有効化環境で LCU (累積更新プログラム) の適用時に Out Of Memory で発生する事象について紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UWF 有効化環境で Windows Update 実行時に Out Of Memory が発生する">
+<meta property="og:url" content="https://jpiotblog.github.io/2020/08/01/UWF-out-of-memory/index.html">
 <meta property="og:site_name" content="Japan IoT Support Blog">
+<meta property="og:description" content="UWF 有効化環境で LCU (累積更新プログラム) の適用時に Out Of Memory で発生する事象について紹介します。">
 <meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2020-08-01T03:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-03T13:51:42.437Z">
 <meta property="article:author" content="jpiotblog">
+<meta property="article:tag" content="Out Of Memory">
+<meta property="article:tag" content="UWF servicing mode">
 <meta name="twitter:card" content="summary">
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
@@ -120,55 +126,106 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
-  <script>
-    window.subData= { title:'Tag : 情報採取手順'}
-  </script>
-
-<section class="post-list">
+        <article id="post-UWF-out-of-memory"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2020/08/01/UWF-out-of-memory/">
+    	UWF 有効化環境で Windows Update 実行時に Out Of Memory が発生する
+    </a>
+  </h2>
+	<time>
+	  8月 1, 2020
+	</time>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/01/26/CollectInfo_UWF/">
-        UWF 関連トラブル時の情報採取手順について
-      </a>
-    </h2>
-    
-    <time>
-      1月 26, 2020
-    </time>
-		
     
     <div class='cats'>
         <a href="/blog/categories/Unified-Write-Filter/">Unified Write Filter</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <p>トラブル発生時の情報採取手順を記載します。</p>
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#適用環境"><span class="toc-number">1.</span> <span class="toc-text">適用環境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事象"><span class="toc-number">2.</span> <span class="toc-text">事象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原因"><span class="toc-number">3.</span> <span class="toc-text">原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#対処方法"><span class="toc-number">4.</span> <span class="toc-text">対処方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#運用手順"><span class="toc-number">4.1.</span> <span class="toc-text">運用手順</span></a></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>UWF 有効化環境で LCU (累積更新プログラム) の適用時に Out Of Memory で発生する事象について紹介します。</p>
+<a id="more"></a>
+<br>
 
-    
-	  <div class="readmore">
-      <a href="/blog/2020/01/26/CollectInfo_UWF/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+<hr>
+<h3 id="適用環境"><a href="#適用環境" class="headerlink" title="適用環境"></a>適用環境</h3><ul>
+<li>Windows 10 Enterprise 2016 LTSB</li>
+<li>Windows 10 IoT Enterprise 2016 LTSB</li>
+<li>物理メモリが 4 GB</li>
+<li>UWF でシステム使用領域を保護している</li>
+</ul>
+<hr>
+<h3 id="事象"><a href="#事象" class="headerlink" title="事象"></a>事象</h3><p>UWF を有効化している環境で Windows Update を適用する方法は、主に以下 2 通りになります。</p>
+<ul>
+<li><p>uwfmgr.exe filter disable を実行して OS 再起動し、手動で Windows Update を実行する。  </p>
+</li>
+<li><p>uwfmgr.exe servicing enable を実行して<a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/service-uwf-protected-devices" target="_blank" rel="noopener">UWF サービスモード</a>を有効化する。  </p>
+</li>
+</ul>
+<p>この時、上述の適用環境に該当するマシンでは Out Of Memory が発生し、更新が失敗する事象が確認されています。 </p>
+<hr>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>Windows 10 Enterprise 2016 LTSB および Windows 10 IoT Enterprise 2016 LTSB は、リリースから長期間が経過していることから、LCU (累積更新プログラム) が持つメタ データのサイズが非常に大きくなっており、処理の過程でメモリ不足が発生します。<br>このような問題の一般的な対処策として、ページング ファイルを有効化する方法があります。しかし、UWF を有効化したタイミングでページング ファイルは無効化されるため、UWF の利用がこの問題を発生させるトリガーとなる場合がございます。  </p>
+<hr>
+<h3 id="対処方法"><a href="#対処方法" class="headerlink" title="対処方法"></a>対処方法</h3><p>以下いずれかの方法を実施することで、事象を回避できる可能性があります。  </p>
+<ul>
+<li>RAM を増設する</li>
+<li>ドライブを追加しページング ファイルの出力先に設定する</li>
+<li>UWF フィルターの無効化後、ページング ファイルを設定してから Windows Update を実行する</li>
+</ul>
+<p>3 点目の運用回避方法につきまして、以下に具体的な手順を紹介させていただきます。  </p>
+<h4 id="運用手順"><a href="#運用手順" class="headerlink" title="運用手順"></a>運用手順</h4><p>(1) 以下のコマンドを実行して、UWF フィルターを無効化します (※ コマンド実行後、OS が再起動します)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; uwfmgr.exe filter disable</span><br><span class="line">&gt; shutdown &#x2F;r &#x2F;t 0</span><br></pre></td></tr></table></figure>
+
+<p>(2) 以下のコマンドを実行して、ページング ファイルを設定します (※ コマンド実行後、OS が再起動します)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; reg add &quot;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management&quot; &#x2F;v PagingFiles &#x2F;t REG_MULTI_SZ &#x2F;d &quot;c:\pagefile.sys 4396 4396&quot; &#x2F;f</span><br><span class="line">&gt; shutdown &#x2F;r &#x2F;t 0</span><br></pre></td></tr></table></figure>
+
+<p>(3) 手動での Windows Update を実行します。</p>
+<p>(4) 以下のコマンドを実行して、ページング ファイルの設定を削除します (※ コマンド実行後、OS が再起動します)。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; reg add &quot;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management&quot; &#x2F;v PagingFiles &#x2F;t REG_MULTI_SZ &#x2F;d &quot;&quot; &#x2F;f</span><br><span class="line">&gt; shutdown &#x2F;r &#x2F;t 0</span><br></pre></td></tr></table></figure>
+
+<p>(5) 以下のコマンドを実行して、UWF フィルターを有効化します (※ コマンド実行後、OS が再起動します)。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; uwfmgr.exe filter enable</span><br><span class="line">&gt; shutdown &#x2F;r &#x2F;t 0</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>変更履歴</code><br><code>2020/08/01 created by Mochizuki</code>  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
       
-        <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/">情報採取手順</a>
+        <a href="/blog/tags/Out-Of-Memory/">Out Of Memory</a>
+      
+        <a href="/blog/tags/UWF-servicing-mode/">UWF servicing mode</a>
       
 	  </div>
     
-  </section>
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2020/07/27/UWF-sysprep/" rel="next"  title="UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点について">
+						UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点について
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-</section>
-
+<script>
+	window.subData = {
+		title: 'UWF 有効化環境で Windows Update 実行時に Out Of Memory が発生する',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>
