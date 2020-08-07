@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-18T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-07T12:03:02.006Z">
+<meta property="article:modified_time" content="2020-08-07T14:31:05.598Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="除外設定">
 <meta name="twitter:card" content="summary">
@@ -154,7 +154,7 @@
 <br>
 
 <hr>
-<h2 id="除外設定に関するお問い合わせについて"><a href="#除外設定に関するお問い合わせについて" class="headerlink" title="除外設定に関するお問い合わせについて"></a>除外設定に関するお問い合わせについて</h2><p>UWF は、保護対象領域に対する書き込みをオーバーレイ領域でキャッシュし、OS 再起動時に UWF を有効化した時点まで変更をリセットします。ある製品を動作させようとしたときに、OS 再起動後に情報がリセットされると不都合が発生する場合、除外設定を追加することで期待通りの動作をさせることができる可能性があります。<br>この時、各製品で必要な除外設定につきましては、各製品サポートよりご案内させていただいております。下記例を参照ください。  </p>
+<h2 id="除外設定に関するお問い合わせについて"><a href="#除外設定に関するお問い合わせについて" class="headerlink" title="除外設定に関するお問い合わせについて"></a>除外設定に関するお問い合わせについて</h2><p>UWF は、保護対象領域に対する書き込みをオーバーレイ領域でキャッシュし、OS 再起動をトリガーにキャッシュした情報をリセットして、UWF を有効化した時点に戻します。ある製品を動作させようとしたときに、OS 再起動後に情報がリセットされると不都合が発生する場合、除外設定を追加することで期待通りに動作させることができる可能性があります。<br>この時、各製品で必要な除外設定につきましては、各製品サポートよりご案内させていただいております。下記例を参照ください。  </p>
 <ul>
 <li><p>質問例 1. Windows Defender に必要な除外設定を教えてほしい<br> -&gt; Windows Defender の製品サポートへお問い合わせください</p>
 </li>
@@ -177,7 +177,7 @@
 </li>
 </ul>
 <hr>
-<h2 id="Windows-Defender-用の除外設定について"><a href="#Windows-Defender-用の除外設定について" class="headerlink" title="Windows Defender 用の除外設定について"></a>Windows Defender 用の除外設定について</h2><p>弊社より提供させていいただいておりますマルウェア対策ソフトウェア (Windows Defender および System Center Endpoint Protection) につきましては、除外設定を下記サイトにて公開しております。  </p>
+<h2 id="Windows-Defender-用の除外設定について"><a href="#Windows-Defender-用の除外設定について" class="headerlink" title="Windows Defender 用の除外設定について"></a>Windows Defender 用の除外設定について</h2><p>弊社より提供させていただいておりますマルウェア対策ソフトウェア (Windows Defender および System Center Endpoint Protection) につきましては、除外設定を下記サイトにて公開しております。  </p>
 <p><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwf-antimalware-support" target="_blank" rel="noopener">UWF で保護されているデバイスでマルウェア対策のサポート</a>  </p>
 <p>また、これらの除外設定に伴い発生する問題の事例をご紹介します。比較的新しいバージョンの OS (Windows 10 バージョン 1909 以降) におきましては、2020/6/17 現在にて発生報告は確認されておりません。関連すると思われる問題が確認された場合には、Windows Defender 製品サポートへお問い合わせください。  </p>
 <ul>
