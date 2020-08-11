@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://jpiotblog.github.io/images/Cancel-shutdown-with-Shell-Launcher/Closing1app-and-shuttingdown.png">
 <meta property="og:image" content="https://jpiotblog.github.io/images/Cancel-shutdown-with-Shell-Launcher/Closing4apps-and-shuttingdown.png">
 <meta property="article:published_time" content="2020-08-11T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-11T02:48:20.446Z">
+<meta property="article:modified_time" content="2020-08-11T13:46:30.489Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="シャットダウン">
 <meta name="twitter:card" content="summary">
@@ -169,6 +169,7 @@
 </blockquote>
 <p>上記ドキュメントでは Shell Launcher V2 でも方法がない旨の記載となっておりますが、現時点では、例外として、Shell Launcher V2 を用いた以下の手順であれば、同じことができることを確認していますので、その詳細をご紹介していきます。  </p>
 <p>今回は、Windows 10 IoT Enterprise LTSC 2019 x64 を使用します。Shell Launcher V2 は Windows 10 バージョン 1809 以降でサポートされており、バージョン 1809 では KB4551853 をインストールすることでご利用いただけます。  </p>
+<hr>
 <h2 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h2><p>(1) Shell Launcher の機能を有効にした Windows 10 IoT Enterprise LTSC 2019 で、以下の KB を適用します。</p>
 <ul>
 <li><p><a href="https://support.microsoft.com/ja-jp/help/4551853/windows-10-update-kb4551853" target="_blank" rel="noopener">2020 年 5 月 12 日 - KB4551853 (OS ビルド 17763.1217)</a></p>
@@ -196,6 +197,7 @@
 <p><code>. .\ShellLauncherBridgeWmiHelpers.ps1</code><br><code>Set-ShellLauncherBridgeWmi -FilePath .\ShellLauncher.xml</code></p>
 <p>(8) OS を再起動したら、カスタムシェルアプリケーションが起動してきますので、シャットダウンしますと以下の様に表示されます。Shell Launcher V2 では、カスタムシェルアプリケーションのウィンドウは、必ず全画面表示になりますので、ここでのシャットダウンは、タスクマネージャーの [ファイル]-[新しいタスクの実行] でコマンドプロンプトを起動し、shutdown /s /t 0 を実行しています。  </p>
 <p><img src="https://jpiotblog.github.io/images/Cancel-shutdown-with-Shell-Launcher/Closing4apps-and-shuttingdown.png" alt="Closing4apps-and-shuttingdown.png"></p>
+<hr>
 <h2 id="参考ドキュメント"><a href="#参考ドキュメント" class="headerlink" title="参考ドキュメント"></a>参考ドキュメント</h2><ul>
 <li><a href="https://docs.microsoft.com/en-us/windows/configuration/kiosk-shelllauncher" target="_blank" rel="noopener">Use Shell Launcher to create a Windows 10 kiosk</a></li>
 <li><a href="https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-shutdownblockreasoncreate" target="_blank" rel="noopener">ShutdownBlockReasonCreate function</a></li>
