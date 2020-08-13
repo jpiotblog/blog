@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Windows Embedded 8 Standard で Windows Update がエラー 8007000E で失敗する (関連 KB4571736)</title>
+      <link href="/blog/2020/08/13/WE8S-error-8007000E/"/>
+      <url>/blog/2020/08/13/WE8S-error-8007000E/</url>
+      
+        <content type="html"><![CDATA[<p>Windows Embedded 8 Standard で Windows Update がエラー 8007000E で失敗する現象の修正プログラム KB4571736 がリリースされましたのでご紹介します。</p><a id="more"></a><br><hr><p>Windows Embedded 8 Standard で Windows Update がエラー 8007000E で失敗する現象の修正プログラム KB4571736 がリリースされました。</p><ul><li><a href="https://support.microsoft.com/en-us/help/4571736/windows-server-2012-update" target="_blank" rel="noopener">August 11, 2020-KB4571736 (Monthly Rollup)</a></li></ul><p>上記サイトの修正プログラムは、Windows Update カタログ サイトから手動でダウンロードいただけます。</p><ul><li><a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB4571736" target="_blank" rel="noopener">Windows Update カタログ (KB4571736)</a></li></ul><p>修正される現象について、改めて以下にご紹介させていただきます。  </p><hr><h3 id="KB4571736-適用によって修正される現象"><a href="#KB4571736-適用によって修正される現象" class="headerlink" title="KB4571736 適用によって修正される現象"></a>KB4571736 適用によって修正される現象</h3><p>Windows Embedded 8 Standard で Windows Update の 「更新プログラムの確認」 をクリックすると、以下の様に 8007000E エラー (E_OUTOFMEMORY、メモリ不足) で失敗します。  </p><p><img src="https://jpiotblog.github.io/images/WE8S-error-8007000E/WE8S-error-8007000E.png" alt="WE8S-error-8007000E.png"></p><p>この現象は、どの環境でも再現するわけではありません。また、KB4571736 がリリースされるまでに Windows Update で配布される修正プログラムの重複の除外により、配布される容量の削減も行われ、再現率も低下しております。しかしながら、弊社で以下の条件の Hyper-V 仮想マシンで環境構築すれば、x86 でも x64 でも再現することを確認しました。</p><ul><li>世代の指定で 「第 1 世代」 を選択</li><li>メモリの割り当てで 「2048 MB」 を指定</li><li>Windows Embedded 8 Standard のテンプレートに 「ThinClient」 を選択</li></ul><hr><h3 id="回避方法の補足"><a href="#回避方法の補足" class="headerlink" title="回避方法の補足"></a>回避方法の補足</h3><p>KB4571736 を適用せずに回避する方法はございません。また、Windows Update そのものが失敗するエラーのため、本現象が発生する場合は、KB4571736 を手動で適用していただく必要があります。<br><br></p><p>以上の内容がお役に立てば幸いです。  </p><hr><p><code>変更履歴</code><br><code>2020/08/13 created by Tsuda</code>  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows Embedded 8 Standard </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows Update </tag>
+            
+            <tag> 8007000E </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Shell Launcher でシャットダウンをキャンセルする方法について</title>
       <link href="/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/"/>
       <url>/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/</url>
