@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://jpiotblog.github.io/2020/02/20/UWF-longtermup/</loc>
+        <lastmod>2020-08-21T11:25:38.749Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://jpiotblog.github.io/2020/08/21/UWF-out-of-memory/</loc>
-        <lastmod>2020-08-21T11:08:05.829Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.749Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +25,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/07/27/UWF-sysprep/</loc>
-        <lastmod>2020-08-21T11:08:05.829Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.749Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +33,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/08/13/WE8S-error-8007000E/</loc>
-        <lastmod>2020-08-21T11:08:05.829Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.749Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +41,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/01/16/UWF-FAQ/</loc>
-        <lastmod>2020-08-21T11:08:05.813Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.733Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -41,15 +49,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/02/19/UWF-exclusions/</loc>
-        <lastmod>2020-08-21T11:08:05.813Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpiotblog.github.io/2020/02/20/UWF-longtermup/</loc>
-        <lastmod>2020-08-21T11:08:05.813Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.733Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -57,7 +57,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/02/12/UWF-dump-setting/</loc>
-        <lastmod>2020-08-21T11:08:05.810Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.716Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -65,7 +65,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/06/29/UWF-commit/</loc>
-        <lastmod>2020-08-21T11:08:05.808Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.700Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -73,7 +73,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/01/12/past-blog/</loc>
-        <lastmod>2020-08-21T11:08:05.805Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.700Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -81,7 +81,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/01/26/CollectInfo_UWF/</loc>
-        <lastmod>2020-08-21T11:08:05.801Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.685Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -89,7 +89,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/08/11/Cancel-shutdown-with-Shell-Launcher/</loc>
-        <lastmod>2020-08-21T11:08:05.786Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.673Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -97,7 +97,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/2020/01/01/about-jpiotblog/</loc>
-        <lastmod>2020-08-21T11:08:05.782Z</lastmod>
+        <lastmod>2020-08-21T11:25:38.650Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
