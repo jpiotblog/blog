@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-18T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-09T04:59:37.985Z">
+<meta property="article:modified_time" content="2020-09-09T05:02:03.438Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="除外設定">
 <meta name="twitter:card" content="summary">
@@ -168,8 +168,8 @@
 <h2 id="除外を推奨しないパスについて"><a href="#除外を推奨しないパスについて" class="headerlink" title="除外を推奨しないパスについて"></a>除外を推奨しないパスについて</h2><p>システムの起動の初期段階でアクセスするフォルダ (C:\Windows 配下など) は、他のデータと一貫性を持っているため、一部のフォルダーのみを除外することで問題が発生する場合があります。この一貫性が崩れた場合、システムがハンドルできない問題が発生し 「SYSTEM THREAD EXCEPTION NOT HANDLED」 エラー表示されます。これは、システム内部にて Access violation が発生 (アクセスできる情報としてアクセスしたが、情報が無いか権限が無く失敗) することでシステムの起動が進められなくなるためです。  </p>
 <p>なお、レジストリの除外については下記公開情報のとおり、HKLM レジストリ ハイブ配下の幾つかのキーおよびその配下のサブキーでのみ実行いただけます。こちらに該当しないレジストリを除外設定しようとすると、アクセス拒否のエラーと共に実行が失敗します。仮に設定時にエラーが出なかった場合でも、HKCU や HKU 配下など、除外が許可されていない (マイクロソフト側で正常動作を保証しない) パスにつきましては、書き込み結果の不整合による予期しない動作の原因になります。    </p>
 <ul>
-<li><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwf-registryfilteraddexclusion" target="_blank" rel="noopener">UWF_RegistryFilter.AddExclusion</a><blockquote>
-<p>除外リストには、次のレジストリ キーの下のレジストリ サブキーのみを追加できます。</p>
+<li><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwf-registryfilteraddexclusion" target="_blank" rel="noopener">UWF_RegistryFilter.AddExclusion</a>  <blockquote>
+<p>! 重要<br>除外リストには、次のレジストリ キーの下のレジストリ サブキーのみを追加できます。</p>
 <ul>
 <li>HKEY_LOCAL_MACHINE\BCD00000000</li>
 <li>HKEY_LOCAL_MACHINE\SYSTEM</li>
