@@ -2,102 +2,102 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://jpiotblog.github.io</loc>
+        <loc>https://jpiotblog.github.io/blog</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/08/13/WE8S-error-8007000E/</loc>
-        <lastmod>2020-09-09T05:10:26.257Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/08/13/WE8S-error-8007000E/</loc>
+        <lastmod>2020-10-22T10:13:54.842Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/07/27/UWF-sysprep/</loc>
-        <lastmod>2020-09-09T05:10:26.254Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/07/27/UWF-sysprep/</loc>
+        <lastmod>2020-10-22T10:13:54.837Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/08/21/UWF-out-of-memory/</loc>
-        <lastmod>2020-09-09T05:10:26.249Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/</loc>
+        <lastmod>2020-10-22T10:13:54.819Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/02/20/UWF-longtermup/</loc>
-        <lastmod>2020-09-09T05:10:26.246Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/02/20/UWF-longtermup/</loc>
+        <lastmod>2020-10-22T10:13:54.802Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/01/16/UWF-FAQ/</loc>
-        <lastmod>2020-09-09T05:10:26.241Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/01/16/UWF-FAQ/</loc>
+        <lastmod>2020-10-22T10:13:54.791Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/02/19/UWF-exclusions/</loc>
-        <lastmod>2020-09-09T05:10:26.231Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/02/19/UWF-exclusions/</loc>
+        <lastmod>2020-10-22T10:13:54.773Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/02/12/UWF-dump-setting/</loc>
-        <lastmod>2020-09-09T05:10:26.211Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/</loc>
+        <lastmod>2020-10-22T10:13:54.745Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/06/29/UWF-commit/</loc>
-        <lastmod>2020-09-09T05:10:26.206Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/</loc>
+        <lastmod>2020-10-22T10:13:54.724Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/01/12/past-blog/</loc>
-        <lastmod>2020-09-09T05:10:26.203Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/01/12/past-blog/</loc>
+        <lastmod>2020-10-22T10:13:54.715Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/01/26/CollectInfo_UWF/</loc>
-        <lastmod>2020-09-09T05:10:26.199Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/01/26/CollectInfo_UWF/</loc>
+        <lastmod>2020-10-22T10:13:54.708Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/08/11/Cancel-shutdown-with-Shell-Launcher/</loc>
-        <lastmod>2020-09-09T05:10:26.186Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/</loc>
+        <lastmod>2020-10-22T10:13:54.693Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/2020/01/01/about-jpiotblog/</loc>
-        <lastmod>2020-09-09T05:10:26.183Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/</loc>
+        <lastmod>2020-10-22T10:13:54.656Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
