@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpiotblog.github.io/blog/"/>
-  <updated>2020-10-22T10:13:54.819Z</updated>
+  <updated>2020-11-30T14:17:49.488Z</updated>
   <id>https://jpiotblog.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>UWF 有効化環境で HORM を使用する際の留意点について</title>
+    <link href="https://jpiotblog.github.io/blog/2020/12/01/UWF-HORM/"/>
+    <id>https://jpiotblog.github.io/blog/2020/12/01/UWF-HORM/</id>
+    <published>2020-12-01T03:00:00.000Z</published>
+    <updated>2020-11-30T14:17:49.488Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Unified Write Filter (UWF) と共に Hibernate Once/Resume Many (HORM) 機能を使用する際の留意点を紹介いたします。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    
+    
+      <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
+    
+      <category term="Hibernate Once/Resume Many (HORM)" scheme="https://jpiotblog.github.io/blog/tags/Hibernate-Once-Resume-Many-HORM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>UWF 有効化環境で Windows Update 実行時に Out Of Memory が発生する</title>
     <link href="https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/</id>
     <published>2020-08-21T03:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.819Z</updated>
+    <updated>2020-11-30T14:17:49.512Z</updated>
     
     <summary type="html">
     
@@ -30,7 +53,7 @@
     </summary>
     
     
-      <category term="Unified Write Filter" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter/"/>
+      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
     
     
       <category term="Out Of Memory" scheme="https://jpiotblog.github.io/blog/tags/Out-Of-Memory/"/>
@@ -44,7 +67,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/08/13/WE8S-error-8007000E/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/13/WE8S-error-8007000E/</id>
     <published>2020-08-13T03:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.842Z</updated>
+    <updated>2020-11-30T14:17:49.528Z</updated>
     
     <summary type="html">
     
@@ -67,7 +90,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/</id>
     <published>2020-08-11T03:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.693Z</updated>
+    <updated>2020-11-30T14:17:49.361Z</updated>
     
     <summary type="html">
     
@@ -88,7 +111,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/07/27/UWF-sysprep/"/>
     <id>https://jpiotblog.github.io/blog/2020/07/27/UWF-sysprep/</id>
     <published>2020-07-27T08:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.837Z</updated>
+    <updated>2020-11-30T14:17:49.523Z</updated>
     
     <summary type="html">
     
@@ -97,7 +120,7 @@
     </summary>
     
     
-      <category term="Unified Write Filter" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter/"/>
+      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
     
     
       <category term="Sysprep" scheme="https://jpiotblog.github.io/blog/tags/Sysprep/"/>
@@ -109,7 +132,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/"/>
     <id>https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/</id>
     <published>2020-06-29T08:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.724Z</updated>
+    <updated>2020-11-30T14:17:49.392Z</updated>
     
     <summary type="html">
     
@@ -118,10 +141,12 @@
     </summary>
     
     
-      <category term="Unified Write Filter" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter/"/>
+      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
     
     
       <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
+    
+      <category term="Commit/Commit-Delete" scheme="https://jpiotblog.github.io/blog/tags/Commit-Commit-Delete/"/>
     
   </entry>
   
@@ -130,7 +155,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/20/UWF-longtermup/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/20/UWF-longtermup/</id>
     <published>2020-02-19T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.802Z</updated>
+    <updated>2020-11-30T14:17:49.500Z</updated>
     
     <summary type="html">
     
@@ -139,8 +164,10 @@
     </summary>
     
     
-      <category term="Unified Write Filter" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter/"/>
+      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
     
+    
+      <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
     
       <category term="オーバーレイ" scheme="https://jpiotblog.github.io/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/"/>
     
@@ -151,7 +178,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/19/UWF-exclusions/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/19/UWF-exclusions/</id>
     <published>2020-02-18T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.773Z</updated>
+    <updated>2020-11-30T14:17:49.464Z</updated>
     
     <summary type="html">
     
@@ -160,8 +187,10 @@
     </summary>
     
     
-      <category term="Unified Write Filter" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter/"/>
+      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
     
+    
+      <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
     
       <category term="除外設定" scheme="https://jpiotblog.github.io/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/"/>
     
@@ -172,7 +201,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/</id>
     <published>2020-02-11T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.745Z</updated>
+    <updated>2020-11-30T14:17:49.408Z</updated>
     
     <summary type="html">
     
@@ -181,7 +210,7 @@
     </summary>
     
     
-      <category term="Unified Write Filter" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter/"/>
+      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
     
     
       <category term="メモリ ダンプの設定手順" scheme="https://jpiotblog.github.io/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/"/>
@@ -193,7 +222,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/26/CollectInfo_UWF/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/26/CollectInfo_UWF/</id>
     <published>2020-01-25T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.708Z</updated>
+    <updated>2020-11-30T14:17:49.376Z</updated>
     
     <summary type="html">
     
@@ -202,7 +231,7 @@
     </summary>
     
     
-      <category term="Unified Write Filter" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter/"/>
+      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
     
     
       <category term="情報採取手順" scheme="https://jpiotblog.github.io/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/"/>
@@ -210,11 +239,11 @@
   </entry>
   
   <entry>
-    <title>FAQ (Unified Write Filter)</title>
+    <title>FAQ (Unified Write Filter (UWF))</title>
     <link href="https://jpiotblog.github.io/blog/2020/01/16/UWF-FAQ/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/16/UWF-FAQ/</id>
     <published>2020-01-15T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.791Z</updated>
+    <updated>2020-11-30T14:17:49.483Z</updated>
     
     <summary type="html">
     
@@ -223,7 +252,7 @@
     </summary>
     
     
-      <category term="Unified Write Filter" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter/"/>
+      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
     
     
       <category term="FAQ" scheme="https://jpiotblog.github.io/blog/tags/FAQ/"/>
@@ -235,7 +264,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/12/past-blog/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.715Z</updated>
+    <updated>2020-11-30T14:17:49.392Z</updated>
     
     <summary type="html">
     
@@ -256,7 +285,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:54.656Z</updated>
+    <updated>2020-11-30T14:17:49.361Z</updated>
     
     <summary type="html">
     

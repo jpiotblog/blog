@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>UWF 有効化環境で HORM を使用する際の留意点について</title>
+      <link href="/blog/2020/12/01/UWF-HORM/"/>
+      <url>/blog/2020/12/01/UWF-HORM/</url>
+      
+        <content type="html"><![CDATA[<p>Unified Write Filter (UWF) と共に Hibernate Once/Resume Many (HORM) 機能を使用する際の留意点を紹介いたします。  </p><a id="more"></a><br>統合書き込みフィルター (UWF) と共に Hibernate Once/Resume Many (HORM) 機能を使って、事前に構成された状態でデバイスを起動することができます。HORM が有効になると、システムは常に最後に保存された休止状態ファイル (hiberfil.sys) から再開および再起動されます。 機能の有効化など具体的な手順は、下記サイトの手順に従って有効化することが可能です。  <ul><li><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/hibernate-once-resume-many-horm-" target="_blank" rel="noopener">Hibernate Once/Resume Many (HORM)</a></li></ul><p>本記事では、HORM を有効化する際の留意点をお纏めいたします。  </p><hr><h2 id="要件等"><a href="#要件等" class="headerlink" title="要件等"></a>要件等</h2><p>具体的な要件は以下サイトに纏めておりますので、ご参照ください。  </p><ul><li><p><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/hibernate-once-resume-many-horm-#requirements" target="_blank" rel="noopener">要件</a></p><blockquote><p>Windows 10 Enterprise、Windows 10 の教育、または Windows IoT Core (IoT Core)。 X86 ベースおよび x64 ベースのデバイスでサポートされています。  </p></blockquote></li><li><p><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/hibernate-once-resume-many-horm-#uwf-configuration" target="_blank" rel="noopener">UWF 構成</a></p><blockquote><p>HORM を有効または無効にするには、その前に UWF を有効にする必要があります。 UWF は、休止ファイルが無効にならないように保護するために、次の方法で構成する必要があります。  </p><ul><li>システムにマウントされているすべての固定ボリュームは、UWF によって保護されている必要があります。  </li><li>システムで、UWF 用に構成されたファイル、フォルダー、またはレジストリの除外を使用することはできません。  </li><li>UWF オーバーレイは RAM モードを使用するように構成されている必要があります。 HORM では、ディスクを利用するオーバーレイはサポートされていません。</li></ul></blockquote></li></ul><hr><h2 id="状態確認方法"><a href="#状態確認方法" class="headerlink" title="状態確認方法"></a>状態確認方法</h2><p>HORM の有効/無効状態は uwfmgr.exe get-config コマンドの結果から確認することが出来ません。そのため、下記レジストリ値などから確認を行うことをお勧めしております。  </p><p><code>キー: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\uwfvol\Parameters\Dynamic</code><br><code>名前: HormEnabled</code><br><code>種類: DWORD</code><br><code>値: (0: 無効 / 1 有効)</code>  </p><p>コマンドで確認する場合は、以下の通り実行ください。  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg query &quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\uwfvol\Parameters\Dynamic&quot; &#x2F;v &quot;HormEnabled&quot;</span><br></pre></td></tr></table></figure><blockquote><p>参考情報:<br>ufgmgr ツールで HORM 有効/無効化する際のエラーメッセージからも状態を確認することが可能です。例えば、uwfmgr.exe filter enable-horm コマンドを実行時に、既に有効になっている場合以下の通りメッセージが出力します。  </p><blockquote><p>Unified Write Filter already disabled - no action taken.  </p></blockquote><p>uwfmgr.exe filter disable-horm コマンドを実行時に、既に無効になっている場合以下の通りメッセージが出力します。  </p><blockquote><p>Unified Write Filter already enabled - no action taken.  </p></blockquote></blockquote><hr><h2 id="特定のドライブを保護せずに-HORM-を有効化する方法"><a href="#特定のドライブを保護せずに-HORM-を有効化する方法" class="headerlink" title="特定のドライブを保護せずに HORM を有効化する方法"></a>特定のドライブを保護せずに HORM を有効化する方法</h2><p>HORM 機能を有効化する際、全てのボリュームを保護しておくことが前提となりますが、一部のボリュームを保護せずに使用したい場合がありす。UWF の前身である EWF では、HORM を有効化する際に保護対象外のボリュームを dismount することで対応可能といった記事がございますが、UWF でも同様の方法が利用いただけます。  </p><ul><li><a href="https://docs.microsoft.com/en-us/previous-versions/windows/embedded/ff794826(v=winembedded.60)" target="_blank" rel="noopener">Use an Unprotected Volume in a Hibernate Once/Resume Many Environment (Standard 7 SP1)</a>  </li></ul><p>具体的には、uwfmgr volume protect コマンドで特定のボリュームを保護した後、保護対象としていないボリュームのディスクを diskpart コマンドなどでオフラインにしておくことで実現可能です。以下は、ディスク 1 が D ドライブである場合の実行例です。<br>※ diskpart コマンドのリファレンスは <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart" target="_blank" rel="noopener">こちら</a>。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">C:\&gt;diskpart</span><br><span class="line"> </span><br><span class="line">Microsoft DiskPart バージョン 10.0.17763.1</span><br><span class="line"> </span><br><span class="line">Copyright (C) Microsoft Corporation.</span><br><span class="line">コンピューター: DESKTOP-UQTBV36</span><br><span class="line"> </span><br><span class="line">DISKPART&gt; list disk</span><br><span class="line"> </span><br><span class="line">  ディスク      状態           サイズ   空き   ダイナ GPT</span><br><span class="line">  ###                                          ミック</span><br><span class="line">  ------------  -------------  -------  -------  ---  ---</span><br><span class="line">  ディスク 0    オンライン           127 GB      0 B        *</span><br><span class="line">  ディスク 1    オンライン            10 GB  1024 KB        *</span><br><span class="line"> </span><br><span class="line">DISKPART&gt; select disk 1</span><br><span class="line"> </span><br><span class="line">ディスク 1 が選択されました。</span><br><span class="line"> </span><br><span class="line">DISKPART&gt; offline disk</span><br><span class="line"> </span><br><span class="line">DiskPart は選択されたディスクをオフラインにしました。</span><br><span class="line"> </span><br><span class="line">DISKPART&gt; list disk</span><br><span class="line"> </span><br><span class="line">  ディスク      状態           サイズ   空き   ダイナ GPT</span><br><span class="line">  ###                                          ミック</span><br><span class="line">  ------------  -------------  -------  -------  ---  ---</span><br><span class="line">  ディスク 0    オンライン           127 GB      0 B        *</span><br><span class="line">* ディスク 1    オフライン            10 GB  1024 KB        *</span><br><span class="line"> </span><br><span class="line">DISKPART&gt; exit</span><br><span class="line"> </span><br><span class="line">DiskPart を終了しています...</span><br></pre></td></tr></table></figure><p>COMPMGMT.MSC または DISKMGMT.MSC コマンドで “ディスクの管理” コンソールを起動し、UI 上でオフラインにしても問題ありません。  </p><p><img src="https://jpiotblog.github.io/images/UWF-HORM/UWF-disk-management-offline.png" align="left" border="1"><br clear="left">  </p><hr><p><code>変更履歴</code><br><code>2020/12/1 created by Mochizuki</code>  </p><p>※ 本記事は 「<a href="https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/">jpiotblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpiotblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpiotblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Unified Write Filter (UWF) </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> uwfmgr.exe </tag>
+            
+            <tag> Hibernate Once/Resume Many (HORM) </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>UWF 有効化環境で Windows Update 実行時に Out Of Memory が発生する</title>
       <link href="/blog/2020/08/21/UWF-out-of-memory/"/>
       <url>/blog/2020/08/21/UWF-out-of-memory/</url>
@@ -13,7 +40,7 @@
       
       <categories>
           
-          <category> Unified Write Filter </category>
+          <category> Unified Write Filter (UWF) </category>
           
       </categories>
       
@@ -92,7 +119,7 @@
       
       <categories>
           
-          <category> Unified Write Filter </category>
+          <category> Unified Write Filter (UWF) </category>
           
       </categories>
       
@@ -117,7 +144,7 @@
       
       <categories>
           
-          <category> Unified Write Filter </category>
+          <category> Unified Write Filter (UWF) </category>
           
       </categories>
       
@@ -125,6 +152,8 @@
         <tags>
             
             <tag> uwfmgr.exe </tag>
+            
+            <tag> Commit/Commit-Delete </tag>
             
         </tags>
       
@@ -142,12 +171,14 @@
       
       <categories>
           
-          <category> Unified Write Filter </category>
+          <category> Unified Write Filter (UWF) </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> uwfmgr.exe </tag>
             
             <tag> オーバーレイ </tag>
             
@@ -162,17 +193,19 @@
       <link href="/blog/2020/02/19/UWF-exclusions/"/>
       <url>/blog/2020/02/19/UWF-exclusions/</url>
       
-        <content type="html"><![CDATA[<p>UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。</p><a id="more"></a><br><hr><h2 id="除外設定に関するお問い合わせについて"><a href="#除外設定に関するお問い合わせについて" class="headerlink" title="除外設定に関するお問い合わせについて"></a>除外設定に関するお問い合わせについて</h2><p>UWF は、保護対象領域に対する書き込みをオーバーレイ領域でキャッシュし、OS 再起動をトリガーにキャッシュした情報をリセットして、UWF を有効化した時点に戻します。ある製品を動作させようとしたときに、OS 再起動後に情報がリセットされると不都合が発生する場合、除外設定を追加することで期待通りに動作させることができる可能性があります。<br>この時、各製品で必要な除外設定につきましては、各製品サポートよりご案内させていただいております。下記例を参照ください。  </p><ul><li><p>質問例 1. Windows Defender に必要な除外設定を教えてほしい<br> -&gt; Windows Defender の製品サポートへお問い合わせください</p></li><li><p>質問例 2. Wi-Fi の接続情報を OS 起動後も維持したい<br> -&gt; Windows OS の製品サポート (ネットワーク担当) へお問い合わせください</p></li><li><p>質問例 3. A 社の製品を UWF 有効化した状態で動作させることは可能か<br> -&gt; A 社製品ベンダーへお問い合わせください</p></li></ul><p>除外設定の追加によって何らかの問題が発生した場合、除外対象パスを使用するプロセス側にて調査が必要となる場合がございます。対象の製品サポートへ事例の有無や対処方法についてお問い合わせください。  </p><hr><h2 id="除外を推奨しないパスについて"><a href="#除外を推奨しないパスについて" class="headerlink" title="除外を推奨しないパスについて"></a>除外を推奨しないパスについて</h2><p>システムの起動の初期段階でアクセスするフォルダ (C:\Windows 配下など) は、他のデータと一貫性を持っているため、一部のフォルダーのみを除外することで問題が発生する場合があります。この一貫性が崩れた場合、システムがハンドルできない問題が発生し 「SYSTEM THREAD EXCEPTION NOT HANDLED」 エラー表示されます。これは、システム内部にて Access violation が発生 (アクセスできる情報としてアクセスしたが、情報が無いか権限が無く失敗) することでシステムの起動が進められなくなるためです。  </p><p>なお、レジストリの除外については下記公開情報のとおり、HKLM レジストリ ハイブの幾つかのキー配下のサブキーでのみ実行いただけます。こちらに該当しないレジストリを除外設定しようとすると、アクセス拒否のエラーと共に実行が失敗します。仮に設定時にエラーが出なかった場合でも、HKCU や HKU 配下など、除外が許可されていない (マイクロソフト側で正常動作を保証しない) パスにつきましては、書き込み結果の不整合による予期しない動作の原因になります。    </p><ul><li><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwf-registryfilteraddexclusion" target="_blank" rel="noopener">UWF_RegistryFilter.AddExclusion</a>  <blockquote><p>! 重要<br>除外リストには、次のレジストリ キーの下のレジストリ サブキーのみを追加できます。</p><ul><li>HKEY_LOCAL_MACHINE\BCD00000000</li><li>HKEY_LOCAL_MACHINE\SYSTEM</li><li>HKEY_LOCAL_MACHINE\SOFTWARE</li><li>HKEY_LOCAL_MACHINE\SAM</li><li>HKEY_LOCAL_MACHINE\SECURITY</li><li>HKEY_LOCAL_MACHINE\COMPONENTS</li></ul></blockquote></li></ul><br>下記公開情報には、一般的な除外設定に加えて、除外を推奨しないパスの情報も含まれております。主にファイルのパスですが、一部レジストリ パスもございます。除外設定の際にご参照ください。  <ul><li><p><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwfexclusions" target="_blank" rel="noopener">書き込みフィルターの除外</a>  </p><blockquote><p>! 重要<br>次の除外を追加しないでください。</p><ul><li>\Windows\System32\config\DEFAULT  </li><li>\Windows\System32\config\SAM  </li><li>\Windows\System32\config\SECURITY  </li><li>\Windows\System32\config\SOFTWARE  </li><li>\Windows\System32\config\SYSTEM  </li><li>\Users&lt;User Name&gt;\NTUSER.DAT  </li><li>\Windows\BOOTSTAT.DAT  </li><li><System Drive>\EFI\Microsoft\Boot\BOOTSTAT.DAT  </li><li><System Drive>\Boot\BOOTSTAT.DAT  </li></ul><p>また、次の項目の除外を追加しないでください。  </p><ul><li>ボリュームルート。 例: C: または d:  </li><li>システムボリューム上のフォルダー。\Windows  </li><li>システムボリューム上のフォルダー。\Windows\System32  </li><li>システムボリューム上のフォルダー。\Windows\System32\Drivers  </li><li>ページングファイル。  </li></ul><p>これらのアイテムの除外の追加はサポートされていないため、予期しない結果が生じる可能性があります。 これらの場所にあるサブディレクトリとファイルを除外するのは問題ありません。</p></blockquote><blockquote><p>! 重要<br>次の除外を追加しないでください。</p><ul><li>HKLM\SECURITY\Policy\Secrets$MACHINE.ACC</li></ul></blockquote></li><li><p><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/unified-write-filter" target="_blank" rel="noopener">統合書き込みフィルター (UWF) 機能</a> </p><blockquote><p>! 注意<br>この問題を回避するには、日付と時刻の設定 (“%windir%\bootstat.dat”) を保持するファイルを書き込みフィルターの除外に追加しないでください。 これにより、Stop エラー 0x7E (SYSTEM_THREAD_EXCEPTION_NOT_HANDLED) が発生します。</p></blockquote></li></ul><br>また、公開情報へ追加リクエスト中の内容となりますが、下記についても除外を設定しないようお願いいたします。  <ul><li><p>C:\Windows\WinSXS フォルダー</p><blockquote><p>Winodws 10 Enterprise 2019 LTSC では、C:\Windows\WinSXS フォルダーを除外するとシステム起動時に 「SYSTEM THREAD EXCEPTION NOT HANDLED」 で BSOD が発生するという報告がございます。C:\Windows\WinSXS フォルダー配下にはシステム起動初期にアクセスする情報が含まれておりますため、除外をお勧めいたしません。  </p></blockquote></li></ul><hr><h2 id="Windows-Defender-用の除外設定について"><a href="#Windows-Defender-用の除外設定について" class="headerlink" title="Windows Defender 用の除外設定について"></a>Windows Defender 用の除外設定について</h2><p>弊社より提供させていただいておりますマルウェア対策ソフトウェア (Windows Defender および System Center Endpoint Protection) につきましては、除外設定を下記サイトにて公開しております。  </p><p><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwf-antimalware-support" target="_blank" rel="noopener">UWF で保護されているデバイスでマルウェア対策のサポート</a>  </p><p>また、これらの除外設定に伴い発生する問題の事例をご紹介します。比較的新しいバージョンの OS (Windows 10 バージョン 1909 以降) におきましては、2020/6/17 現在にて発生報告は確認されておりません。関連すると思われる問題が確認された場合には、Windows Defender 製品サポートへお問い合わせください。  </p><ul><li><p>Windows Defender のレジストリを除外すると OS 起動時にハングアップする  </p><blockquote><p>下記レジストリ キーを除外していると、OS 起動時にハングアップして起動できない場合があります。レースコンディションによるものであり、スペックの低い端末で発生する傾向にあります。OS 側での修正は困難であるため、Wdfilter の除外解除等をご検討ください。  </p><ul><li>HKLM\System\CurrentControlSet\Services\WdFilter  </li><li>HKLM\SYSTEM\ControlSet001\Control\DeviceClasses{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}  </li></ul></blockquote><blockquote><p>Windows 10 Enterprise 2016 LTSB の環境では下記除外が入っていた場合にも同様の問題が発生するという報告があります。該当する場合にはこちらの除外解除もご検討ください。  </p><ul><li>HKLM\SOFTWARE\Classes\TypeLib{8C389764-F036-48F2-9AE2-88C260DCF43B}  </li><li>HKLM\SOFTWARE\Classes\CLSID{A2D75874-6750-4931-94C1-C99D3BC9D0C7}  </li><li>HKLM\SOFTWARE\Classes\CLSID{195B4D07-3DE2-4744-BBF2-D90121AE785B}  </li></ul></blockquote></li></ul><hr><p><code>変更履歴</code><br><code>2020/02/19 created by Mochizuki</code><br><code>2020/06/16 modified by Mochizuki</code><br><code>2020/09/09 modified by Mochizuki</code>  </p>]]></content>
+        <content type="html"><![CDATA[<p>UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。</p><a id="more"></a><br><hr><h2 id="除外設定に関するお問い合わせについて"><a href="#除外設定に関するお問い合わせについて" class="headerlink" title="除外設定に関するお問い合わせについて"></a>除外設定に関するお問い合わせについて</h2><p>UWF は、保護対象領域に対する書き込みをオーバーレイ領域でキャッシュし、OS 再起動をトリガーにキャッシュした情報をリセットして、UWF を有効化した時点に戻します。ある製品を動作させようとしたときに、OS 再起動後に情報がリセットされると不都合が発生する場合、除外設定を追加することで期待通りに動作させることができる可能性があります。<br>この時、各製品で必要な除外設定につきましては、各製品サポートよりご案内させていただいております。下記例を参照ください。  </p><ul><li><p>質問例 1. Windows Defender に必要な除外設定を教えてほしい<br> -&gt; Windows Defender の製品サポートへお問い合わせください</p></li><li><p>質問例 2. Wi-Fi の接続情報を OS 起動後も維持したい<br> -&gt; Windows OS の製品サポート (ネットワーク担当) へお問い合わせください</p></li><li><p>質問例 3. A 社の製品を UWF 有効化した状態で動作させることは可能か<br> -&gt; A 社製品ベンダーへお問い合わせください</p></li></ul><p>除外設定の追加によって何らかの問題が発生した場合、除外対象パスを使用するプロセス側にて調査が必要となる場合がございます。対象の製品サポートへ事例の有無や対処方法についてお問い合わせください。  </p><hr><h2 id="除外を推奨しないパスについて"><a href="#除外を推奨しないパスについて" class="headerlink" title="除外を推奨しないパスについて"></a>除外を推奨しないパスについて</h2><p>システムの起動の初期段階でアクセスするフォルダ (C:\Windows 配下など) は、他のデータと一貫性を持っているため、一部のフォルダーのみを除外することで問題が発生する場合があります。この一貫性が崩れた場合、システムがハンドルできない問題が発生し 「SYSTEM THREAD EXCEPTION NOT HANDLED」 エラー表示されます。これは、システム内部にて Access violation が発生 (アクセスできる情報としてアクセスしたが、情報が無いか権限が無く失敗) することでシステムの起動が進められなくなるためです。  </p><p>なお、レジストリの除外については下記公開情報のとおり、HKLM レジストリ ハイブの幾つかのキー配下のサブキーでのみ実行いただけます。こちらに該当しないレジストリを除外設定しようとすると、アクセス拒否のエラーと共に実行が失敗します。仮に設定時にエラーが出なかった場合でも、HKCU や HKU 配下など、除外が許可されていない (マイクロソフト側で正常動作を保証しない) パスにつきましては、書き込み結果の不整合による予期しない動作の原因になります。    </p><ul><li><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwf-registryfilteraddexclusion" target="_blank" rel="noopener">UWF_RegistryFilter.AddExclusion</a>  <blockquote><p>! 重要<br>除外リストには、次のレジストリ キーの下のレジストリ サブキーのみを追加できます。</p><ul><li>HKEY_LOCAL_MACHINE\BCD00000000</li><li>HKEY_LOCAL_MACHINE\SYSTEM</li><li>HKEY_LOCAL_MACHINE\SOFTWARE</li><li>HKEY_LOCAL_MACHINE\SAM</li><li>HKEY_LOCAL_MACHINE\SECURITY</li><li>HKEY_LOCAL_MACHINE\COMPONENTS</li></ul></blockquote></li></ul><br>下記公開情報には、一般的な除外設定に加えて、除外を推奨しないパスの情報も含まれております。主にファイルのパスですが、一部レジストリ パスもございます。除外設定の際にご参照ください。  <ul><li><p><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwfexclusions" target="_blank" rel="noopener">書き込みフィルターの除外</a>  </p><blockquote><p>! 重要<br>次の除外を追加しないでください。</p><ul><li>\Windows\System32\config\DEFAULT  </li><li>\Windows\System32\config\SAM  </li><li>\Windows\System32\config\SECURITY  </li><li>\Windows\System32\config\SOFTWARE  </li><li>\Windows\System32\config\SYSTEM  </li><li>\Users\&lt;User Name&gt;\NTUSER.DAT  </li><li>\Windows\BOOTSTAT.DAT  </li><li><System Drive>\EFI\Microsoft\Boot\BOOTSTAT.DAT  </li><li><System Drive>\Boot\BOOTSTAT.DAT  </li></ul><p>また、次の項目の除外を追加しないでください。  </p><ul><li>ボリュームルート。 例: C: または d:  </li><li>システムボリューム上のフォルダー。\Windows  </li><li>システムボリューム上のフォルダー。\Windows\System32  </li><li>システムボリューム上のフォルダー。\Windows\System32\Drivers  </li><li>ページングファイル。  </li></ul><p>これらのアイテムの除外の追加はサポートされていないため、予期しない結果が生じる可能性があります。 これらの場所にあるサブディレクトリとファイルを除外するのは問題ありません。</p></blockquote><blockquote><p>! 重要<br>次の除外を追加しないでください。</p><ul><li>HKLM\SECURITY\Policy\Secrets$MACHINE.ACC</li></ul></blockquote></li><li><p><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/unified-write-filter" target="_blank" rel="noopener">統合書き込みフィルター (UWF) 機能</a> </p><blockquote><p>! 注意<br>この問題を回避するには、日付と時刻の設定 (“%windir%\bootstat.dat”) を保持するファイルを書き込みフィルターの除外に追加しないでください。 これにより、Stop エラー 0x7E (SYSTEM_THREAD_EXCEPTION_NOT_HANDLED) が発生します。</p></blockquote></li></ul><br>また、公開情報へ追加リクエスト中の内容となりますが、下記についても除外を設定しないようお願いいたします。  <ul><li><p>C:\Windows\WinSXS フォルダー</p><blockquote><p>Winodws 10 Enterprise 2019 LTSC では、C:\Windows\WinSXS フォルダーを除外するとシステム起動時に 「SYSTEM THREAD EXCEPTION NOT HANDLED」 で BSOD が発生するという報告がございます。C:\Windows\WinSXS フォルダー配下にはシステム起動初期にアクセスする情報が含まれておりますため、除外をお勧めいたしません。  </p></blockquote></li></ul><hr><h2 id="Windows-Defender-用の除外設定について"><a href="#Windows-Defender-用の除外設定について" class="headerlink" title="Windows Defender 用の除外設定について"></a>Windows Defender 用の除外設定について</h2><p>弊社より提供させていただいておりますマルウェア対策ソフトウェア (Windows Defender および System Center Endpoint Protection) につきましては、除外設定を下記サイトにて公開しております。  </p><p><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwf-antimalware-support" target="_blank" rel="noopener">UWF で保護されているデバイスでマルウェア対策のサポート</a>  </p><p>また、これらの除外設定に伴い発生する問題の事例をご紹介します。比較的新しいバージョンの OS (Windows 10 バージョン 1909 以降) におきましては、2020/6/17 現在にて発生報告は確認されておりません。関連すると思われる問題が確認された場合には、Windows Defender 製品サポートへお問い合わせください。  </p><ul><li><p>Windows Defender のレジストリを除外すると OS 起動時にハングアップする  </p><blockquote><p>下記レジストリ キーを除外していると、OS 起動時にハングアップして起動できない場合があります。レースコンディションによるものであり、スペックの低い端末で発生する傾向にあります。OS 側での修正は困難であるため、Wdfilter の除外解除等をご検討ください。  </p><ul><li>HKLM\System\CurrentControlSet\Services\WdFilter  </li><li>HKLM\SYSTEM\ControlSet001\Control\DeviceClasses{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}  </li></ul></blockquote><blockquote><p>Windows 10 Enterprise 2016 LTSB の環境では下記除外が入っていた場合にも同様の問題が発生するという報告があります。該当する場合にはこちらの除外解除もご検討ください。  </p><ul><li>HKLM\SOFTWARE\Classes\TypeLib{8C389764-F036-48F2-9AE2-88C260DCF43B}  </li><li>HKLM\SOFTWARE\Classes\CLSID{A2D75874-6750-4931-94C1-C99D3BC9D0C7}  </li><li>HKLM\SOFTWARE\Classes\CLSID{195B4D07-3DE2-4744-BBF2-D90121AE785B}  </li></ul></blockquote></li></ul><hr><p><code>変更履歴</code><br><code>2020/02/19 created by Mochizuki</code><br><code>2020/06/16 modified by Mochizuki</code><br><code>2020/09/09 modified by Mochizuki</code>  </p>]]></content>
       
       
       <categories>
           
-          <category> Unified Write Filter </category>
+          <category> Unified Write Filter (UWF) </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> uwfmgr.exe </tag>
             
             <tag> 除外設定 </tag>
             
@@ -192,7 +225,7 @@
       
       <categories>
           
-          <category> Unified Write Filter </category>
+          <category> Unified Write Filter (UWF) </category>
           
       </categories>
       
@@ -217,7 +250,7 @@
       
       <categories>
           
-          <category> Unified Write Filter </category>
+          <category> Unified Write Filter (UWF) </category>
           
       </categories>
       
@@ -233,7 +266,7 @@
     
     
     <entry>
-      <title>FAQ (Unified Write Filter)</title>
+      <title>FAQ (Unified Write Filter (UWF))</title>
       <link href="/blog/2020/01/16/UWF-FAQ/"/>
       <url>/blog/2020/01/16/UWF-FAQ/</url>
       
@@ -242,7 +275,7 @@
       
       <categories>
           
-          <category> Unified Write Filter </category>
+          <category> Unified Write Filter (UWF) </category>
           
       </categories>
       
