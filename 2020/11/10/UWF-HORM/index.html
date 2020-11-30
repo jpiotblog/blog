@@ -28,7 +28,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpiotblog.github.io/images/UWF-HORM/UWF-disk-management-offline.png">
 <meta property="article:published_time" content="2020-11-10T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-30T14:45:34.997Z">
+<meta property="article:modified_time" content="2020-11-30T23:57:53.926Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="uwfmgr.exe">
 <meta property="article:tag" content="HORM">
@@ -186,7 +186,7 @@
 <p>コマンドで確認する場合は、以下の通り実行ください。  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg query &quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\uwfvol\Parameters\Dynamic&quot; &#x2F;v &quot;HormEnabled&quot;</span><br></pre></td></tr></table></figure>
 
-<p>なお、ufgmgr ツールで HORM 有効/無効化する際のエラーメッセージからも状態を確認することが可能です。例えば、uwfmgr.exe filter enable-horm コマンドを実行時に、既に有効になっている場合以下の通りメッセージが出力します。  </p>
+<p>なお、uwfmgr ツールで HORM 有効/無効化する際のエラーメッセージからも状態を確認することが可能です。例えば、uwfmgr.exe filter enable-horm コマンドを実行時に、既に有効になっている場合以下の通りメッセージが出力します。  </p>
 <blockquote>
 <p>Unified Write Filter already enabled - no action taken.  </p>
 </blockquote>
