@@ -28,7 +28,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpiotblog.github.io/images/UWF-HORM/UWF-disk-management-offline.png">
 <meta property="article:published_time" content="2020-12-01T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-30T14:17:49.488Z">
+<meta property="article:modified_time" content="2020-11-30T14:22:48.904Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="uwfmgr.exe">
 <meta property="article:tag" content="Hibernate Once&#x2F;Resume Many (HORM)">
@@ -155,7 +155,7 @@
     	<p>Unified Write Filter (UWF) と共に Hibernate Once/Resume Many (HORM) 機能を使用する際の留意点を紹介いたします。  </p>
 <a id="more"></a>
 <br>
-統合書き込みフィルター (UWF) と共に Hibernate Once/Resume Many (HORM) 機能を使って、事前に構成された状態でデバイスを起動することができます。HORM が有効になると、システムは常に最後に保存された休止状態ファイル (hiberfil.sys) から再開および再起動されます。 機能の有効化など具体的な手順は、下記サイトの手順に従って有効化することが可能です。  
+統合書き込みフィルター (UWF) と共に Hibernate Once/Resume Many (HORM) 機能を使用することで、事前に構成された状態でデバイスを起動することが可能になります。HORM が有効になると、システムは常に最後に保存された休止状態ファイル (hiberfil.sys) から再開および再起動されます。機能の有効化など具体的な手順は、下記サイトを参照ください。  
 
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/hibernate-once-resume-many-horm-" target="_blank" rel="noopener">Hibernate Once/Resume Many (HORM)</a></li>
@@ -186,15 +186,13 @@
 <p>コマンドで確認する場合は、以下の通り実行ください。  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg query &quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\uwfvol\Parameters\Dynamic&quot; &#x2F;v &quot;HormEnabled&quot;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>参考情報:<br>ufgmgr ツールで HORM 有効/無効化する際のエラーメッセージからも状態を確認することが可能です。例えば、uwfmgr.exe filter enable-horm コマンドを実行時に、既に有効になっている場合以下の通りメッセージが出力します。  </p>
+<p>なお、ufgmgr ツールで HORM 有効/無効化する際のエラーメッセージからも状態を確認することが可能です。例えば、uwfmgr.exe filter enable-horm コマンドを実行時に、既に有効になっている場合以下の通りメッセージが出力します。  </p>
 <blockquote>
 <p>Unified Write Filter already disabled - no action taken.  </p>
 </blockquote>
 <p>uwfmgr.exe filter disable-horm コマンドを実行時に、既に無効になっている場合以下の通りメッセージが出力します。  </p>
 <blockquote>
 <p>Unified Write Filter already enabled - no action taken.  </p>
-</blockquote>
 </blockquote>
 <hr>
 <h2 id="特定のドライブを保護せずに-HORM-を有効化する方法"><a href="#特定のドライブを保護せずに-HORM-を有効化する方法" class="headerlink" title="特定のドライブを保護せずに HORM を有効化する方法"></a>特定のドライブを保護せずに HORM を有効化する方法</h2><p>HORM 機能を有効化する際、全てのボリュームを保護しておくことが前提となりますが、一部のボリュームを保護せずに使用したい場合がありす。UWF の前身である EWF では、HORM を有効化する際に保護対象外のボリュームを dismount することで対応可能といった記事がございますが、UWF でも同様の方法が利用いただけます。  </p>
