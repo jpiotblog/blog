@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpiotblog.github.io/blog/"/>
-  <updated>2020-11-30T14:25:47.918Z</updated>
+  <updated>2020-11-30T14:28:05.931Z</updated>
   <id>https://jpiotblog.github.io/blog/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>UWF 有効化環境で HORM を使用する際の留意点について</title>
-    <link href="https://jpiotblog.github.io/blog/2020/12/01/UWF-HORM/"/>
-    <id>https://jpiotblog.github.io/blog/2020/12/01/UWF-HORM/</id>
-    <published>2020-12-01T03:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.918Z</updated>
+    <link href="https://jpiotblog.github.io/blog/2020/11/10/UWF-HORM/"/>
+    <id>https://jpiotblog.github.io/blog/2020/11/10/UWF-HORM/</id>
+    <published>2020-11-10T03:00:00.000Z</published>
+    <updated>2020-11-30T14:28:05.931Z</updated>
     
     <summary type="html">
     
@@ -44,7 +44,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/</id>
     <published>2020-08-21T03:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.935Z</updated>
+    <updated>2020-11-30T14:28:05.947Z</updated>
     
     <summary type="html">
     
@@ -67,7 +67,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/08/13/WE8S-error-8007000E/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/13/WE8S-error-8007000E/</id>
     <published>2020-08-13T03:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.935Z</updated>
+    <updated>2020-11-30T14:28:05.962Z</updated>
     
     <summary type="html">
     
@@ -90,7 +90,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/</id>
     <published>2020-08-11T03:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.858Z</updated>
+    <updated>2020-11-30T14:28:05.883Z</updated>
     
     <summary type="html">
     
@@ -111,7 +111,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/07/27/UWF-sysprep/"/>
     <id>https://jpiotblog.github.io/blog/2020/07/27/UWF-sysprep/</id>
     <published>2020-07-27T08:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.935Z</updated>
+    <updated>2020-11-30T14:28:05.947Z</updated>
     
     <summary type="html">
     
@@ -132,7 +132,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/"/>
     <id>https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/</id>
     <published>2020-06-29T08:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.877Z</updated>
+    <updated>2020-11-30T14:28:05.899Z</updated>
     
     <summary type="html">
     
@@ -155,7 +155,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/20/UWF-longtermup/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/20/UWF-longtermup/</id>
     <published>2020-02-19T15:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.918Z</updated>
+    <updated>2020-11-30T14:28:05.947Z</updated>
     
     <summary type="html">
     
@@ -178,7 +178,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/19/UWF-exclusions/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/19/UWF-exclusions/</id>
     <published>2020-02-18T15:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.895Z</updated>
+    <updated>2020-11-30T14:28:05.914Z</updated>
     
     <summary type="html">
     
@@ -201,7 +201,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/</id>
     <published>2020-02-11T15:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.882Z</updated>
+    <updated>2020-11-30T14:28:05.899Z</updated>
     
     <summary type="html">
     
@@ -222,7 +222,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/26/CollectInfo_UWF/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/26/CollectInfo_UWF/</id>
     <published>2020-01-25T15:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.858Z</updated>
+    <updated>2020-11-30T14:28:05.899Z</updated>
     
     <summary type="html">
     
@@ -243,7 +243,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/16/UWF-FAQ/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/16/UWF-FAQ/</id>
     <published>2020-01-15T15:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.903Z</updated>
+    <updated>2020-11-30T14:28:05.931Z</updated>
     
     <summary type="html">
     
@@ -264,7 +264,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/12/past-blog/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.873Z</updated>
+    <updated>2020-11-30T14:28:05.899Z</updated>
     
     <summary type="html">
     
@@ -285,7 +285,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-11-30T14:25:47.846Z</updated>
+    <updated>2020-11-30T14:28:05.883Z</updated>
     
     <summary type="html">
     
