@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Keyboard Filter で [Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタする方法</title>
+      <link href="/blog/2021/04/19/KF-block-printscrn-combination/"/>
+      <url>/blog/2021/04/19/KF-block-printscrn-combination/</url>
+      
+        <content type="html"><![CDATA[<p>Windows 10 IoT Enterprise (Enterprise もバイナリとして同じ) の Device Lockdown 機能の Keyboard Filter で [Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタする方法をご紹介します。  </p><a id="more"></a><br><hr><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>以下のドキュメントの Enable-rules.ps1 の Enable-Scancode を使います。  </p><ul><li><a href="https://docs.microsoft.com/en-us/windows-hardware/customize/enterprise/keyboardfilter-add-blocked-key-combinations" target="_blank" rel="noopener">Add blocked key combinations</a></li></ul><p>Enable-rules.ps1 の 「# Some example uses of the functions defined above.」以降を、以下の様に置き換えます。<br>以下の変更を加えた状態で、Enable-rules.ps1 を実行した場合は、[Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] のフィルターが有効化されます。</p><h3 id="Windows-PrintScrn"><a href="#Windows-PrintScrn" class="headerlink" title="Windows + PrintScrn"></a>Windows + PrintScrn</h3><blockquote><p>Enable-Scancode -Modifiers “Win” -Code 0xE037 </p></blockquote><h3 id="Shift-PrintScrn"><a href="#Shift-PrintScrn" class="headerlink" title="Shift + PrintScrn"></a>Shift + PrintScrn</h3><blockquote><p>Enable-Scancode -Modifiers “Shift” -Code 0xE037 </p></blockquote><hr><h2 id="補足"><a href="#補足" class="headerlink" title="補足"></a>補足</h2><p>上記ドキュメントの Enable-Custom-Key で、以下の様な組み合わせを試した場合、PrintScrn キー単体と、[Alt キー+ PrintScrn キー] は問題なくフィルターできますが、[Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタすることはできません。  </p><h3 id="PrintScrn"><a href="#PrintScrn" class="headerlink" title="PrintScrn"></a>PrintScrn</h3><blockquote><p>Enable-Custom-Key “PrintScrn”</p></blockquote><h3 id="Alt-PrintScrn"><a href="#Alt-PrintScrn" class="headerlink" title="Alt + PrintScrn"></a>Alt + PrintScrn</h3><blockquote><p>Enable-Custom-Key “Alt+PrintScrn”</p></blockquote><h3 id="Windows-PrintScrn-1"><a href="#Windows-PrintScrn-1" class="headerlink" title="Windows + PrintScrn"></a>Windows + PrintScrn</h3><blockquote><p>Enable-Custom-Key “Win+PrintScrn” </p></blockquote><h3 id="Shift-PrintScrn-1"><a href="#Shift-PrintScrn-1" class="headerlink" title="Shift + PrintScrn"></a>Shift + PrintScrn</h3><blockquote><p>Enable-Custom-Key “Shift+PrintScrn”</p></blockquote><p>これは不具合ではなく、想定された動作として取り扱われています。[Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] のフィルタリングは、冒頭で紹介しました方法をご利用ください。</p><p>以上の内容がお役に立てば幸いです。</p><hr><p><code>変更履歴</code><br><code>2021/04/19 modified by Tsuda</code>  </p><p>※ 本記事は 「<a href="https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/">jpiotblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpiotblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpiotblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Keyboard Filter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Keyboard Filter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>UWF 有効化環境で HORM を使用する際の留意点について</title>
       <link href="/blog/2020/11/10/UWF-HORM/"/>
       <url>/blog/2020/11/10/UWF-HORM/</url>
