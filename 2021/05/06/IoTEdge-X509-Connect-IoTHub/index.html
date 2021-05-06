@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://jpiotblog.github.io/images/IoTEdge-X509-Connect-IoTHub/Register-IoTEdge-Device.png">
 <meta property="og:image" content="https://jpiotblog.github.io/images/IoTEdge-X509-Connect-IoTHub/Register-IoTEdge-Device-2.png">
 <meta property="article:published_time" content="2021-05-06T05:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-06T14:37:41.221Z">
+<meta property="article:modified_time" content="2021-05-06T14:42:15.003Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="IoT Hub">
 <meta property="article:tag" content="IoT Edge">
@@ -175,14 +175,19 @@
 <p>ここでは IoT Edge デバイスのデバイス ID を “u1804serveredge01” とします。</p>
 <p>コマンド例:</p>
 <hr>
-<p>   git clone <a href="https://github.com/Azure/iotedge.git" target="_blank" rel="noopener">https://github.com/Azure/iotedge.git</a>  </p>
-<p>   mkdir certgen  </p>
-<p>   cp iotedge/tools/CACertificates/*.cnf certgen/  </p>
-<p>   cp iotedge/tools/CACertificates/certGen.sh certgen/  </p>
-<p>   cd certgen  </p>
-<p>   ./certGen.sh create_root_and_intermediate  </p>
-<p>   ./certGen.sh create_edge_device_identity_certificate “u1804serveredge01”  </p>
-<hr>
+<pre><code>git clone https://github.com/Azure/iotedge.git  
+
+mkdir certgen  
+
+cp iotedge/tools/CACertificates/*.cnf certgen/  
+
+cp iotedge/tools/CACertificates/certGen.sh certgen/  
+
+cd certgen  
+
+./certGen.sh create_root_and_intermediate  
+
+./certGen.sh create_edge_device_identity_certificate &quot;u1804serveredge01&quot;  </code></pre><hr>
 <h3 id="3-デバイス証明書の拇印を確認する"><a href="#3-デバイス証明書の拇印を確認する" class="headerlink" title="(3) デバイス証明書の拇印を確認する"></a>(3) デバイス証明書の拇印を確認する</h3><p>コマンド例:</p>
 <hr>
 <pre><code>openssl x509 -in certs/iot-edge-device-identity-u1804serveredge01.cert.pem -fingerprint -noout</code></pre><hr>
