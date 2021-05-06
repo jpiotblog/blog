@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>uwfmgr.exe ツールの Commit/Commit-Delete コマンドについて | Japan IoT Support Blog</title>
+  <title>Archives: 2021/5 | Japan IoT Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,18 +19,12 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="uwfmgr.exe ツールの Commit&#x2F;Commit-Delete コマンドについて">
-<meta property="og:url" content="https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Japan IoT Support Blog">
+<meta property="og:url" content="https://jpiotblog.github.io/blog/archives/2021/05/index.html">
 <meta property="og:site_name" content="Japan IoT Support Blog">
-<meta property="og:description" content="UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。">
 <meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2020-06-29T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-06T05:48:46.124Z">
 <meta property="article:author" content="jpiotblog">
-<meta property="article:tag" content="uwfmgr.exe">
-<meta property="article:tag" content="Commit&#x2F;Commit-Delete">
 <meta name="twitter:card" content="summary">
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
@@ -126,122 +120,61 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-UWF-commit"
-  class="post white-box article-type-post"
-  itemscope itemprop="blogPost">
-	<section class='meta'>
-	<h2 class="title">
-  	<a href="/blog/2020/06/29/UWF-commit/">
-    	uwfmgr.exe ツールの Commit/Commit-Delete コマンドについて
-    </a>
-  </h2>
-	<time>
-	  6月 29, 2020
-	</time>
+        
 	
+  <script>
+    window.subData= { title:'Year : 2021.5'}
+  </script>
+
+<section class="post-list">
+	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/blog/2021/05/06/IoTEdge-X509-Connect-IoTHub/">
+        IoT Edge デバイスを X.509 証明書を使って IoT Hub に接続する方法について
+      </a>
+    </h2>
+    
+    <time>
+      5月 6, 2021
+    </time>
+		
     
     <div class='cats'>
-        <a href="/blog/categories/Unified-Write-Filter-UWF/">Unified Write Filter (UWF)</a>
+        <a href="/blog/categories/IoT-Hub/">IoT Hub</a>, <a href="/blog/categories/IoT-Hub/IoT-Edge/">IoT Edge</a>
     </div>
 
-	</section>
-	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#uwfmgr-exe-File-Commit-Commit-Delete-について"><span class="toc-number">1.</span> <span class="toc-text">uwfmgr.exe File Commit&#x2F;Commit-Delete について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uwfmgr-exe-Registry-Commit-Commit-Delete-について"><span class="toc-number">2.</span> <span class="toc-text">uwfmgr.exe Registry Commit&#x2F;Commit-Delete について</span></a></li></ol></section>
-	
-	<section class="article typo">
-  	<div class="article-entry" itemprop="articleBody">
-    	<p>UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。</p>
-<a id="more"></a>
-<br>
+  </section>
+  <section class="article typo">
+	  <p>IoT Edge デバイスを IoT Hub に接続する方法について、X.509 証明書を使用する場合の具体的な手順例をご紹介します。</p>
 
-<hr>
-<p>※ uwfmgr.exe ツールの利用法は、<a href="https://docs.microsoft.com/en-us/windows-hardware/customize/enterprise/uwfmgrexe" target="_blank" rel="noopener">こちら</a> を参照ください。  </p>
-<hr>
-<h2 id="uwfmgr-exe-File-Commit-Commit-Delete-について"><a href="#uwfmgr-exe-File-Commit-Commit-Delete-について" class="headerlink" title="uwfmgr.exe File Commit/Commit-Delete について"></a>uwfmgr.exe File Commit/Commit-Delete について</h2><p>UWF オーバーレイの保護領域に対してファイル操作を行った場合、OS 再起動後にこれらの操作内容がリセットされます。この時、uwfmgr.exe File Commit/Commit-Delete によって、変更内容がリセットされないよう “コミット” することが可能です。コミットしたタイミングの変更内容が実際のシステムに反映されます。  </p>
-<p>ファイルの作成、変更を反映する場合、uwfmgr.exe file commit を使用します。実行はファイル単位で、正規表現は使用できません。  </p>
-<ul>
-<li>例 (c:\temp\test.txt の変更反映) <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe file commit &quot;c:\temp\test.txt&quot;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>ファイルの削除を反映する場合、uwfmgr.exe file commit-delete を使用します。実行はファイル単位ですが、空のフォルダーに対しても使用可能です。正規表現は使用できません。<br>ファイル削除後に実行するのではなく、コマンドを実行によってファイルを削除します。  </p>
-<ul>
-<li><p>例 (c:\temp\test.txt の削除反映):</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe file commit-delete &quot;c:\temp\test.txt&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>例 (c:\temp の削除反映 ※ 空のフォルダーである必要があります):</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe file commit-delete &quot;c:\temp&quot;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<blockquote>
-<p>補足 1:<br>新しくフォルダーを作成し、その配下に作成したファイルに対して uwfmgr file commit を実行した場合、作成したフォルダーを含めてコミットされます。逆に、フォルダー内のファイルを全て uwfmgr file commit-delete で削除後、空のフォルダーを削除する場合には uwfmgr file commit-delete をそのフォルダーに対して実行することでフォルダーの削除がコミットされます。  </p>
-</blockquote>
-<blockquote>
-<p>補足 2:<br>現状、新しく作成したフォルダーのみ (空の状態) をコミットする方法がありません。代替策として、フォルダーの配下に適当なファイルを作成し Commit 実行後、Comite-Delete で削除することでフォルダーのみをコミットしたことと同等の結果を得ることが可能です。</p>
-<ul>
-<li>例 (c:\temp フォルダーのみコミットする場合):<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir c:\temp</span><br><span class="line">echo commit &gt; c:\temp\test.txt</span><br><span class="line">uwfmgr file commit c:\temp\test.txt</span><br><span class="line">uwfmgr file commit-delete c:\temp\test.txt</span><br></pre></td></tr></table></figure>
-2 行目の echo コマンドで commit という文字列を c:\temp\test.txt へ標準出力し、ファイルを作成します。<br>3 行目で作成されたファイルをコミットし、4 行目で削除します。</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="uwfmgr-exe-Registry-Commit-Commit-Delete-について"><a href="#uwfmgr-exe-Registry-Commit-Commit-Delete-について" class="headerlink" title="uwfmgr.exe Registry Commit/Commit-Delete について"></a>uwfmgr.exe Registry Commit/Commit-Delete について</h2><p>UWF オーバーレイによってシステムの利用領域を保護している状態でレジストリ キーや値の変更を行った場合、OS 再起動後に変更内容はリセットされます。この時、uwfmgr.exe Registry Commit/Commit-Delete によって、変更内容がリセットされないよう “コミット” することが可能です。コミットしたタイミングの変更内容がシステムに反映されます。  </p>
-<p>レジストリ キー、値の作成、変更を反映する場合、uwfmgr.exe registry commit を使用します。実行は値単位で、正規表現は使用できません。    </p>
-<ul>
-<li>例 (HKLM\SOFTWARE\test キー配下の値 test の変更反映): <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit &quot;HKLM\SOFTWARE\test&quot; test</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>レジストリ キー、値の削除を反映する場合、uwfmgr.exe registry commit-delete を使用します。キーのみを指定して削除を実行することが可能です。<br>レジストリ キー、値を削除後に実行するのではなく、コマンドを実行によって削除します。  </p>
-<ul>
-<li><p>例 (HKLM\Software\test キー配下の値 test の削除反映):</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit-delete &quot;HKLM\Software\test&quot; test</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>例 (HKLM\Software\test キーの削除反映):</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit-delete &quot;HKLM\Software\test&quot;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<blockquote>
-<p>補足:<br>HKLM 以外のレジストリ ハイブ (例えば、HKCR、HKCU など) のキー、サブ キー、値の作成や変更、削除は行えません。また、HKLM 自体や、HKLM\Software, HKLM\System, HKLM\SAM, HKLM\Security, HKLM\Components キーを変更対象とすることはできません。これらは仕様上、実行が拒否されます。</p>
-</blockquote>
-<hr>
-<p><code>変更履歴</code><br><code>2020/06/29 created by Mochizuki</code>  </p>
-
-  	</div>
-	  
-	  <div class="article-tags tags">
+    
+	  <div class="readmore">
+      <a href="/blog/2021/05/06/IoTEdge-X509-Connect-IoTHub/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="full-width auto-padding tags">
       
-        <a href="/blog/tags/uwfmgr-exe/">uwfmgr.exe</a>
+        <a href="/blog/tags/IoT-Hub/">IoT Hub</a>
       
-        <a href="/blog/tags/Commit-Commit-Delete/">Commit/Commit-Delete</a>
+        <a href="/blog/tags/IoT-Edge/">IoT Edge</a>
+      
+        <a href="/blog/tags/X-509/">X.509</a>
       
 	  </div>
     
-		
-	
-		<div class="art-item-footer">
-				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/07/27/UWF-sysprep/" rel="prev"  title="UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点について">
-						UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点について 
-					</a></span>
-				
-				
-					<span class="art-item-right">next：<a href="/blog/2020/02/20/UWF-longtermup/" rel="next"  title="長期間稼働するシステムでの UWF 有効化について">
-						長期間稼働するシステムでの UWF 有効化について
-					</a><i class="icon icon-chevron-thin-right"></i></span>
-				
-		</div>
-	
-	</section>
-	
+  </section>
 </article>
-<script>
-	window.subData = {
-		title: 'uwfmgr.exe ツールの Commit/Commit-Delete コマンドについて',
-		tools: true
-	}
-</script>
+    </div>
+  
+</section>
+
+
 
       </div>
       <aside class='l_side'>

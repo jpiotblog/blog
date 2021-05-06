@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>IoT Hub に MQTT でメッセージを Publish する際のトピック名について | Japan IoT Support Blog</title>
+  <title>IoT Edge デバイスを X.509 証明書を使って IoT Hub に接続する方法について | Japan IoT Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,18 +19,23 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IoT Hub に MQTT でメッセージを Publish する際のトピック名に関する注意点をご案内します。">
+  <meta name="description" content="IoT Edge デバイスを IoT Hub に接続する方法について、X.509 証明書を使用する場合の具体的な手順例をご紹介します。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IoT Hub に MQTT でメッセージを Publish する際のトピック名について">
-<meta property="og:url" content="https://jpiotblog.github.io/blog/2021/04/28/IoTHub-mqtt-publish-topic-name/index.html">
+<meta property="og:title" content="IoT Edge デバイスを X.509 証明書を使って IoT Hub に接続する方法について">
+<meta property="og:url" content="https://jpiotblog.github.io/blog/2021/05/06/IoTEdge-X509-Connect-IoTHub/index.html">
 <meta property="og:site_name" content="Japan IoT Support Blog">
-<meta property="og:description" content="IoT Hub に MQTT でメッセージを Publish する際のトピック名に関する注意点をご案内します。">
+<meta property="og:description" content="IoT Edge デバイスを IoT Hub に接続する方法について、X.509 証明書を使用する場合の具体的な手順例をご紹介します。">
 <meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2021-04-28T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-06T05:48:46.106Z">
+<meta property="og:image" content="https://jpiotblog.github.io/images/IoTEdge-X509-Connect-IoTHub/Register-IoTEdge-Device.png">
+<meta property="og:image" content="https://jpiotblog.github.io/images/IoTEdge-X509-Connect-IoTHub/Register-IoTEdge-Device-2.png">
+<meta property="article:published_time" content="2021-05-06T05:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-06T05:48:46.100Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="IoT Hub">
+<meta property="article:tag" content="IoT Edge">
+<meta property="article:tag" content="X.509">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpiotblog.github.io/images/IoTEdge-X509-Connect-IoTHub/Register-IoTEdge-Device.png">
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -125,59 +130,110 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-IoTHub-mqtt-publish-topic-name"
+        <article id="post-IoTEdge-X509-Connect-IoTHub"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/blog/2021/04/28/IoTHub-mqtt-publish-topic-name/">
-    	IoT Hub に MQTT でメッセージを Publish する際のトピック名について
+  	<a href="/blog/2021/05/06/IoTEdge-X509-Connect-IoTHub/">
+    	IoT Edge デバイスを X.509 証明書を使って IoT Hub に接続する方法について
     </a>
   </h2>
 	<time>
-	  4月 28, 2021
+	  5月 6, 2021
 	</time>
 	
     
     <div class='cats'>
-        <a href="/blog/categories/IoT-Hub/">IoT Hub</a>
+        <a href="/blog/categories/IoT-Hub/">IoT Hub</a>, <a href="/blog/categories/IoT-Hub/IoT-Edge/">IoT Edge</a>
     </div>
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本記事の背景"><span class="toc-number">1.</span> <span class="toc-text">本記事の背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MQTT-を直接利用する場合に発生する現象"><span class="toc-number">2.</span> <span class="toc-text">MQTT を直接利用する場合に発生する現象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#今後の対応予定"><span class="toc-number">3.</span> <span class="toc-text">今後の対応予定</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IoT-Edge-デバイスを-IoT-Hub-に接続する方法-X-509-証明書"><span class="toc-number">1.</span> <span class="toc-text">IoT Edge デバイスを IoT Hub に接続する方法 (X.509 証明書)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#検証環境"><span class="toc-number">1.1.</span> <span class="toc-text">検証環境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#手順"><span class="toc-number">1.2.</span> <span class="toc-text">手順</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-IoT-Edge-をインストールする"><span class="toc-number">1.2.1.</span> <span class="toc-text">(1) IoT Edge をインストールする</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-テスト用の証明書を生成する"><span class="toc-number">1.2.2.</span> <span class="toc-text">(2) テスト用の証明書を生成する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-デバイス証明書の拇印を確認する"><span class="toc-number">1.2.3.</span> <span class="toc-text">(3) デバイス証明書の拇印を確認する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-IoT-Hub-に-IoT-Edge-デバイスを登録する"><span class="toc-number">1.2.4.</span> <span class="toc-text">(4) IoT Hub に IoT Edge デバイスを登録する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-IoT-Edge-の-config-yaml-を編集してデーモンを再起動する"><span class="toc-number">1.2.5.</span> <span class="toc-text">(5) IoT Edge の config.yaml を編集してデーモンを再起動する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意点"><span class="toc-number">1.2.6.</span> <span class="toc-text">注意点</span></a></li></ol></li></ol></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>IoT Hub に MQTT でメッセージを Publish する際のトピック名に関する注意点をご案内します。</p>
+    	<p>IoT Edge デバイスを IoT Hub に接続する方法について、X.509 証明書を使用する場合の具体的な手順例をご紹介します。</p>
 <a id="more"></a>
 <br>
 
 <hr>
-<h2 id="本記事の背景"><a href="#本記事の背景" class="headerlink" title="本記事の背景"></a>本記事の背景</h2><p>IoT Hub は <a href="https://docs.microsoft.com/ja-jp/azure/iot-hub/iot-hub-mqtt-support" target="_blank" rel="noopener">MQTT での接続をサポート</a>しており、デバイスは Azure IoT device SDK の代わりに汎用的な MQTT ライブラリを利用して通信することが可能です。</p>
-<p>ここで、デバイス ID が Device01 の場合に、IoT Hub に MQTT で接続して D2C (テレメトリ) メッセージを送信するまでの一般的な流れは以下の通りです。</p>
-<p>(1) デバイス ID (Device01) と IoT Hub のホスト名、対称キーの情報を元に SAS トークンを生成します。</p>
-<ul>
-<li>SAS トークンの例: SharedAccessSignature sr={your hub name}.azure-devices.net%2Fdevices%2F<strong>Device01</strong>%2Fapi-version%3D2016-11-14&amp;sig=vSgHBMUG…..Ntg%3d&amp;se=1456481802</li>
+<h1 id="IoT-Edge-デバイスを-IoT-Hub-に接続する方法-X-509-証明書"><a href="#IoT-Edge-デバイスを-IoT-Hub-に接続する方法-X-509-証明書" class="headerlink" title="IoT Edge デバイスを IoT Hub に接続する方法 (X.509 証明書)"></a>IoT Edge デバイスを IoT Hub に接続する方法 (X.509 証明書)</h1><p>IoT Hub に IoT Edge デバイスを接続する際の認証情報としては対称キー (SAS トークン) の他に X.509 証明書がサポートされています。以下は X.509 証明書の拇印を利用して IoT Edge デバイスを IoT Hub に接続するための具体的な手順となります。</p>
+<h2 id="検証環境"><a href="#検証環境" class="headerlink" title="検証環境"></a>検証環境</h2><ul>
+<li>ホスト OS: Ubuntu 18.04 LTS</li>
+<li>IoT Edge バージョン: 1.0.10.4</li>
 </ul>
-<p>(2) MQTT で接続 (CONNECT パケットの送信) を行います。</p>
+<h2 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h2><h3 id="1-IoT-Edge-をインストールする"><a href="#1-IoT-Edge-をインストールする" class="headerlink" title="(1) IoT Edge をインストールする"></a>(1) IoT Edge をインストールする</h3><p>下記の手順に従って「IoT Edge をインストールする」の項目まで作業を進めます。</p>
 <ul>
-<li>Usename: {your hub name}.azure-devices.net/<strong>Device01</strong>/?api-version=2018-06-30</li>
-<li>Password: ステップ 1 で生成した SAS トークン</li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/iot-edge/how-to-install-iot-edge?view=iotedge-2018-06" target="_blank" rel="noopener">Azure IoT Edge for Linux をインストールまたはアンインストールする</a></li>
 </ul>
-<p>(3) D2C メッセージを送信するため Publish を行います。</p>
+<h3 id="2-テスト用の証明書を生成する"><a href="#2-テスト用の証明書を生成する" class="headerlink" title="(2) テスト用の証明書を生成する"></a>(2) テスト用の証明書を生成する</h3><p>下記ドキュメントの Bash 向けの手順でテスト用の証明書を生成します。これは IoT Edge をインストールした Ubuntu 上で実行しても問題ありません。</p>
 <ul>
-<li>Publish 先のトピック名: devices/<strong>Device01</strong>/messages/events/</li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/iot-edge/how-to-create-test-certificates?view=iotedge-2018-06" target="_blank" rel="noopener">IoT Edge デバイスの機能をテストするためのデモ用の証明書を作成する</a></li>
 </ul>
-<h2 id="MQTT-を直接利用する場合に発生する現象"><a href="#MQTT-を直接利用する場合に発生する現象" class="headerlink" title="MQTT を直接利用する場合に発生する現象"></a>MQTT を直接利用する場合に発生する現象</h2><p>通常は上記のようにステップ 1 - 3 で使用されるデバイス ID は全て同じ (Device01) となります。Azure IoT device SDK を利用している場合は MQTT レベルの操作を意識する必要がなく、トピック名などのパラメーターは適切に設定されます。</p>
-<p>一方で、MQTT を直接使用している場合、ステップ 3 で ステップ 1, 2 とは異なるデバイス ID (例. Device02) をクライアント側で指定することが技術的には可能です。</p>
-<ul>
-<li>Publish 先のトピック名: devices/<strong>Device02</strong>/messages/events/</li>
-</ul>
-<p>現在の IoT Hub はこのようなケースについて、公開ドキュメントの仕様では明記されていませんが、実際の動作としては、デバイス ID の文字列によってエラーになるパターンと、エラーとならずに Publish に成功するパターンが存在しています。</p>
-<h2 id="今後の対応予定"><a href="#今後の対応予定" class="headerlink" title="今後の対応予定"></a>今後の対応予定</h2><p>ステップ 3 で Publish する際のトピック名に含まれるデバイス ID を、ステップ 1, 2 と異なるものにする必要は通常無いと考えられるため、今後はトピック名を厳密にチェックして、接続時と異なるデバイス ID を宛先とした Publish は全てエラーとして扱われる予定です。併せて、既に本動作を前提として運用しているユーザーに対する周知や、仕様として公開ドキュメントに記載する準備も進めています。</p>
+<p>ここでは IoT Edge デバイスのデバイス ID を “u1804serveredge01” とします。</p>
+<p>コマンド例:</p>
 <hr>
-<p><code>変更履歴</code><br><code>2021/04/28 created by Nakagami</code>  </p>
+<pre><code>git clone https://github.com/Azure/iotedge.git
+
+mkdir certgen
+
+cp iotedge/tools/CACertificates/*.cnf certgen/
+
+cp iotedge/tools/CACertificates/certGen.sh certgen/
+
+cd certgen
+
+./certGen.sh create_root_and_intermediate
+
+./certGen.sh create_edge_device_identity_certificate &quot;u1804serveredge01&quot;</code></pre><hr>
+<h3 id="3-デバイス証明書の拇印を確認する"><a href="#3-デバイス証明書の拇印を確認する" class="headerlink" title="(3) デバイス証明書の拇印を確認する"></a>(3) デバイス証明書の拇印を確認する</h3><p>コマンド例:</p>
+<hr>
+<pre><code>openssl x509 -in certs/iot-edge-device-identity-u1804serveredge01.cert.pem -fingerprint -noout</code></pre><hr>
+<p>出力例:</p>
+<hr>
+<pre><code>SHA1 Fingerprint=07:49:D2:99:AD:39:88:AD:1E:CA:36:BD:5B:33:B1:55:48:CA:CE:82</code></pre><hr>
+<h3 id="4-IoT-Hub-に-IoT-Edge-デバイスを登録する"><a href="#4-IoT-Hub-に-IoT-Edge-デバイスを登録する" class="headerlink" title="(4) IoT Hub に IoT Edge デバイスを登録する"></a>(4) IoT Hub に IoT Edge デバイスを登録する</h3><p>Azure ポータルから IoT Edge デバイスを追加します。</p>
+<p><img src="https://jpiotblog.github.io/images/IoTEdge-X509-Connect-IoTHub/Register-IoTEdge-Device.png" alt="Register-IoTEdge-Device.png"></p>
+<p>手順 (2) で指定したデバイス ID (この例では “u1804serveredge01”) および手順 (3) で確認した拇印を入力します。</p>
+<p>入力例:</p>
+<p><img src="https://jpiotblog.github.io/images/IoTEdge-X509-Connect-IoTHub/Register-IoTEdge-Device-2.png" alt="Register-IoTEdge-Device-2.png"></p>
+<h3 id="5-IoT-Edge-の-config-yaml-を編集してデーモンを再起動する"><a href="#5-IoT-Edge-の-config-yaml-を編集してデーモンを再起動する" class="headerlink" title="(5) IoT Edge の config.yaml を編集してデーモンを再起動する"></a>(5) IoT Edge の config.yaml を編集してデーモンを再起動する</h3><p>上記 “Azure IoT Edge for Linux をインストールまたはアンインストールする” の「オプション 2:X.509 証明書を使用した認証」に従って設定を行います。</p>
+<p>config.yaml の設定例:</p>
+<hr>
+<pre><code>provisioning:
+
+    source: &quot;manual&quot;
+
+    authentication:
+
+        method: &quot;x509&quot;
+
+        iothub_hostname: &quot;&lt;YOUR IOT HUB NAME&gt;.azure-devices.net&quot;
+
+        device_id: &quot;u1804serveredge01&quot;
+
+        identity_cert: &quot;file:///home/user/certgen/certs/iot-edge-device-identity-u1804serveredge01.cert.pem&quot;
+
+        identity_pk: &quot;file:///home/user/certgen/private/iot-edge-device-identity-u1804serveredge01.key.pem&quot;
+
+    dynamic_reprovisioning: false</code></pre><hr>
+<ul>
+<li>iothub_hostname: IoT Hub のホスト名</li>
+<li>device_id: デバイス ID, この例では “u1804serveredge01”</li>
+<li>identity_cert: デバイス証明書のパス (フルパスの前に “file://“ が必要)</li>
+<li>identity_pk: デバイス証明書の秘密鍵のパス (フルパスの前に “file://“ が必要)</li>
+</ul>
+<p>config.yaml の変更内容を保存したら IoT Edge デーモンを再起動します。</p>
+<hr>
+<pre><code>sudo systemctl restart iotedge</code></pre><hr>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>IoT Edge デバイスは CA 証明書による複数デバイスの包括的な認証には対応していないため、自己署名証明書ではなく他の CA によって署名された証明書を使用する場合であっても、手順 (4) では「X.509 自己署名済み」を選択して証明書の拇印を個別で登録する必要があります。また、Device Provisioning Service (DPS) で IoT Edge デバイスをグループ登録することは可能ですが、この場合も IoT Hub には証明書の拇印が登録されます。</p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/iot-hub/iot-hub-x509ca-overview" target="_blank" rel="noopener">X.509 CA 証明書を使用したデバイス認証</a></li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/iot-edge/how-to-auto-provision-x509-certs?view=iotedge-2020-11" target="_blank" rel="noopener">X.509 証明書を使用して IoT Edge デバイスを作成およびプロビジョニングする</a></li>
+</ul>
+<p><code>変更履歴</code><br><code>2021/05/06 created by Nakagami</code>  </p>
 <p>※ 本記事は 「<a href="https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/">jpiotblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpiotblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpiotblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
 
   	</div>
@@ -186,19 +242,19 @@
       
         <a href="/blog/tags/IoT-Hub/">IoT Hub</a>
       
+        <a href="/blog/tags/IoT-Edge/">IoT Edge</a>
+      
+        <a href="/blog/tags/X-509/">X.509</a>
+      
 	  </div>
     
 		
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2021/05/06/IoTEdge-X509-Connect-IoTHub/" rel="prev"  title="IoT Edge デバイスを X.509 証明書を使って IoT Hub に接続する方法について">
-						IoT Edge デバイスを X.509 証明書を使って IoT Hub に接続する方法について 
-					</a></span>
 				
-				
-					<span class="art-item-right">next：<a href="/blog/2021/04/19/KF-block-printscrn-combination/" rel="next"  title="Keyboard Filter で [Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタする方法">
-						Keyboard Filter で [Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタする方法
+					<span class="art-item-right">next：<a href="/blog/2021/04/28/IoTHub-mqtt-publish-topic-name/" rel="next"  title="IoT Hub に MQTT でメッセージを Publish する際のトピック名について">
+						IoT Hub に MQTT でメッセージを Publish する際のトピック名について
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
@@ -208,7 +264,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'IoT Hub に MQTT でメッセージを Publish する際のトピック名について',
+		title: 'IoT Edge デバイスを X.509 証明書を使って IoT Hub に接続する方法について',
 		tools: true
 	}
 </script>
