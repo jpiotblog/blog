@@ -27,9 +27,11 @@
 <meta property="og:description" content="UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-18T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-18T12:59:33.008Z">
+<meta property="article:modified_time" content="2021-06-22T07:13:47.491Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="uwfmgr.exe">
+<meta property="article:tag" content="Microsoft Defender">
+<meta property="article:tag" content="Windows Update">
 <meta property="article:tag" content="除外設定">
 <meta name="twitter:card" content="summary">
 
@@ -146,7 +148,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#除外設定に関するお問い合わせについて"><span class="toc-number">1.</span> <span class="toc-text">除外設定に関するお問い合わせについて</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#除外を推奨しないパスについて"><span class="toc-number">2.</span> <span class="toc-text">除外を推奨しないパスについて</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows-Defender-用の除外設定について"><span class="toc-number">3.</span> <span class="toc-text">Windows Defender 用の除外設定について</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#除外設定に関するお問い合わせについて"><span class="toc-number">1.</span> <span class="toc-text">除外設定に関するお問い合わせについて</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#除外を推奨しないパスについて"><span class="toc-number">2.</span> <span class="toc-text">除外を推奨しないパスについて</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Microsoft-Defender-用の除外設定について"><span class="toc-number">3.</span> <span class="toc-text">Microsoft Defender 用の除外設定について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows-Update-用の除外設定について"><span class="toc-number">4.</span> <span class="toc-text">Windows Update 用の除外設定について</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -157,7 +159,7 @@
 <hr>
 <h2 id="除外設定に関するお問い合わせについて"><a href="#除外設定に関するお問い合わせについて" class="headerlink" title="除外設定に関するお問い合わせについて"></a>除外設定に関するお問い合わせについて</h2><p>UWF は、保護対象領域に対する書き込みをオーバーレイ領域でキャッシュし、OS 再起動をトリガーにキャッシュした情報をリセットして、UWF を有効化した時点に戻します。ある製品を動作させようとしたときに、OS 再起動後に情報がリセットされると不都合が発生する場合、除外設定を追加することで期待通りに動作させることができる可能性があります。<br>この時、各製品で必要な除外設定につきましては、各製品サポートよりご案内させていただいております。下記例を参照ください。  </p>
 <ul>
-<li><p>質問例 1. Windows Defender に必要な除外設定を教えてほしい<br> -&gt; Windows Defender の製品サポートへお問い合わせください</p>
+<li><p>質問例 1. Microsoft Defender に必要な除外設定を教えてほしい<br> -&gt; Microsoft Defender の製品サポートへお問い合わせください</p>
 </li>
 <li><p>質問例 2. Wi-Fi の接続情報を OS 起動後も維持したい<br> -&gt; Windows OS の製品サポート (ネットワーク担当) へお問い合わせください</p>
 </li>
@@ -234,11 +236,11 @@
 </li>
 </ul>
 <hr>
-<h2 id="Windows-Defender-用の除外設定について"><a href="#Windows-Defender-用の除外設定について" class="headerlink" title="Windows Defender 用の除外設定について"></a>Windows Defender 用の除外設定について</h2><p>弊社より提供させていただいておりますマルウェア対策ソフトウェア (Windows Defender および System Center Endpoint Protection) につきましては、除外設定を下記サイトにて公開しております。  </p>
+<h2 id="Microsoft-Defender-用の除外設定について"><a href="#Microsoft-Defender-用の除外設定について" class="headerlink" title="Microsoft Defender 用の除外設定について"></a>Microsoft Defender 用の除外設定について</h2><p>弊社より提供させていただいておりますマルウェア対策ソフトウェア (Microsoft Defender および System Center Endpoint Protection) につきましては、除外設定を下記サイトにて公開しております。  </p>
 <p><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwf-antimalware-support" target="_blank" rel="noopener">UWF で保護されているデバイスでマルウェア対策のサポート</a>  </p>
-<p>また、これらの除外設定に伴い発生する問題の事例をご紹介します。比較的新しいバージョンの OS (Windows 10 バージョン 1909 以降) におきましては、2020/6/17 現在にて発生報告は確認されておりません。関連すると思われる問題が確認された場合には、Windows Defender 製品サポートへお問い合わせください。  </p>
+<p>また、これらの除外設定に伴い発生する問題の事例をご紹介します。比較的新しいバージョンの OS (Windows 10 バージョン 1909 以降) におきましては、2020/6/17 現在にて発生報告は確認されておりません。関連すると思われる問題が確認された場合には、Microsoft Defender 製品サポートへお問い合わせください。  </p>
 <ul>
-<li><p>Windows Defender のレジストリを除外すると OS 起動時にハングアップする  </p>
+<li><p>Microsoft Defender のレジストリを除外すると OS 起動時にハングアップする  </p>
 <blockquote>
 <p>下記レジストリ キーを除外していると、OS 起動時にハングアップして起動できない場合があります。レースコンディションによるものであり、スペックの低い端末で発生する傾向にあります。OS 側での修正は困難であるため、Wdfilter の除外解除等をご検討ください。  </p>
 <ul>
@@ -257,6 +259,11 @@
 </li>
 </ul>
 <hr>
+<h2 id="Windows-Update-用の除外設定について"><a href="#Windows-Update-用の除外設定について" class="headerlink" title="Windows Update 用の除外設定について"></a>Windows Update 用の除外設定について</h2><p>Windows Update の適用を除外設定で対応する場合、更新対象になりうるコンポーネントを全て除外する必要があるため、現実的に不可能です。下記サイトの情報を参考に、<a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/service-uwf-protected-devices" target="_blank" rel="noopener">UWF サービス モード</a>のご利用をご検討ください。</p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwf-apply-windows-updates" target="_blank" rel="noopener">UWF で保護されているデバイスに Windows 更新プログラムを適用します。</a></li>
+</ul>
+<hr>
 <p><code>変更履歴</code><br><code>2020/02/19 created by Mochizuki</code><br><code>2020/06/16 modified by Mochizuki</code><br><code>2020/09/09 modified by Mochizuki</code>  </p>
 
   	</div>
@@ -264,6 +271,10 @@
 	  <div class="article-tags tags">
       
         <a href="/blog/tags/uwfmgr-exe/">uwfmgr.exe</a>
+      
+        <a href="/blog/tags/Microsoft-Defender/">Microsoft Defender</a>
+      
+        <a href="/blog/tags/Windows-Update/">Windows Update</a>
       
         <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/">除外設定</a>
       
@@ -364,7 +375,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/8007000E/" style="font-size: 14px; color: #808080">8007000E</a> <a href="/blog/tags/Commit-Commit-Delete/" style="font-size: 14px; color: #808080">Commit/Commit-Delete</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/HORM/" style="font-size: 14px; color: #808080">HORM</a> <a href="/blog/tags/IoT-Edge/" style="font-size: 14px; color: #808080">IoT Edge</a> <a href="/blog/tags/IoT-Hub/" style="font-size: 17px; color: #404040">IoT Hub</a> <a href="/blog/tags/Keyboard-Filter/" style="font-size: 14px; color: #808080">Keyboard Filter</a> <a href="/blog/tags/Out-Of-Memory/" style="font-size: 14px; color: #808080">Out Of Memory</a> <a href="/blog/tags/Sysprep/" style="font-size: 14px; color: #808080">Sysprep</a> <a href="/blog/tags/UWF-servicing-mode/" style="font-size: 14px; color: #808080">UWF servicing mode</a> <a href="/blog/tags/Windows-Update/" style="font-size: 14px; color: #808080">Windows Update</a> <a href="/blog/tags/X-509/" style="font-size: 14px; color: #808080">X.509</a> <a href="/blog/tags/uwfmgr-exe/" style="font-size: 20px; color: #000">uwfmgr.exe</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/" style="font-size: 14px; color: #808080">オーバーレイ</a> <a href="/blog/tags/%E3%82%B7%E3%83%A3%E3%83%83%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3/" style="font-size: 14px; color: #808080">シャットダウン</a> <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">メモリ ダンプの設定手順</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a> <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/" style="font-size: 14px; color: #808080">除外設定</a>
+        <a href="/blog/tags/8007000E/" style="font-size: 14px; color: #808080">8007000E</a> <a href="/blog/tags/Commit-Commit-Delete/" style="font-size: 14px; color: #808080">Commit/Commit-Delete</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/HORM/" style="font-size: 14px; color: #808080">HORM</a> <a href="/blog/tags/IoT-Edge/" style="font-size: 14px; color: #808080">IoT Edge</a> <a href="/blog/tags/IoT-Hub/" style="font-size: 17px; color: #404040">IoT Hub</a> <a href="/blog/tags/Keyboard-Filter/" style="font-size: 14px; color: #808080">Keyboard Filter</a> <a href="/blog/tags/Microsoft-Defender/" style="font-size: 14px; color: #808080">Microsoft Defender</a> <a href="/blog/tags/Out-Of-Memory/" style="font-size: 14px; color: #808080">Out Of Memory</a> <a href="/blog/tags/Sysprep/" style="font-size: 14px; color: #808080">Sysprep</a> <a href="/blog/tags/UWF-servicing-mode/" style="font-size: 14px; color: #808080">UWF servicing mode</a> <a href="/blog/tags/Windows-Update/" style="font-size: 17px; color: #404040">Windows Update</a> <a href="/blog/tags/X-509/" style="font-size: 14px; color: #808080">X.509</a> <a href="/blog/tags/uwfmgr-exe/" style="font-size: 20px; color: #000">uwfmgr.exe</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/" style="font-size: 14px; color: #808080">オーバーレイ</a> <a href="/blog/tags/%E3%82%B7%E3%83%A3%E3%83%83%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3/" style="font-size: 14px; color: #808080">シャットダウン</a> <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">メモリ ダンプの設定手順</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a> <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/" style="font-size: 14px; color: #808080">除外設定</a>
     </div>
 </div>
 
