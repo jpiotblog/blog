@@ -3,10 +3,10 @@
   <title>Japan IoT Support Blog</title>
   <icon>https://jpiotblog.github.io/blog/icon.png</icon>
   
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="https://jpiotblog.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpiotblog.github.io/blog/"/>
-  <updated>2021-06-22T07:13:47.356Z</updated>
+  <updated>2021-07-19T06:44:07.754Z</updated>
   <id>https://jpiotblog.github.io/blog/</id>
   
   <author>
@@ -21,25 +21,23 @@
     <link href="https://jpiotblog.github.io/blog/2021/05/06/IoTEdge-X509-Connect-IoTHub/"/>
     <id>https://jpiotblog.github.io/blog/2021/05/06/IoTEdge-X509-Connect-IoTHub/</id>
     <published>2021-05-06T05:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.356Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;IoT Edge デバイスを IoT Hub に接続する方法について、X.509 証明書を使用する場合の具体的な手順例をご紹介します。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.754Z</updated>
     
     
-      <category term="IoT Hub" scheme="https://jpiotblog.github.io/blog/categories/IoT-Hub/"/>
-    
-      <category term="IoT Edge" scheme="https://jpiotblog.github.io/blog/categories/IoT-Hub/IoT-Edge/"/>
+    <summary type="html">&lt;p&gt;IoT Edge デバイスを IoT Hub に接続する方法について、X.509 証明書を使用する場合の具体的な手順例をご紹介します。&lt;/p&gt;</summary>
     
     
-      <category term="IoT Hub" scheme="https://jpiotblog.github.io/blog/tags/IoT-Hub/"/>
     
-      <category term="IoT Edge" scheme="https://jpiotblog.github.io/blog/tags/IoT-Edge/"/>
+    <category term="IoT Hub" scheme="https://jpiotblog.github.io/blog/categories/IoT-Hub/"/>
     
-      <category term="X.509" scheme="https://jpiotblog.github.io/blog/tags/X-509/"/>
+    <category term="IoT Edge" scheme="https://jpiotblog.github.io/blog/categories/IoT-Hub/IoT-Edge/"/>
+    
+    
+    <category term="IoT Hub" scheme="https://jpiotblog.github.io/blog/tags/IoT-Hub/"/>
+    
+    <category term="IoT Edge" scheme="https://jpiotblog.github.io/blog/tags/IoT-Edge/"/>
+    
+    <category term="X.509" scheme="https://jpiotblog.github.io/blog/tags/X-509/"/>
     
   </entry>
   
@@ -48,19 +46,17 @@
     <link href="https://jpiotblog.github.io/blog/2021/04/28/IoTHub-mqtt-publish-topic-name/"/>
     <id>https://jpiotblog.github.io/blog/2021/04/28/IoTHub-mqtt-publish-topic-name/</id>
     <published>2021-04-28T08:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.363Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;IoT Hub に MQTT でメッセージを Publish する際のトピック名に関する注意点をご案内します。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.758Z</updated>
     
     
-      <category term="IoT Hub" scheme="https://jpiotblog.github.io/blog/categories/IoT-Hub/"/>
+    <summary type="html">&lt;p&gt;IoT Hub に MQTT でメッセージを Publish する際のトピック名に関する注意点をご案内します。&lt;/p&gt;</summary>
     
     
-      <category term="IoT Hub" scheme="https://jpiotblog.github.io/blog/tags/IoT-Hub/"/>
+    
+    <category term="IoT Hub" scheme="https://jpiotblog.github.io/blog/categories/IoT-Hub/"/>
+    
+    
+    <category term="IoT Hub" scheme="https://jpiotblog.github.io/blog/tags/IoT-Hub/"/>
     
   </entry>
   
@@ -69,19 +65,17 @@
     <link href="https://jpiotblog.github.io/blog/2021/04/19/KF-block-printscrn-combination/"/>
     <id>https://jpiotblog.github.io/blog/2021/04/19/KF-block-printscrn-combination/</id>
     <published>2021-04-19T03:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.374Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Windows 10 IoT Enterprise (Enterprise もバイナリとして同じ) の Device Lockdown 機能の Keyboard Filter で [Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタする方法をご紹介します。  &lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.762Z</updated>
     
     
-      <category term="Keyboard Filter" scheme="https://jpiotblog.github.io/blog/categories/Keyboard-Filter/"/>
+    <summary type="html">&lt;p&gt;Windows 10 IoT Enterprise (Enterprise もバイナリとして同じ) の Device Lockdown 機能の Keyboard Filter で [Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタする方法をご紹介します。  &lt;/p&gt;</summary>
     
     
-      <category term="Keyboard Filter" scheme="https://jpiotblog.github.io/blog/tags/Keyboard-Filter/"/>
+    
+    <category term="Keyboard Filter" scheme="https://jpiotblog.github.io/blog/categories/Keyboard-Filter/"/>
+    
+    
+    <category term="Keyboard Filter" scheme="https://jpiotblog.github.io/blog/tags/Keyboard-Filter/"/>
     
   </entry>
   
@@ -90,21 +84,19 @@
     <link href="https://jpiotblog.github.io/blog/2020/11/10/UWF-HORM/"/>
     <id>https://jpiotblog.github.io/blog/2020/11/10/UWF-HORM/</id>
     <published>2020-11-10T03:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.539Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Unified Write Filter (UWF) と共に Hibernate Once/Resume Many (HORM) 機能を使用する際の留意点を紹介いたします。  &lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.825Z</updated>
     
     
-      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    <summary type="html">&lt;p&gt;Unified Write Filter (UWF) と共に Hibernate Once/Resume Many (HORM) 機能を使用する際の留意点を紹介いたします。  &lt;/p&gt;</summary>
     
     
-      <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
     
-      <category term="HORM" scheme="https://jpiotblog.github.io/blog/tags/HORM/"/>
+    <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    
+    
+    <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
+    
+    <category term="HORM" scheme="https://jpiotblog.github.io/blog/tags/HORM/"/>
     
   </entry>
   
@@ -113,21 +105,19 @@
     <link href="https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/</id>
     <published>2020-08-21T03:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.557Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;UWF 有効化環境で LCU (累積更新プログラム) の適用時に Out Of Memory が発生する事象について紹介します。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.836Z</updated>
     
     
-      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    <summary type="html">&lt;p&gt;UWF 有効化環境で LCU (累積更新プログラム) の適用時に Out Of Memory が発生する事象について紹介します。&lt;/p&gt;</summary>
     
     
-      <category term="Out Of Memory" scheme="https://jpiotblog.github.io/blog/tags/Out-Of-Memory/"/>
     
-      <category term="UWF servicing mode" scheme="https://jpiotblog.github.io/blog/tags/UWF-servicing-mode/"/>
+    <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    
+    
+    <category term="Out Of Memory" scheme="https://jpiotblog.github.io/blog/tags/Out-Of-Memory/"/>
+    
+    <category term="UWF servicing mode" scheme="https://jpiotblog.github.io/blog/tags/UWF-servicing-mode/"/>
     
   </entry>
   
@@ -136,21 +126,19 @@
     <link href="https://jpiotblog.github.io/blog/2020/08/13/WE8S-error-8007000E/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/13/WE8S-error-8007000E/</id>
     <published>2020-08-13T03:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.575Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Windows Embedded 8 Standard において、Windows Update がエラー 8007000E で失敗する現象の対処方法をご紹介します。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.844Z</updated>
     
     
-      <category term="Windows Embedded 8 Standard" scheme="https://jpiotblog.github.io/blog/categories/Windows-Embedded-8-Standard/"/>
+    <summary type="html">&lt;p&gt;Windows Embedded 8 Standard において、Windows Update がエラー 8007000E で失敗する現象の対処方法をご紹介します。&lt;/p&gt;</summary>
     
     
-      <category term="Windows Update" scheme="https://jpiotblog.github.io/blog/tags/Windows-Update/"/>
     
-      <category term="8007000E" scheme="https://jpiotblog.github.io/blog/tags/8007000E/"/>
+    <category term="Windows Embedded 8 Standard" scheme="https://jpiotblog.github.io/blog/categories/Windows-Embedded-8-Standard/"/>
+    
+    
+    <category term="Windows Update" scheme="https://jpiotblog.github.io/blog/tags/Windows-Update/"/>
+    
+    <category term="8007000E" scheme="https://jpiotblog.github.io/blog/tags/8007000E/"/>
     
   </entry>
   
@@ -159,19 +147,17 @@
     <link href="https://jpiotblog.github.io/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/</id>
     <published>2020-08-11T03:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.313Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Shell Launcher でシャットダウンをキャンセルする方法についてご紹介します。  &lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.736Z</updated>
     
     
-      <category term="Shell Launcher" scheme="https://jpiotblog.github.io/blog/categories/Shell-Launcher/"/>
+    <summary type="html">&lt;p&gt;Shell Launcher でシャットダウンをキャンセルする方法についてご紹介します。  &lt;/p&gt;</summary>
     
     
-      <category term="シャットダウン" scheme="https://jpiotblog.github.io/blog/tags/%E3%82%B7%E3%83%A3%E3%83%83%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3/"/>
+    
+    <category term="Shell Launcher" scheme="https://jpiotblog.github.io/blog/categories/Shell-Launcher/"/>
+    
+    
+    <category term="シャットダウン" scheme="https://jpiotblog.github.io/blog/tags/%E3%82%B7%E3%83%A3%E3%83%83%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3/"/>
     
   </entry>
   
@@ -180,19 +166,17 @@
     <link href="https://jpiotblog.github.io/blog/2020/07/27/UWF-sysprep/"/>
     <id>https://jpiotblog.github.io/blog/2020/07/27/UWF-sysprep/</id>
     <published>2020-07-27T08:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.567Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点をご紹介いたします。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.839Z</updated>
     
     
-      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    <summary type="html">&lt;p&gt;UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点をご紹介いたします。&lt;/p&gt;</summary>
     
     
-      <category term="Sysprep" scheme="https://jpiotblog.github.io/blog/tags/Sysprep/"/>
+    
+    <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    
+    
+    <category term="Sysprep" scheme="https://jpiotblog.github.io/blog/tags/Sysprep/"/>
     
   </entry>
   
@@ -201,21 +185,19 @@
     <link href="https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/"/>
     <id>https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/</id>
     <published>2020-06-29T08:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.414Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.769Z</updated>
     
     
-      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    <summary type="html">&lt;p&gt;UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。&lt;/p&gt;</summary>
     
     
-      <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
     
-      <category term="Commit/Commit-Delete" scheme="https://jpiotblog.github.io/blog/tags/Commit-Commit-Delete/"/>
+    <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    
+    
+    <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
+    
+    <category term="Commit/Commit-Delete" scheme="https://jpiotblog.github.io/blog/tags/Commit-Commit-Delete/"/>
     
   </entry>
   
@@ -224,21 +206,19 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/20/UWF-longtermup/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/20/UWF-longtermup/</id>
     <published>2020-02-19T15:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.548Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;長期間稼働するシステムで UWF を有効化する場合の、一般的な留意事項をご紹介します。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.832Z</updated>
     
     
-      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    <summary type="html">&lt;p&gt;長期間稼働するシステムで UWF を有効化する場合の、一般的な留意事項をご紹介します。&lt;/p&gt;</summary>
     
     
-      <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
     
-      <category term="オーバーレイ" scheme="https://jpiotblog.github.io/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/"/>
+    <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    
+    
+    <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
+    
+    <category term="オーバーレイ" scheme="https://jpiotblog.github.io/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/"/>
     
   </entry>
   
@@ -247,25 +227,23 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/19/UWF-exclusions/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/19/UWF-exclusions/</id>
     <published>2020-02-18T15:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.491Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.804Z</updated>
     
     
-      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    <summary type="html">&lt;p&gt;UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。&lt;/p&gt;</summary>
     
     
-      <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
     
-      <category term="Microsoft Defender" scheme="https://jpiotblog.github.io/blog/tags/Microsoft-Defender/"/>
+    <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
     
-      <category term="Windows Update" scheme="https://jpiotblog.github.io/blog/tags/Windows-Update/"/>
     
-      <category term="除外設定" scheme="https://jpiotblog.github.io/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/"/>
+    <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
+    
+    <category term="Microsoft Defender" scheme="https://jpiotblog.github.io/blog/tags/Microsoft-Defender/"/>
+    
+    <category term="Windows Update" scheme="https://jpiotblog.github.io/blog/tags/Windows-Update/"/>
+    
+    <category term="除外設定" scheme="https://jpiotblog.github.io/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/"/>
     
   </entry>
   
@@ -274,19 +252,17 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/</id>
     <published>2020-02-11T15:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.438Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;UWF を有効化した環境で、メモリ ダンプを取得する方法についてご紹介します。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.781Z</updated>
     
     
-      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    <summary type="html">&lt;p&gt;UWF を有効化した環境で、メモリ ダンプを取得する方法についてご紹介します。&lt;/p&gt;</summary>
     
     
-      <category term="メモリ ダンプの設定手順" scheme="https://jpiotblog.github.io/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/"/>
+    
+    <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    
+    
+    <category term="メモリ ダンプの設定手順" scheme="https://jpiotblog.github.io/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/"/>
     
   </entry>
   
@@ -295,19 +271,17 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/26/CollectInfo_UWF/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/26/CollectInfo_UWF/</id>
     <published>2020-01-25T15:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.347Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;UWF 機能に関連するトラブル発生時の情報採取手順を紹介します。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.750Z</updated>
     
     
-      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    <summary type="html">&lt;p&gt;UWF 機能に関連するトラブル発生時の情報採取手順を紹介します。&lt;/p&gt;</summary>
     
     
-      <category term="情報採取手順" scheme="https://jpiotblog.github.io/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/"/>
+    
+    <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    
+    
+    <category term="情報採取手順" scheme="https://jpiotblog.github.io/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/"/>
     
   </entry>
   
@@ -316,19 +290,17 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/16/UWF-FAQ/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/16/UWF-FAQ/</id>
     <published>2020-01-15T15:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.530Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;UWF 機能に関してよくあるご質問とその回答をまとめております。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.821Z</updated>
     
     
-      <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    <summary type="html">&lt;p&gt;UWF 機能に関してよくあるご質問とその回答をまとめております。&lt;/p&gt;</summary>
     
     
-      <category term="FAQ" scheme="https://jpiotblog.github.io/blog/tags/FAQ/"/>
+    
+    <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
+    
+    
+    <category term="FAQ" scheme="https://jpiotblog.github.io/blog/tags/FAQ/"/>
     
   </entry>
   
@@ -337,19 +309,17 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/12/past-blog/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.380Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;過去のブログ情報を紹介いたします。&lt;br&gt;定期的な更新は行われていないため、除外設定等の情報は現在の OS では適用されない場合がございます。&lt;br&gt;恐れ入りますが、予めご留意いただけますようお願い申し上げます。&lt;/p&gt;
-    
-    </summary>
+    <updated>2021-07-19T06:44:07.765Z</updated>
     
     
-      <category term="IoT 製品全般" scheme="https://jpiotblog.github.io/blog/categories/IoT-%E8%A3%BD%E5%93%81%E5%85%A8%E8%88%AC/"/>
+    <summary type="html">&lt;p&gt;過去のブログ情報を紹介いたします。&lt;br&gt;定期的な更新は行われていないため、除外設定等の情報は現在の OS では適用されない場合がございます。&lt;br&gt;恐れ入りますが、予めご留意いただけますようお願い申し上げます。&lt;/p&gt;</summary>
     
     
-      <category term="過去ブログ" scheme="https://jpiotblog.github.io/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/"/>
+    
+    <category term="IoT 製品全般" scheme="https://jpiotblog.github.io/blog/categories/IoT-%E8%A3%BD%E5%93%81%E5%85%A8%E8%88%AC/"/>
+    
+    
+    <category term="過去ブログ" scheme="https://jpiotblog.github.io/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/"/>
     
   </entry>
   
@@ -358,26 +328,24 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2021-06-22T07:13:47.277Z</updated>
+    <updated>2021-07-19T06:44:07.722Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;p&gt;日本マイクロソフトの IoT 製品 (Device Lockdown 機能含む) に関するサポート情報のブログです。&lt;/p&gt;
-&lt;h3 id=&quot;公開日&quot;&gt;&lt;a href=&quot;#公開日&quot; class=&quot;headerlink&quot;
+    <summary type="html">&lt;p&gt;日本マイクロソフトの IoT 製品 (Device Lockdown 機能含む) に関するサポート情報のブログです。&lt;/p&gt;
+&lt;h3 id=&quot;公開日&quot;&gt;&lt;a href=&quot;#公開日&quot; class=&quot;headerlink&quot;</summary>
         
       
     
-    </summary>
     
     
-      <category term="IoT 製品全般" scheme="https://jpiotblog.github.io/blog/categories/IoT-%E8%A3%BD%E5%93%81%E5%85%A8%E8%88%AC/"/>
+    <category term="IoT 製品全般" scheme="https://jpiotblog.github.io/blog/categories/IoT-%E8%A3%BD%E5%93%81%E5%85%A8%E8%88%AC/"/>
     
     
-      <category term="はじめに" scheme="https://jpiotblog.github.io/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/"/>
+    <category term="はじめに" scheme="https://jpiotblog.github.io/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/"/>
     
   </entry>
   

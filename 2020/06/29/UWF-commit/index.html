@@ -17,7 +17,7 @@
   <link rel="mask-icon" href="https://jpiotblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。">
 <meta property="og:type" content="article">
@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-06-29T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-22T07:13:47.414Z">
+<meta property="article:modified_time" content="2021-07-19T06:44:07.769Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="uwfmgr.exe">
 <meta property="article:tag" content="Commit&#x2F;Commit-Delete">
@@ -45,8 +45,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -146,33 +145,28 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#uwfmgr-exe-File-Commit-Commit-Delete-について"><span class="toc-number">1.</span> <span class="toc-text">uwfmgr.exe File Commit&#x2F;Commit-Delete について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uwfmgr-exe-Registry-Commit-Commit-Delete-について"><span class="toc-number">2.</span> <span class="toc-text">uwfmgr.exe Registry Commit&#x2F;Commit-Delete について</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#uwfmgr-exe-File-Commit-Commit-Delete-%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">1.</span> <span class="toc-text">uwfmgr.exe File Commit&#x2F;Commit-Delete について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uwfmgr-exe-Registry-Commit-Commit-Delete-%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">2.</span> <span class="toc-text">uwfmgr.exe Registry Commit&#x2F;Commit-Delete について</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。</p>
-<a id="more"></a>
+<span id="more"></span>
 <br>
 
 <hr>
-<p>※ uwfmgr.exe ツールの利用法は、<a href="https://docs.microsoft.com/en-us/windows-hardware/customize/enterprise/uwfmgrexe" target="_blank" rel="noopener">こちら</a> を参照ください。  </p>
+<p>※ uwfmgr.exe ツールの利用法は、<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-hardware/customize/enterprise/uwfmgrexe">こちら</a> を参照ください。  </p>
 <hr>
 <h2 id="uwfmgr-exe-File-Commit-Commit-Delete-について"><a href="#uwfmgr-exe-File-Commit-Commit-Delete-について" class="headerlink" title="uwfmgr.exe File Commit/Commit-Delete について"></a>uwfmgr.exe File Commit/Commit-Delete について</h2><p>UWF オーバーレイの保護領域に対してファイル操作を行った場合、OS 再起動後にこれらの操作内容がリセットされます。この時、uwfmgr.exe File Commit/Commit-Delete によって、変更内容がリセットされないよう “コミット” することが可能です。コミットしたタイミングの変更内容が実際のシステムに反映されます。  </p>
 <p>ファイルの作成、変更を反映する場合、uwfmgr.exe file commit を使用します。実行はファイル単位で、正規表現は使用できません。  </p>
 <ul>
-<li>例 (c:\temp\test.txt の変更反映) <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe file commit &quot;c:\temp\test.txt&quot;</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>例 (c:\temp\test.txt の変更反映) <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe file commit &quot;c:\temp\test.txt&quot;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>ファイルの削除を反映する場合、uwfmgr.exe file commit-delete を使用します。実行はファイル単位ですが、空のフォルダーに対しても使用可能です。正規表現は使用できません。<br>ファイル削除後に実行するのではなく、コマンドを実行によってファイルを削除します。  </p>
 <ul>
 <li><p>例 (c:\temp\test.txt の削除反映):</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe file commit-delete &quot;c:\temp\test.txt&quot;</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe file commit-delete &quot;c:\temp\test.txt&quot;</span><br></pre></td></tr></table></figure></li>
 <li><p>例 (c:\temp の削除反映 ※ 空のフォルダーである必要があります):</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe file commit-delete &quot;c:\temp&quot;</span><br></pre></td></tr></table></figure>
-
-</li>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe file commit-delete &quot;c:\temp&quot;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
 <p>補足 1:<br>新しくフォルダーを作成し、その配下に作成したファイルに対して uwfmgr file commit を実行した場合、作成したフォルダーを含めてコミットされます。逆に、フォルダー内のファイルを全て uwfmgr file commit-delete で削除後、空のフォルダーを削除する場合には uwfmgr file commit-delete をそのフォルダーに対して実行することでフォルダーの削除がコミットされます。  </p>
@@ -180,7 +174,7 @@
 <blockquote>
 <p>補足 2:<br>現状、新しく作成したフォルダーのみ (空の状態) をコミットする方法がありません。代替策として、フォルダーの配下に適当なファイルを作成し Commit 実行後、Comite-Delete で削除することでフォルダーのみをコミットしたことと同等の結果を得ることが可能です。</p>
 <ul>
-<li>例 (c:\temp フォルダーのみコミットする場合):<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir c:\temp</span><br><span class="line">echo commit &gt; c:\temp\test.txt</span><br><span class="line">uwfmgr file commit c:\temp\test.txt</span><br><span class="line">uwfmgr file commit-delete c:\temp\test.txt</span><br></pre></td></tr></table></figure>
+<li>例 (c:\temp フォルダーのみコミットする場合):<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir c:\temp</span><br><span class="line">echo commit &gt; c:\temp\test.txt</span><br><span class="line">uwfmgr file commit c:\temp\test.txt</span><br><span class="line">uwfmgr file commit-delete c:\temp\test.txt</span><br></pre></td></tr></table></figure>
 2 行目の echo コマンドで commit という文字列を c:\temp\test.txt へ標準出力し、ファイルを作成します。<br>3 行目で作成されたファイルをコミットし、4 行目で削除します。</li>
 </ul>
 </blockquote>
@@ -188,19 +182,14 @@
 <h2 id="uwfmgr-exe-Registry-Commit-Commit-Delete-について"><a href="#uwfmgr-exe-Registry-Commit-Commit-Delete-について" class="headerlink" title="uwfmgr.exe Registry Commit/Commit-Delete について"></a>uwfmgr.exe Registry Commit/Commit-Delete について</h2><p>UWF オーバーレイによってシステムの利用領域を保護している状態でレジストリ キーや値の変更を行った場合、OS 再起動後に変更内容はリセットされます。この時、uwfmgr.exe Registry Commit/Commit-Delete によって、変更内容がリセットされないよう “コミット” することが可能です。コミットしたタイミングの変更内容がシステムに反映されます。  </p>
 <p>レジストリ キー、値の作成、変更を反映する場合、uwfmgr.exe registry commit を使用します。実行は値単位で、正規表現は使用できません。    </p>
 <ul>
-<li>例 (HKLM\SOFTWARE\test キー配下の値 test の変更反映): <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit &quot;HKLM\SOFTWARE\test&quot; test</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>例 (HKLM\SOFTWARE\test キー配下の値 test の変更反映): <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit &quot;HKLM\SOFTWARE\test&quot; test</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>レジストリ キー、値の削除を反映する場合、uwfmgr.exe registry commit-delete を使用します。キーのみを指定して削除を実行することが可能です。<br>レジストリ キー、値を削除後に実行するのではなく、コマンドを実行によって削除します。  </p>
 <ul>
 <li><p>例 (HKLM\Software\test キー配下の値 test の削除反映):</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit-delete &quot;HKLM\Software\test&quot; test</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit-delete &quot;HKLM\Software\test&quot; test</span><br></pre></td></tr></table></figure></li>
 <li><p>例 (HKLM\Software\test キーの削除反映):</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit-delete &quot;HKLM\Software\test&quot;</span><br></pre></td></tr></table></figure>
-
-</li>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe registry commit-delete &quot;HKLM\Software\test&quot;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
 <p>補足:<br>HKLM 以外のレジストリ ハイブ (例えば、HKCR、HKCU など) のキー、サブ キー、値の作成や変更、削除は行えません。また、HKLM 自体や、HKLM\Software, HKLM\System, HKLM\SAM, HKLM\Security, HKLM\Components キーを変更対象とすることはできません。これらは仕様上、実行が拒否されます。</p>
@@ -341,7 +330,7 @@
     
   </div>
   
-  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' target="_blank" rel="noopener" class="codename">MaterialFlow</a>.</div>
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
   
 </footer>
 

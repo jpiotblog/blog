@@ -17,7 +17,7 @@
   <link rel="mask-icon" href="https://jpiotblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="UWF を有効化した環境で、メモリ ダンプを取得する方法についてご紹介します。">
 <meta property="og:type" content="article">
@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF を有効化した環境で、メモリ ダンプを取得する方法についてご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-11T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-22T07:13:47.438Z">
+<meta property="article:modified_time" content="2021-07-19T06:44:07.781Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="メモリ ダンプの設定手順">
 <meta name="twitter:card" content="summary">
@@ -44,8 +44,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -145,12 +144,12 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#はじめに"><span class="toc-number">1.</span> <span class="toc-text">はじめに</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事前準備"><span class="toc-number">2.</span> <span class="toc-text">事前準備</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dump-出力設定手順"><span class="toc-number">3.</span> <span class="toc-text">Dump 出力設定手順</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dump-の出力手順"><span class="toc-number">4.</span> <span class="toc-text">Dump の出力手順</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#※-参考情報"><span class="toc-number">5.</span> <span class="toc-text">※ 参考情報</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"><span class="toc-number">1.</span> <span class="toc-text">はじめに</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99"><span class="toc-number">2.</span> <span class="toc-text">事前準備</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dump-%E5%87%BA%E5%8A%9B%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86"><span class="toc-number">3.</span> <span class="toc-text">Dump 出力設定手順</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dump-%E3%81%AE%E5%87%BA%E5%8A%9B%E6%89%8B%E9%A0%86"><span class="toc-number">4.</span> <span class="toc-text">Dump の出力手順</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%80%BB-%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1"><span class="toc-number">5.</span> <span class="toc-text">※ 参考情報</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>UWF を有効化した環境で、メモリ ダンプを取得する方法についてご紹介します。</p>
-<a id="more"></a>
+<span id="more"></span>
 <br>
 
 <hr>
@@ -165,7 +164,7 @@
 <p> 事前準備時、メモリダンプ採取時に再起動が必要です。  </p>
 </li>
 <li><p>採取ファイル  </p>
-<p>本手順では “D:\Dumps\Memory.dmp” として進めさせていただきます。  </p>
+<p> 本手順では “D:\Dumps\Memory.dmp” として進めさせていただきます。  </p>
 </li>
 </ul>
 <hr>
@@ -174,16 +173,13 @@
 </li>
 <li><p>事前に UWF フィルターとボリュームの保護を実行します。この過程で PageFile の設定が一旦初期化されます。  </p>
 <p> 実行例:<br> ※ この手順ではシステム ドライブを C: ドライブとします。 </p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe volume protect c:  </span><br><span class="line">uwfmgr.exe filter enable  </span><br><span class="line">shutdown -r -t 0</span><br></pre></td></tr></table></figure>
-
-</li>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe volume protect c:  </span><br><span class="line">uwfmgr.exe filter enable  </span><br><span class="line">shutdown -r -t 0  </span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
 <h2 id="Dump-出力設定手順"><a href="#Dump-出力設定手順" class="headerlink" title="Dump 出力設定手順"></a>Dump 出力設定手順</h2><ol>
 <li><p>UWF フィルターを無効化する。  </p>
 <p>実行例:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe filter disable  </span><br><span class="line">shutdown -r -t 0</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe filter disable  </span><br><span class="line">shutdown -r -t 0  </span><br></pre></td></tr></table></figure></li>
 <li><p>PageFile の大きさを 物理メモリ + 300 Mbyte 以上の大きさに設定する。</p>
 <p>実行例:<br>a) [エクスプローラ] - [コンピュータ] を右クリックし [プロパティ(R)] をクリックします。<br>b) [システムの詳細設定] をクリックします。<br>c) [詳細設定] タブの [パフォーマンス] にある [設定(S)] をクリックします。<br>d) [詳細設定] タブの [仮想メモリ] の項目にある [変更(C)] ボタンをクリックします。<br>e) この画面にて、[すべてのドライブのページング ファイルのサイズを自動的に管理する(A)] オプションを外します。<br>f) 手順 1) で作成したシステムドライブ以外のドライブ (ここでは D:) をクリックします。<br>g) [カスタムサイズ] にチェックを付け、[初期サイズ]、[最大サイズ] の両方に物理メモリ + 300 Mbyte 以上の値を入力します。 (例えば 4096MB メモリの場合、4396MB)<br>h) その後 [設定] ボタンをクリックし設定を反映させ [OK] ボタンをクリックします。<br>i) “変更結果はコンピューターを再起動しなければ有効になりません。” というポップアップが表示されますので、[OK] ボタンをクリックします。<br>j) “パフォーマンス オプション” のウィンドウも [OK] ボタンにて閉じます。  </p>
 <p>※ 補足<br>この設定値は、次のレジストリに反映されます。なお、直接レジストリ値を編集することでも、ページング ファイル サイズを設定することができます。  </p>
@@ -206,7 +202,7 @@
 <li><p>(オプション) AlwaysKeepMemoryDump を設定する。  </p>
 <p>Client OS におけるメモリ ダンプでは WorkGroup 環境の場合、ダンプ ファイル格納ボリュームの空き容量が25 GB 未満の場合、ダンプ ファイルが削除される動作となります (Domain 環境の場合、25 GB の制限には合致いたしません)。<br>そのため、対象の端末が Workgroup 環境の場合には、以下のレジストリ値を設定いただき、ダンプ ファイルが上記制限に合致しないよう設定いただく事をご検討いただければと存じます。  </p>
 <p>キー: <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl</code><br>名前: <code>AlwaysKeepMemoryDump</code><br>種類: <code>REG_DWOD</code><br>データ : <code>1</code>  </p>
-<p>公開情報:<br><a href="https://blogs.msdn.microsoft.com/wer/2009/02/09/kernel-dump-storage-and-clean-up-behavior-in-windows-7/" target="_blank" rel="noopener">Kernel dump storage and clean up behavior in Windows 7</a>  </p>
+<p>公開情報:<br><a target="_blank" rel="noopener" href="https://blogs.msdn.microsoft.com/wer/2009/02/09/kernel-dump-storage-and-clean-up-behavior-in-windows-7/">Kernel dump storage and clean up behavior in Windows 7</a>  </p>
 </li>
 <li><p>(オプション) キーボードから STOP エラーを発生できるように設定する。  </p>
 <p>事象発生時にメモリ ダンプの生成を行えるよう、トリガーの設定を行います。レジストリ エディタで、次のレジストリの値を設定してください。  </p>
@@ -220,9 +216,7 @@
 </li>
 <li><p>UWF を有効化し、OS を再起動する。  </p>
 <p>実行例:  </p>
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe filter enable  </span><br><span class="line">shutdown -r -t <span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe filter enable  </span><br><span class="line">shutdown -r -t <span class="number">0</span>  </span><br></pre></td></tr></table></figure></li>
 </ol>
 <hr>
 <h2 id="Dump-の出力手順"><a href="#Dump-の出力手順" class="headerlink" title="Dump の出力手順"></a>Dump の出力手順</h2><p>調査対象の事象が発生した際に、NMI もしくはキーボード操作によってメモリ ダンプを出力させます。  </p>
@@ -231,19 +225,19 @@
 </ul>
 <hr>
 <h2 id="※-参考情報"><a href="#※-参考情報" class="headerlink" title="※ 参考情報"></a>※ 参考情報</h2><ul>
-<li><p><a href="http://support.microsoft.com/kb/969028" target="_blank" rel="noopener">Windows Server 2008 および Windows Server 2008 R2 でカーネルまたは完全メモリ ダンプ ファイルを生成する方法</a>  </p>
+<li><p><a target="_blank" rel="noopener" href="http://support.microsoft.com/kb/969028">Windows Server 2008 および Windows Server 2008 R2 でカーネルまたは完全メモリ ダンプ ファイルを生成する方法</a>  </p>
 </li>
-<li><p><a href="http://support.microsoft.com/kb/254649/en-us" target="_blank" rel="noopener">Overview of memory dump file options for Windows 2000, Windows XP, Windows Server 2003, Windows Vista, Windows Server 2008, Windows 7 and Windows Server 2008 R2</a>  </p>
+<li><p><a target="_blank" rel="noopener" href="http://support.microsoft.com/kb/254649/en-us">Overview of memory dump file options for Windows 2000, Windows XP, Windows Server 2003, Windows Vista, Windows Server 2008, Windows 7 and Windows Server 2008 R2</a>  </p>
 </li>
-<li><p><a href="http://support.microsoft.com/kb/254649/ja" target="_blank" rel="noopener">メモリ ダンプ ファイルのオプションは、Windows 2000、Windows XP、Windows Server 2003、Windows Vista、Windows Server 2008、Windows 7 と Windows サーバー 2008 R2 の概要 (機械翻訳)</a>  </p>
+<li><p><a target="_blank" rel="noopener" href="http://support.microsoft.com/kb/254649/ja">メモリ ダンプ ファイルのオプションは、Windows 2000、Windows XP、Windows Server 2003、Windows Vista、Windows Server 2008、Windows 7 と Windows サーバー 2008 R2 の概要 (機械翻訳)</a>  </p>
 </li>
-<li><p><a href="http://blogs.technet.com/b/askcore/archive/2012/09/12/windows-8-and-windows-server-2012-automatic-memory-dump.aspx" target="_blank" rel="noopener">Windows 8 and Windows Server 2012: Automatic Memory Dump (英文のみ)</a></p>
+<li><p><a target="_blank" rel="noopener" href="http://blogs.technet.com/b/askcore/archive/2012/09/12/windows-8-and-windows-server-2012-automatic-memory-dump.aspx">Windows 8 and Windows Server 2012: Automatic Memory Dump (英文のみ)</a></p>
 </li>
-<li><p><a href="http://support.microsoft.com/kb/2750146" target="_blank" rel="noopener">NMI_HARDWARE_FAILURE error when an NMI is triggered on Windows 8 and Windows Server 2012 (英文のみ)</a>  </p>
+<li><p><a target="_blank" rel="noopener" href="http://support.microsoft.com/kb/2750146">NMI_HARDWARE_FAILURE error when an NMI is triggered on Windows 8 and Windows Server 2012 (英文のみ)</a>  </p>
 </li>
-<li><p><a href="http://support.microsoft.com/kb/244139" target="_blank" rel="noopener">Windows の機能により、キーボード操作で Memory.dmp ファイルを作成できる</a>  </p>
+<li><p><a target="_blank" rel="noopener" href="http://support.microsoft.com/kb/244139">Windows の機能により、キーボード操作で Memory.dmp ファイルを作成できる</a>  </p>
 </li>
-<li><p><a href="http://support.microsoft.com/kb/130536" target="_blank" rel="noopener">クラッシュ後 Windows でメモリ ダンプ ファイルが保存されない</a></p>
+<li><p><a target="_blank" rel="noopener" href="http://support.microsoft.com/kb/130536">クラッシュ後 Windows でメモリ ダンプ ファイルが保存されない</a></p>
 </li>
 </ul>
 
@@ -378,7 +372,7 @@
     
   </div>
   
-  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' target="_blank" rel="noopener" class="codename">MaterialFlow</a>.</div>
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
   
 </footer>
 

@@ -17,7 +17,7 @@
   <link rel="mask-icon" href="https://jpiotblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Windows 10 IoT Enterprise (Enterprise もバイナリとして同じ) の Device Lockdown 機能の Keyboard Filter で [Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタする方法をご紹介します。">
 <meta property="og:type" content="article">
@@ -27,7 +27,7 @@
 <meta property="og:description" content="Windows 10 IoT Enterprise (Enterprise もバイナリとして同じ) の Device Lockdown 機能の Keyboard Filter で [Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタする方法をご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2021-04-19T03:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-22T07:13:47.374Z">
+<meta property="article:modified_time" content="2021-07-19T06:44:07.762Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="Keyboard Filter">
 <meta name="twitter:card" content="summary">
@@ -44,8 +44,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/blog/atom.xml" title="Japan IoT Support Blog" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -145,18 +144,18 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-number">1.</span> <span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-PrintScrn"><span class="toc-number">1.1.</span> <span class="toc-text">Windows + PrintScrn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shift-PrintScrn"><span class="toc-number">1.2.</span> <span class="toc-text">Shift + PrintScrn</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#補足"><span class="toc-number">2.</span> <span class="toc-text">補足</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PrintScrn"><span class="toc-number">2.1.</span> <span class="toc-text">PrintScrn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alt-PrintScrn"><span class="toc-number">2.2.</span> <span class="toc-text">Alt + PrintScrn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-PrintScrn-1"><span class="toc-number">2.3.</span> <span class="toc-text">Windows + PrintScrn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shift-PrintScrn-1"><span class="toc-number">2.4.</span> <span class="toc-text">Shift + PrintScrn</span></a></li></ol></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-PrintScrn"><span class="toc-number">1.1.</span> <span class="toc-text">Windows + PrintScrn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shift-PrintScrn"><span class="toc-number">1.2.</span> <span class="toc-text">Shift + PrintScrn</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%9C%E8%B6%B3"><span class="toc-number">2.</span> <span class="toc-text">補足</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PrintScrn"><span class="toc-number">2.1.</span> <span class="toc-text">PrintScrn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alt-PrintScrn"><span class="toc-number">2.2.</span> <span class="toc-text">Alt + PrintScrn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-PrintScrn-1"><span class="toc-number">2.3.</span> <span class="toc-text">Windows + PrintScrn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shift-PrintScrn-1"><span class="toc-number">2.4.</span> <span class="toc-text">Shift + PrintScrn</span></a></li></ol></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>Windows 10 IoT Enterprise (Enterprise もバイナリとして同じ) の Device Lockdown 機能の Keyboard Filter で [Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタする方法をご紹介します。  </p>
-<a id="more"></a>
+<span id="more"></span>
 <br>
 
 <hr>
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>以下のドキュメントの Enable-rules.ps1 の Enable-Scancode を使います。  </p>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/windows-hardware/customize/enterprise/keyboardfilter-add-blocked-key-combinations" target="_blank" rel="noopener">Add blocked key combinations</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-hardware/customize/enterprise/keyboardfilter-add-blocked-key-combinations">Add blocked key combinations</a></li>
 </ul>
 <p>Enable-rules.ps1 の 「# Some example uses of the functions defined above.」以降を、以下の様に置き換えます。<br>以下の変更を加えた状態で、Enable-rules.ps1 を実行した場合は、[Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] のフィルターが有効化されます。</p>
 <h3 id="Windows-PrintScrn"><a href="#Windows-PrintScrn" class="headerlink" title="Windows + PrintScrn"></a>Windows + PrintScrn</h3><blockquote>
@@ -316,7 +315,7 @@
     
   </div>
   
-  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' target="_blank" rel="noopener" class="codename">MaterialFlow</a>.</div>
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
   
 </footer>
 
