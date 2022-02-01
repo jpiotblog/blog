@@ -8,24 +8,16 @@
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/blog/2020/08/13/WE8S-error-8007000E/</loc>
-        <lastmod>2021-07-19T06:57:49.601Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://jpiotblog.github.io/blog/2020/07/27/UWF-sysprep/</loc>
-        <lastmod>2021-07-19T06:57:49.597Z</lastmod>
+        <lastmod>2022-02-01T02:08:07.118Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/</loc>
-        <lastmod>2021-07-19T06:57:49.594Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/08/13/WE8S-error-8007000E/</loc>
+        <lastmod>2022-02-01T02:08:07.118Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +25,15 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2020/02/20/UWF-longtermup/</loc>
-        <lastmod>2021-07-19T06:57:49.590Z</lastmod>
+        <lastmod>2022-02-01T02:08:07.102Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/</loc>
+        <lastmod>2022-02-01T02:08:07.102Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -41,7 +41,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2020/11/10/UWF-HORM/</loc>
-        <lastmod>2021-07-19T06:57:49.587Z</lastmod>
+        <lastmod>2022-02-01T02:08:07.086Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -49,7 +49,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2020/01/16/UWF-FAQ/</loc>
-        <lastmod>2021-07-19T06:57:49.583Z</lastmod>
+        <lastmod>2022-02-01T02:08:07.071Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -57,15 +57,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2020/02/19/UWF-exclusions/</loc>
-        <lastmod>2021-07-19T06:57:49.571Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/</loc>
-        <lastmod>2021-07-19T06:57:49.547Z</lastmod>
+        <lastmod>2022-02-01T02:08:07.071Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -73,15 +65,15 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/</loc>
-        <lastmod>2021-07-19T06:57:49.535Z</lastmod>
+        <lastmod>2022-02-01T02:08:07.055Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpiotblog.github.io/blog/2020/01/12/past-blog/</loc>
-        <lastmod>2021-07-19T06:57:49.531Z</lastmod>
+        <loc>https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/</loc>
+        <lastmod>2022-02-01T02:08:07.055Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -89,7 +81,15 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2021/04/19/KF-block-printscrn-combination/</loc>
-        <lastmod>2021-07-19T06:57:49.528Z</lastmod>
+        <lastmod>2022-02-01T02:08:07.040Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpiotblog.github.io/blog/2020/01/12/past-blog/</loc>
+        <lastmod>2022-02-01T02:08:07.040Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -97,7 +97,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2021/04/28/IoTHub-mqtt-publish-topic-name/</loc>
-        <lastmod>2021-07-19T06:57:49.524Z</lastmod>
+        <lastmod>2022-02-01T02:08:07.024Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -105,7 +105,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2021/05/06/IoTEdge-X509-Connect-IoTHub/</loc>
-        <lastmod>2021-07-19T06:57:49.522Z</lastmod>
+        <lastmod>2022-02-01T02:08:07.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -113,7 +113,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2020/01/26/CollectInfo_UWF/</loc>
-        <lastmod>2021-07-19T06:57:49.518Z</lastmod>
+        <lastmod>2022-02-01T02:08:06.993Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -121,7 +121,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/</loc>
-        <lastmod>2021-07-19T06:57:49.505Z</lastmod>
+        <lastmod>2022-02-01T02:08:06.977Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -129,7 +129,7 @@
 
     <url>
         <loc>https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/</loc>
-        <lastmod>2021-07-19T06:57:49.493Z</lastmod>
+        <lastmod>2022-02-01T02:08:06.962Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
