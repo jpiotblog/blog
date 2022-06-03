@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-18T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-01T02:10:45.462Z">
+<meta property="article:modified_time" content="2022-06-03T06:33:31.598Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="uwfmgr.exe">
 <meta property="article:tag" content="Microsoft Defender">
@@ -232,6 +232,7 @@
 <blockquote>
 <p>Winodws 10 Enterprise 2019 LTSC では、C:\Windows\WinSXS フォルダーを除外するとシステム起動時に 「SYSTEM THREAD EXCEPTION NOT HANDLED」 で BSOD が発生するという報告がございます。C:\Windows\WinSXS フォルダー配下にはシステム起動初期にアクセスする情報が含まれておりますため、除外をお勧めいたしません。  </p>
 </blockquote>
+<p> 下記弊社のブログに 「(1) StartComponentCleanup タスクの無効化もしくは除外設定」として Winsxs フォルダーの除外を紹介しておりますが、「A. “StartComponentCleanup” タスクの無効化」もしくは「C. 類似コマンドの定期実行」で回避ください。<br> <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/archive/blogs/askcorejp/uwf-setting#1-startcomponentcleanup-%E3%82%BF%E3%82%B9%E3%82%AF%E3%81%AE%E7%84%A1%E5%8A%B9%E5%8C%96%E3%82%82%E3%81%97%E3%81%8F%E3%81%AF%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A">(1) StartComponentCleanup タスクの無効化もしくは除外設定</a>  </p>
 </li>
 </ul>
 <hr>
@@ -263,7 +264,7 @@
 <li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwf-apply-windows-updates">UWF で保護されているデバイスに Windows 更新プログラムを適用します。</a></li>
 </ul>
 <hr>
-<p><code>変更履歴</code><br><code>2020/02/19 created by Mochizuki</code><br><code>2020/06/16 modified by Mochizuki</code><br><code>2020/09/09 modified by Mochizuki</code>  </p>
+<p><code>変更履歴</code><br><code>2020/02/19 created by Mochizuki</code><br><code>2020/06/16 modified by Mochizuki</code><br><code>2020/09/09 modified by Mochizuki</code><br><code>2022/06/03 modified by Tsuchida</code>  </p>
 
   	</div>
 	  
