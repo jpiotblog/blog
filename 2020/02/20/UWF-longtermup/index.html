@@ -27,7 +27,7 @@
 <meta property="og:description" content="長期間稼働するシステムで UWF を有効化する場合の、一般的な留意事項をご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-19T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-03T06:33:31.618Z">
+<meta property="article:modified_time" content="2023-08-24T15:00:04.163Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="uwfmgr.exe">
 <meta property="article:tag" content="オーバーレイ">
@@ -45,7 +45,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -160,14 +160,14 @@
 <p>検討方法例:  </p>
 <p>(1) 一週間または一ヶ月などの運用周期となる期間、運用試験を実施し、オーバーレイの消費傾向を把握します。</p>
 <ul>
-<li>消費量 / 残容量の確認:   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay get-consumption  </span><br><span class="line">uwfmgr overlay get-availablespace  </span><br></pre></td></tr></table></figure></li>
+<li>消費量 &#x2F; 残容量の確認:   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay get-consumption  </span><br><span class="line">uwfmgr overlay get-availablespace  </span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>(2) 試験結果を基に、システム再起動間隔でオーバーレイが枯渇しないよう設定値を決定します。  </p>
-<p>例:<br>オーバーレイ消費傾向: 約 200 MB / 日<br>システム再起動間隔　: 一週間毎  </p>
+<p>例:<br>オーバーレイ消費傾向: 約 200 MB &#x2F; 日<br>システム再起動間隔　: 一週間毎  </p>
 <ul>
-<li>7 日 x 200 MB = 1400 MB / 週、ただし操作によっては消費量が増えることを想定して約 2 倍超の 3 GB = 3072 MB と設定   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-size 3072  </span><br></pre></td></tr></table></figure></li>
-<li>一週間通常使用しても警告を出力しないように 1.5 GB = 1536 MB と設定 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-warningthreshold 1536</span><br></pre></td></tr></table></figure></li>
-<li>重大エラー表示後 2 日間余裕があるように 2.5 GB = 2560 MB と設定 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-criticalthreshold 2560</span><br></pre></td></tr></table></figure></li>
+<li>7 日 x 200 MB &#x3D; 1400 MB &#x2F; 週、ただし操作によっては消費量が増えることを想定して約 2 倍超の 3 GB &#x3D; 3072 MB と設定   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-size 3072  </span><br></pre></td></tr></table></figure></li>
+<li>一週間通常使用しても警告を出力しないように 1.5 GB &#x3D; 1536 MB と設定 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-warningthreshold 1536</span><br></pre></td></tr></table></figure></li>
+<li>重大エラー表示後 2 日間余裕があるように 2.5 GB &#x3D; 2560 MB と設定 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-criticalthreshold 2560</span><br></pre></td></tr></table></figure></li>
 <li>RAM 上に 3072 MB を確保するのが難しい場合は Disk オーバーレイを設定<br> ※ OS 再起動後、set-size で指定したサイズの隠しファイル C:\uwfswap.sys が作成されます。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr overlay set-type disk</span><br></pre></td></tr></table></figure></li>
 <li>設定を反映させるため OS を再起動 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -r -t 0</span><br></pre></td></tr></table></figure>
 <br></li>
@@ -176,7 +176,7 @@
 <ul>
 <li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/windows-hardware/customize/enterprise/uwfoverlay">統合書き込みフィルター (UWF) オーバーレイの位置とサイズ</a></li>
 <li><a target="_blank" rel="noopener" href="https://social.technet.microsoft.com/Forums/ja-JP/959a7f26-3b2a-4336-9882-696bc21efbe1/windows-10?forum=Wcsupportja">Windows 10 の統合書き込みフィルター機能 (UWF) で、フィルターの除外設定を行ってもオーバーレイのメモリを消費してしまう</a></li>
-<li><a target="_blank" rel="noopener" href="https://social.technet.microsoft.com/Forums/ja-JP/4276f895-6266-4d4a-92dd-507ed694aab3/uwf-26377211771239512375123901236312425-6?forum=Wcsupportja">UWF 有効にしてから 6 ヶ月経過すると一部の通知アイコンが表示されない現象について</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://social.technet.microsoft.com/Forums/ja-JP/4276f895-6266-4d4a-92dd-507ed694aab3/uwf-26377211771239512375123901236312425-6?forum=Wcsupportja">UWF 有効にしてから 6 ヶ月経過すると一部の通知アイコンが表示されない現象について</a></li>
 </ul>
 <hr>
 
@@ -262,6 +262,8 @@
     
     <ul class="entry">
     
+        <li><a class="flat-box" href="/blog/categories/IoT-Edge/"><div class='name'>IoT Edge</div><div class='badget'>1</div></a></li>
+    
         <li><a class="flat-box" href="/blog/categories/IoT-Hub/IoT-Edge/"><div class='name'>IoT Edge</div><div class='badget'>1</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/IoT-Hub/"><div class='name'>IoT Hub</div><div class='badget'>2</div></a></li>
@@ -285,7 +287,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/8007000E/" style="font-size: 14px; color: #808080">8007000E</a> <a href="/blog/tags/Commit-Commit-Delete/" style="font-size: 14px; color: #808080">Commit/Commit-Delete</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/HORM/" style="font-size: 14px; color: #808080">HORM</a> <a href="/blog/tags/IoT-Edge/" style="font-size: 14px; color: #808080">IoT Edge</a> <a href="/blog/tags/IoT-Hub/" style="font-size: 17px; color: #404040">IoT Hub</a> <a href="/blog/tags/Keyboard-Filter/" style="font-size: 14px; color: #808080">Keyboard Filter</a> <a href="/blog/tags/Microsoft-Defender/" style="font-size: 14px; color: #808080">Microsoft Defender</a> <a href="/blog/tags/Out-Of-Memory/" style="font-size: 14px; color: #808080">Out Of Memory</a> <a href="/blog/tags/Sysprep/" style="font-size: 14px; color: #808080">Sysprep</a> <a href="/blog/tags/UWF-servicing-mode/" style="font-size: 14px; color: #808080">UWF servicing mode</a> <a href="/blog/tags/Windows-Update/" style="font-size: 17px; color: #404040">Windows Update</a> <a href="/blog/tags/X-509/" style="font-size: 14px; color: #808080">X.509</a> <a href="/blog/tags/uwfmgr-exe/" style="font-size: 20px; color: #000">uwfmgr.exe</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/" style="font-size: 14px; color: #808080">オーバーレイ</a> <a href="/blog/tags/%E3%82%B7%E3%83%A3%E3%83%83%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3/" style="font-size: 14px; color: #808080">シャットダウン</a> <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">メモリ ダンプの設定手順</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a> <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/" style="font-size: 14px; color: #808080">除外設定</a>
+        <a href="/blog/tags/8007000E/" style="font-size: 14px; color: #808080">8007000E</a> <a href="/blog/tags/Commit-Commit-Delete/" style="font-size: 14px; color: #808080">Commit/Commit-Delete</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/HORM/" style="font-size: 14px; color: #808080">HORM</a> <a href="/blog/tags/IoT-Edge/" style="font-size: 17px; color: #404040">IoT Edge</a> <a href="/blog/tags/IoT-Hub/" style="font-size: 17px; color: #404040">IoT Hub</a> <a href="/blog/tags/Keyboard-Filter/" style="font-size: 14px; color: #808080">Keyboard Filter</a> <a href="/blog/tags/Microsoft-Defender/" style="font-size: 14px; color: #808080">Microsoft Defender</a> <a href="/blog/tags/Out-Of-Memory/" style="font-size: 14px; color: #808080">Out Of Memory</a> <a href="/blog/tags/Sysprep/" style="font-size: 14px; color: #808080">Sysprep</a> <a href="/blog/tags/UWF-servicing-mode/" style="font-size: 14px; color: #808080">UWF servicing mode</a> <a href="/blog/tags/Windows-Update/" style="font-size: 17px; color: #404040">Windows Update</a> <a href="/blog/tags/X-509/" style="font-size: 14px; color: #808080">X.509</a> <a href="/blog/tags/uwfmgr-exe/" style="font-size: 20px; color: #000">uwfmgr.exe</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/" style="font-size: 14px; color: #808080">オーバーレイ</a> <a href="/blog/tags/%E3%82%B7%E3%83%A3%E3%83%83%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3/" style="font-size: 14px; color: #808080">シャットダウン</a> <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">メモリ ダンプの設定手順</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a> <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/" style="font-size: 14px; color: #808080">除外設定</a>
     </div>
 </div>
 

@@ -27,7 +27,7 @@
 <meta property="og:description" content="IoT Hub に MQTT でメッセージを Publish する際のトピック名に関する注意点をご案内します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2021-04-28T08:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-03T06:33:31.548Z">
+<meta property="article:modified_time" content="2023-08-24T15:00:04.093Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="IoT Hub">
 <meta name="twitter:card" content="summary">
@@ -44,7 +44,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -157,21 +157,21 @@
 <p>ここで、デバイス ID が Device01 の場合に、IoT Hub に MQTT で接続して D2C (テレメトリ) メッセージを送信するまでの一般的な流れは以下の通りです。</p>
 <p>(1) デバイス ID (Device01) と IoT Hub のホスト名、対称キーの情報を元に SAS トークンを生成します。</p>
 <ul>
-<li>SAS トークンの例: SharedAccessSignature sr={your hub name}.azure-devices.net%2Fdevices%2F<strong>Device01</strong>%2Fapi-version%3D2016-11-14&amp;sig=vSgHBMUG…..Ntg%3d&amp;se=1456481802</li>
+<li>SAS トークンの例: SharedAccessSignature sr&#x3D;{your hub name}.azure-devices.net%2Fdevices%2F<strong>Device01</strong>%2Fapi-version%3D2016-11-14&amp;sig&#x3D;vSgHBMUG…..Ntg%3d&amp;se&#x3D;1456481802</li>
 </ul>
 <p>(2) MQTT で接続 (CONNECT パケットの送信) を行います。</p>
 <ul>
-<li>Usename: {your hub name}.azure-devices.net/<strong>Device01</strong>/?api-version=2018-06-30</li>
+<li>Usename: {your hub name}.azure-devices.net&#x2F;<strong>Device01</strong>&#x2F;?api-version&#x3D;2018-06-30</li>
 <li>Password: ステップ 1 で生成した SAS トークン</li>
 </ul>
 <p>(3) D2C メッセージを送信するため Publish を行います。</p>
 <ul>
-<li>Publish 先のトピック名: devices/<strong>Device01</strong>/messages/events/</li>
+<li>Publish 先のトピック名: devices&#x2F;<strong>Device01</strong>&#x2F;messages&#x2F;events&#x2F;</li>
 </ul>
 <h2 id="MQTT-を直接利用する場合に発生する現象"><a href="#MQTT-を直接利用する場合に発生する現象" class="headerlink" title="MQTT を直接利用する場合に発生する現象"></a>MQTT を直接利用する場合に発生する現象</h2><p>通常は上記のようにステップ 1 - 3 で使用されるデバイス ID は全て同じ (Device01) となります。Azure IoT device SDK を利用している場合は MQTT レベルの操作を意識する必要がなく、トピック名などのパラメーターは適切に設定されます。</p>
 <p>一方で、MQTT を直接使用している場合、ステップ 3 で ステップ 1, 2 とは異なるデバイス ID (例. Device02) をクライアント側で指定することが技術的には可能です。</p>
 <ul>
-<li>Publish 先のトピック名: devices/<strong>Device02</strong>/messages/events/</li>
+<li>Publish 先のトピック名: devices&#x2F;<strong>Device02</strong>&#x2F;messages&#x2F;events&#x2F;</li>
 </ul>
 <p>現在の IoT Hub はこのようなケースについて、公開ドキュメントの仕様では明記されていませんが、実際の動作としては、デバイス ID の文字列によってエラーになるパターンと、エラーとならずに Publish に成功するパターンが存在しています。</p>
 <h2 id="今後の対応予定"><a href="#今後の対応予定" class="headerlink" title="今後の対応予定"></a>今後の対応予定</h2><p>ステップ 3 で Publish する際のトピック名に含まれるデバイス ID を、ステップ 1, 2 と異なるものにする必要は通常無いと考えられるため、今後はトピック名を厳密にチェックして、接続時と異なるデバイス ID を宛先とした Publish は全てエラーとして扱われる予定です。併せて、既に本動作を前提として運用しているユーザーに対する周知や、仕様として公開ドキュメントに記載する準備も進めています。</p>
@@ -259,6 +259,8 @@
     
     <ul class="entry">
     
+        <li><a class="flat-box" href="/blog/categories/IoT-Edge/"><div class='name'>IoT Edge</div><div class='badget'>1</div></a></li>
+    
         <li><a class="flat-box" href="/blog/categories/IoT-Hub/IoT-Edge/"><div class='name'>IoT Edge</div><div class='badget'>1</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/IoT-Hub/"><div class='name'>IoT Hub</div><div class='badget'>2</div></a></li>
@@ -282,7 +284,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/8007000E/" style="font-size: 14px; color: #808080">8007000E</a> <a href="/blog/tags/Commit-Commit-Delete/" style="font-size: 14px; color: #808080">Commit/Commit-Delete</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/HORM/" style="font-size: 14px; color: #808080">HORM</a> <a href="/blog/tags/IoT-Edge/" style="font-size: 14px; color: #808080">IoT Edge</a> <a href="/blog/tags/IoT-Hub/" style="font-size: 17px; color: #404040">IoT Hub</a> <a href="/blog/tags/Keyboard-Filter/" style="font-size: 14px; color: #808080">Keyboard Filter</a> <a href="/blog/tags/Microsoft-Defender/" style="font-size: 14px; color: #808080">Microsoft Defender</a> <a href="/blog/tags/Out-Of-Memory/" style="font-size: 14px; color: #808080">Out Of Memory</a> <a href="/blog/tags/Sysprep/" style="font-size: 14px; color: #808080">Sysprep</a> <a href="/blog/tags/UWF-servicing-mode/" style="font-size: 14px; color: #808080">UWF servicing mode</a> <a href="/blog/tags/Windows-Update/" style="font-size: 17px; color: #404040">Windows Update</a> <a href="/blog/tags/X-509/" style="font-size: 14px; color: #808080">X.509</a> <a href="/blog/tags/uwfmgr-exe/" style="font-size: 20px; color: #000">uwfmgr.exe</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/" style="font-size: 14px; color: #808080">オーバーレイ</a> <a href="/blog/tags/%E3%82%B7%E3%83%A3%E3%83%83%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3/" style="font-size: 14px; color: #808080">シャットダウン</a> <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">メモリ ダンプの設定手順</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a> <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/" style="font-size: 14px; color: #808080">除外設定</a>
+        <a href="/blog/tags/8007000E/" style="font-size: 14px; color: #808080">8007000E</a> <a href="/blog/tags/Commit-Commit-Delete/" style="font-size: 14px; color: #808080">Commit/Commit-Delete</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/HORM/" style="font-size: 14px; color: #808080">HORM</a> <a href="/blog/tags/IoT-Edge/" style="font-size: 17px; color: #404040">IoT Edge</a> <a href="/blog/tags/IoT-Hub/" style="font-size: 17px; color: #404040">IoT Hub</a> <a href="/blog/tags/Keyboard-Filter/" style="font-size: 14px; color: #808080">Keyboard Filter</a> <a href="/blog/tags/Microsoft-Defender/" style="font-size: 14px; color: #808080">Microsoft Defender</a> <a href="/blog/tags/Out-Of-Memory/" style="font-size: 14px; color: #808080">Out Of Memory</a> <a href="/blog/tags/Sysprep/" style="font-size: 14px; color: #808080">Sysprep</a> <a href="/blog/tags/UWF-servicing-mode/" style="font-size: 14px; color: #808080">UWF servicing mode</a> <a href="/blog/tags/Windows-Update/" style="font-size: 17px; color: #404040">Windows Update</a> <a href="/blog/tags/X-509/" style="font-size: 14px; color: #808080">X.509</a> <a href="/blog/tags/uwfmgr-exe/" style="font-size: 20px; color: #000">uwfmgr.exe</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/" style="font-size: 14px; color: #808080">オーバーレイ</a> <a href="/blog/tags/%E3%82%B7%E3%83%A3%E3%83%83%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3/" style="font-size: 14px; color: #808080">シャットダウン</a> <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">メモリ ダンプの設定手順</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a> <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/" style="font-size: 14px; color: #808080">除外設定</a>
     </div>
 </div>
 

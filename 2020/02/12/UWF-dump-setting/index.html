@@ -27,7 +27,7 @@
 <meta property="og:description" content="UWF を有効化した環境で、メモリ ダンプを取得する方法についてご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-02-11T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-03T06:33:31.582Z">
+<meta property="article:modified_time" content="2023-08-24T15:00:04.108Z">
 <meta property="article:author" content="jpiotblog">
 <meta property="article:tag" content="メモリ ダンプの設定手順">
 <meta name="twitter:card" content="summary">
@@ -44,7 +44,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -164,7 +164,7 @@
 <p> 事前準備時、メモリダンプ採取時に再起動が必要です。  </p>
 </li>
 <li><p>採取ファイル  </p>
-<p> 本手順では “D:\Dumps\Memory.dmp” として進めさせていただきます。  </p>
+<p>本手順では “D:\Dumps\Memory.dmp” として進めさせていただきます。</p>
 </li>
 </ul>
 <hr>
@@ -179,7 +179,8 @@
 <h2 id="Dump-出力設定手順"><a href="#Dump-出力設定手順" class="headerlink" title="Dump 出力設定手順"></a>Dump 出力設定手順</h2><ol>
 <li><p>UWF フィルターを無効化する。  </p>
 <p>実行例:  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe filter disable  </span><br><span class="line">shutdown -r -t 0  </span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uwfmgr.exe filter disable  </span><br><span class="line">shutdown -r -t 0  </span><br></pre></td></tr></table></figure>
+</li>
 <li><p>PageFile の大きさを 物理メモリ + 300 Mbyte 以上の大きさに設定する。</p>
 <p>実行例:<br>a) [エクスプローラ] - [コンピュータ] を右クリックし [プロパティ(R)] をクリックします。<br>b) [システムの詳細設定] をクリックします。<br>c) [詳細設定] タブの [パフォーマンス] にある [設定(S)] をクリックします。<br>d) [詳細設定] タブの [仮想メモリ] の項目にある [変更(C)] ボタンをクリックします。<br>e) この画面にて、[すべてのドライブのページング ファイルのサイズを自動的に管理する(A)] オプションを外します。<br>f) 手順 1) で作成したシステムドライブ以外のドライブ (ここでは D:) をクリックします。<br>g) [カスタムサイズ] にチェックを付け、[初期サイズ]、[最大サイズ] の両方に物理メモリ + 300 Mbyte 以上の値を入力します。 (例えば 4096MB メモリの場合、4396MB)<br>h) その後 [設定] ボタンをクリックし設定を反映させ [OK] ボタンをクリックします。<br>i) “変更結果はコンピューターを再起動しなければ有効になりません。” というポップアップが表示されますので、[OK] ボタンをクリックします。<br>j) “パフォーマンス オプション” のウィンドウも [OK] ボタンにて閉じます。  </p>
 <p>※ 補足<br>この設定値は、次のレジストリに反映されます。なお、直接レジストリ値を編集することでも、ページング ファイル サイズを設定することができます。  </p>
@@ -206,7 +207,7 @@
 </li>
 <li><p>(オプション) キーボードから STOP エラーを発生できるように設定する。  </p>
 <p>事象発生時にメモリ ダンプの生成を行えるよう、トリガーの設定を行います。レジストリ エディタで、次のレジストリの値を設定してください。  </p>
-<p>&lt;PS/2 キーボードの場合&gt;<br>キー: <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters</code><br>名前: <code>CrashOnCtrlScroll</code><br>種類: <code>REG_DWORD</code><br>データ: <code>1</code>  </p>
+<p>&lt;PS&#x2F;2 キーボードの場合&gt;<br>キー: <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters</code><br>名前: <code>CrashOnCtrlScroll</code><br>種類: <code>REG_DWORD</code><br>データ: <code>1</code>  </p>
 <p>&lt;USB キーボードの場合&gt;<br>キー: <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdhid\Parameters</code><br>名前: <code>CrashOnCtrlScroll</code><br>種類: <code>REG_DWORD</code><br>データ: <code>1</code>  </p>
 </li>
 <li><p>(オプション) NMI スイッチを使用できるように設定する。  </p>
@@ -221,7 +222,7 @@
 <hr>
 <h2 id="Dump-の出力手順"><a href="#Dump-の出力手順" class="headerlink" title="Dump の出力手順"></a>Dump の出力手順</h2><p>調査対象の事象が発生した際に、NMI もしくはキーボード操作によってメモリ ダンプを出力させます。  </p>
 <ul>
-<li>取得対象: <code>D:\Dumps\Memory.dmp</code>  </li>
+<li>取得対象: <code>D:\Dumps\Memory.dmp</code></li>
 </ul>
 <hr>
 <h2 id="※-参考情報"><a href="#※-参考情報" class="headerlink" title="※ 参考情報"></a>※ 参考情報</h2><ul>
@@ -321,6 +322,8 @@
     
     <ul class="entry">
     
+        <li><a class="flat-box" href="/blog/categories/IoT-Edge/"><div class='name'>IoT Edge</div><div class='badget'>1</div></a></li>
+    
         <li><a class="flat-box" href="/blog/categories/IoT-Hub/IoT-Edge/"><div class='name'>IoT Edge</div><div class='badget'>1</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/IoT-Hub/"><div class='name'>IoT Hub</div><div class='badget'>2</div></a></li>
@@ -344,7 +347,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/8007000E/" style="font-size: 14px; color: #808080">8007000E</a> <a href="/blog/tags/Commit-Commit-Delete/" style="font-size: 14px; color: #808080">Commit/Commit-Delete</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/HORM/" style="font-size: 14px; color: #808080">HORM</a> <a href="/blog/tags/IoT-Edge/" style="font-size: 14px; color: #808080">IoT Edge</a> <a href="/blog/tags/IoT-Hub/" style="font-size: 17px; color: #404040">IoT Hub</a> <a href="/blog/tags/Keyboard-Filter/" style="font-size: 14px; color: #808080">Keyboard Filter</a> <a href="/blog/tags/Microsoft-Defender/" style="font-size: 14px; color: #808080">Microsoft Defender</a> <a href="/blog/tags/Out-Of-Memory/" style="font-size: 14px; color: #808080">Out Of Memory</a> <a href="/blog/tags/Sysprep/" style="font-size: 14px; color: #808080">Sysprep</a> <a href="/blog/tags/UWF-servicing-mode/" style="font-size: 14px; color: #808080">UWF servicing mode</a> <a href="/blog/tags/Windows-Update/" style="font-size: 17px; color: #404040">Windows Update</a> <a href="/blog/tags/X-509/" style="font-size: 14px; color: #808080">X.509</a> <a href="/blog/tags/uwfmgr-exe/" style="font-size: 20px; color: #000">uwfmgr.exe</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/" style="font-size: 14px; color: #808080">オーバーレイ</a> <a href="/blog/tags/%E3%82%B7%E3%83%A3%E3%83%83%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3/" style="font-size: 14px; color: #808080">シャットダウン</a> <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">メモリ ダンプの設定手順</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a> <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/" style="font-size: 14px; color: #808080">除外設定</a>
+        <a href="/blog/tags/8007000E/" style="font-size: 14px; color: #808080">8007000E</a> <a href="/blog/tags/Commit-Commit-Delete/" style="font-size: 14px; color: #808080">Commit/Commit-Delete</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/HORM/" style="font-size: 14px; color: #808080">HORM</a> <a href="/blog/tags/IoT-Edge/" style="font-size: 17px; color: #404040">IoT Edge</a> <a href="/blog/tags/IoT-Hub/" style="font-size: 17px; color: #404040">IoT Hub</a> <a href="/blog/tags/Keyboard-Filter/" style="font-size: 14px; color: #808080">Keyboard Filter</a> <a href="/blog/tags/Microsoft-Defender/" style="font-size: 14px; color: #808080">Microsoft Defender</a> <a href="/blog/tags/Out-Of-Memory/" style="font-size: 14px; color: #808080">Out Of Memory</a> <a href="/blog/tags/Sysprep/" style="font-size: 14px; color: #808080">Sysprep</a> <a href="/blog/tags/UWF-servicing-mode/" style="font-size: 14px; color: #808080">UWF servicing mode</a> <a href="/blog/tags/Windows-Update/" style="font-size: 17px; color: #404040">Windows Update</a> <a href="/blog/tags/X-509/" style="font-size: 14px; color: #808080">X.509</a> <a href="/blog/tags/uwfmgr-exe/" style="font-size: 20px; color: #000">uwfmgr.exe</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4/" style="font-size: 14px; color: #808080">オーバーレイ</a> <a href="/blog/tags/%E3%82%B7%E3%83%A3%E3%83%83%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3/" style="font-size: 14px; color: #808080">シャットダウン</a> <a href="/blog/tags/%E3%83%A1%E3%83%A2%E3%83%AA-%E3%83%80%E3%83%B3%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">メモリ ダンプの設定手順</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a> <a href="/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/" style="font-size: 14px; color: #808080">除外設定</a>
     </div>
 </div>
 
