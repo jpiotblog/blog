@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> IoT Edge </tag>
-            
             <tag> IoT Hub </tag>
+            
+            <tag> IoT Edge </tag>
             
             <tag> X.509 </tag>
             
