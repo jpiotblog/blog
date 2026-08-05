@@ -6,7 +6,7 @@
   <link href="https://jpiotblog.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpiotblog.github.io/blog/"/>
-  <updated>2026-08-05T02:26:47.740Z</updated>
+  <updated>2026-08-05T02:38:34.254Z</updated>
   <id>https://jpiotblog.github.io/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://jpiotblog.github.io/blog/2023/08/24/IoTEdge-RecommendedDevices/"/>
     <id>https://jpiotblog.github.io/blog/2023/08/24/IoTEdge-RecommendedDevices/</id>
     <published>2023-08-23T15:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.740Z</updated>
+    <updated>2026-08-05T02:38:34.254Z</updated>
     
     
     <summary type="html">&lt;p&gt;IoT Edgeが動作するハードウェアについてご説明いたします。 &lt;/p&gt;</summary>
@@ -40,7 +40,7 @@
     <link href="https://jpiotblog.github.io/blog/2021/05/06/IoTEdge-X509-Connect-IoTHub/"/>
     <id>https://jpiotblog.github.io/blog/2021/05/06/IoTEdge-X509-Connect-IoTHub/</id>
     <published>2021-05-06T05:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.761Z</updated>
+    <updated>2026-08-05T02:38:34.263Z</updated>
     
     
     <summary type="html">&lt;p&gt;IoT Edge デバイスを IoT Hub に接続する方法について、X.509 証明書を使用する場合の具体的な手順例をご紹介します。&lt;/p&gt;</summary>
@@ -65,7 +65,7 @@
     <link href="https://jpiotblog.github.io/blog/2021/04/28/IoTHub-mqtt-publish-topic-name/"/>
     <id>https://jpiotblog.github.io/blog/2021/04/28/IoTHub-mqtt-publish-topic-name/</id>
     <published>2021-04-28T08:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.785Z</updated>
+    <updated>2026-08-05T02:38:34.295Z</updated>
     
     
     <summary type="html">&lt;p&gt;IoT Hub に MQTT でメッセージを Publish する際のトピック名に関する注意点をご案内します。&lt;/p&gt;</summary>
@@ -84,7 +84,7 @@
     <link href="https://jpiotblog.github.io/blog/2021/04/19/KF-block-printscrn-combination/"/>
     <id>https://jpiotblog.github.io/blog/2021/04/19/KF-block-printscrn-combination/</id>
     <published>2021-04-19T03:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.805Z</updated>
+    <updated>2026-08-05T02:38:34.366Z</updated>
     
     
     <summary type="html">&lt;p&gt;Windows 10 IoT Enterprise (Enterprise もバイナリとして同じ) の Device Lockdown 機能の Keyboard Filter で [Windows キー + PrintScrn キー] 及び [Shift キー + PrintScrn キー] をフィルタする方法をご紹介します。  &lt;/p&gt;</summary>
@@ -103,7 +103,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/11/10/UWF-HORM/"/>
     <id>https://jpiotblog.github.io/blog/2020/11/10/UWF-HORM/</id>
     <published>2020-11-10T03:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.977Z</updated>
+    <updated>2026-08-05T02:38:34.542Z</updated>
     
     
     <summary type="html">&lt;p&gt;Unified Write Filter (UWF) と共に Hibernate Once&amp;#x2F;Resume Many (HORM) 機能を使用する際の留意点を紹介いたします。  &lt;/p&gt;</summary>
@@ -124,7 +124,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/21/UWF-out-of-memory/</id>
     <published>2020-08-21T03:00:00.000Z</published>
-    <updated>2026-08-05T02:26:48.043Z</updated>
+    <updated>2026-08-05T02:38:34.573Z</updated>
     
     
     <summary type="html">&lt;p&gt;UWF 有効化環境で LCU (累積更新プログラム) の適用時に Out Of Memory が発生する事象について紹介します。&lt;/p&gt;</summary>
@@ -145,7 +145,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/"/>
     <id>https://jpiotblog.github.io/blog/2020/08/11/Cancel-shutdown-with-Shell-Launcher/</id>
     <published>2020-08-11T03:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.706Z</updated>
+    <updated>2026-08-05T02:38:34.217Z</updated>
     
     
     <summary type="html">&lt;p&gt;Shell Launcher でシャットダウンをキャンセルする方法についてご紹介します。  &lt;/p&gt;</summary>
@@ -164,7 +164,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/07/27/UWF-sysprep/"/>
     <id>https://jpiotblog.github.io/blog/2020/07/27/UWF-sysprep/</id>
     <published>2020-07-27T08:00:00.000Z</published>
-    <updated>2026-08-05T02:26:48.052Z</updated>
+    <updated>2026-08-05T02:38:34.590Z</updated>
     
     
     <summary type="html">&lt;p&gt;UWF 機能を有効化した環境で Sysprep を用いたマスター イメージを作成する場合の留意点をご紹介いたします。&lt;/p&gt;</summary>
@@ -183,7 +183,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/"/>
     <id>https://jpiotblog.github.io/blog/2020/06/29/UWF-commit/</id>
     <published>2020-06-29T08:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.848Z</updated>
+    <updated>2026-08-05T02:38:34.407Z</updated>
     
     
     <summary type="html">&lt;p&gt;UWF オーバーレイの保護領域に対して、ファイルやレジストリの変更を反映させる方法についてお纏めします。&lt;/p&gt;</summary>
@@ -204,7 +204,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/20/UWF-longtermup/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/20/UWF-longtermup/</id>
     <published>2020-02-19T15:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.999Z</updated>
+    <updated>2026-08-05T02:38:34.556Z</updated>
     
     
     <summary type="html">&lt;p&gt;長期間稼働するシステムで UWF を有効化する場合の、一般的な留意事項をご紹介します。&lt;/p&gt;</summary>
@@ -225,7 +225,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/19/UWF-exclusions/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/19/UWF-exclusions/</id>
     <published>2020-02-18T15:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.929Z</updated>
+    <updated>2026-08-05T02:38:34.491Z</updated>
     
     
     <summary type="html">&lt;p&gt;UWF の除外設定を実施するにあたり、留意いただきたい内容をお纏めいたします。&lt;/p&gt;</summary>
@@ -235,11 +235,11 @@
     <category term="Unified Write Filter (UWF)" scheme="https://jpiotblog.github.io/blog/categories/Unified-Write-Filter-UWF/"/>
     
     
-    <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
-    
     <category term="Microsoft Defender" scheme="https://jpiotblog.github.io/blog/tags/Microsoft-Defender/"/>
     
     <category term="Windows Update" scheme="https://jpiotblog.github.io/blog/tags/Windows-Update/"/>
+    
+    <category term="uwfmgr.exe" scheme="https://jpiotblog.github.io/blog/tags/uwfmgr-exe/"/>
     
     <category term="除外設定" scheme="https://jpiotblog.github.io/blog/tags/%E9%99%A4%E5%A4%96%E8%A8%AD%E5%AE%9A/"/>
     
@@ -250,7 +250,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/"/>
     <id>https://jpiotblog.github.io/blog/2020/02/12/UWF-dump-setting/</id>
     <published>2020-02-11T15:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.873Z</updated>
+    <updated>2026-08-05T02:38:34.446Z</updated>
     
     
     <summary type="html">&lt;p&gt;UWF を有効化した環境で、メモリ ダンプを取得する方法についてご紹介します。&lt;/p&gt;</summary>
@@ -269,7 +269,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/26/CollectInfo_UWF/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/26/CollectInfo_UWF/</id>
     <published>2020-01-25T15:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.724Z</updated>
+    <updated>2026-08-05T02:38:34.246Z</updated>
     
     
     <summary type="html">&lt;p&gt;UWF 機能に関連するトラブル発生時の情報採取手順を紹介します。&lt;/p&gt;</summary>
@@ -288,7 +288,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/16/UWF-FAQ/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/16/UWF-FAQ/</id>
     <published>2020-01-15T15:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.955Z</updated>
+    <updated>2026-08-05T02:38:34.527Z</updated>
     
     
     <summary type="html">&lt;p&gt;UWF 機能に関してよくあるご質問とその回答をまとめております。&lt;/p&gt;</summary>
@@ -307,7 +307,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/12/past-blog/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.818Z</updated>
+    <updated>2026-08-05T02:38:34.397Z</updated>
     
     
     <summary type="html">&lt;p&gt;過去のブログ情報を紹介いたします。&lt;br&gt;定期的な更新は行われていないため、除外設定等の情報は現在の OS では適用されない場合がございます。&lt;br&gt;恐れ入りますが、予めご留意いただけますようお願い申し上げます。&lt;/p&gt;</summary>
@@ -326,7 +326,7 @@
     <link href="https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/"/>
     <id>https://jpiotblog.github.io/blog/2020/01/01/about-jpiotblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2026-08-05T02:26:47.673Z</updated>
+    <updated>2026-08-05T02:38:34.172Z</updated>
     
     
       

@@ -284,11 +284,11 @@
       
         <tags>
             
-            <tag> uwfmgr.exe </tag>
-            
             <tag> Microsoft Defender </tag>
             
             <tag> Windows Update </tag>
+            
+            <tag> uwfmgr.exe </tag>
             
             <tag> 除外設定 </tag>
             
